@@ -2,22 +2,22 @@
 
 
 
-### Amazon Web Services(AWS) ÁÖ¼Ò
+### Amazon Web Services(AWS) ì£¼ì†Œ
 ```
-http://52.79.187.44:8080/SpringTest/index
+[Go to IPO PROJECT](http://52.79.187.44:8080/SpringTest/index)
 ```
 
 
 
 ### Project Introduction
 ```
-IPO´Â <Inversion of Potential on Investmen>ÀÇ ¾àÀÚÀÔ´Ï´Ù. 
-ÇÑ±Û·Î ¼³¸íÇÏÀÚ¸é 'ÅõÀÚ ÀáÀç·ÂÀÇ ¹ÝÀü'À» ÀÇ¹ÌÇÕ´Ï´Ù. 
-¿ì¸® À¥ »çÀÌÆ®¸¦ ÀÌ¿ëÇÏ´Â °í°´µéÀÌ Á÷Á¢ À§ÇèÀ» °¨¼öÇÏ¸é¼­ 
-ÁÖ½Ä ½ÃÀå¿¡ ÅõÀÚÇÏ´Â °ÍÀÌ ¾Æ´Ñ ·Îº¸ ¾îµå¹ÙÀÌÀú°¡ ÁÖ½Ä ½ÃÀåÀ» ºÐ¼®ÇÏ°í 
-À§ÇèÀ» °¨ÁöÇÏ¸ç ´ÙÀ½ ½ÃÀåÀ» ¿¹ÃøÇÕ´Ï´Ù. 
-¶ÇÇÑ, IPO´Â ±â¾÷ ¼³¸³ ÈÄ Ã³À½À¸·Î ¿ÜºÎ ÅõÀÚÀÚ¿¡°Ô ÁÖ½ÄÀ» °ø°³ÇÏ°í 
-ÀÌ¸¦ ¸ÅµµÇÏ´Â ¾÷¹«¸¦ ÀÇ¹ÌÇÕ´Ï´Ù.
+IPOëŠ” <Inversion of Potential on Investmen>ì˜ ì•½ìžìž…ë‹ˆë‹¤. 
+í•œê¸€ë¡œ ì„¤ëª…í•˜ìžë©´ 'íˆ¬ìž ìž ìž¬ë ¥ì˜ ë°˜ì „'ì„ ì˜ë¯¸í•©ë‹ˆë‹¤. 
+ìš°ë¦¬ ì›¹ ì‚¬ì´íŠ¸ë¥¼ ì´ìš©í•˜ëŠ” ê³ ê°ë“¤ì´ ì§ì ‘ ìœ„í—˜ì„ ê°ìˆ˜í•˜ë©´ì„œ 
+ì£¼ì‹ ì‹œìž¥ì— íˆ¬ìží•˜ëŠ” ê²ƒì´ ì•„ë‹Œ ë¡œë³´ ì–´ë“œë°”ì´ì €ê°€ ì£¼ì‹ ì‹œìž¥ì„ ë¶„ì„í•˜ê³  
+ìœ„í—˜ì„ ê°ì§€í•˜ë©° ë‹¤ìŒ ì‹œìž¥ì„ ì˜ˆì¸¡í•©ë‹ˆë‹¤. 
+ë˜í•œ, IPOëŠ” ê¸°ì—… ì„¤ë¦½ í›„ ì²˜ìŒìœ¼ë¡œ ì™¸ë¶€ íˆ¬ìžìžì—ê²Œ ì£¼ì‹ì„ ê³µê°œí•˜ê³  
+ì´ë¥¼ ë§¤ë„í•˜ëŠ” ì—…ë¬´ë¥¼ ì˜ë¯¸í•©ë‹ˆë‹¤.
 ```
 
 
@@ -25,20 +25,20 @@ IPO´Â <Inversion of Potential on Investmen>ÀÇ ¾àÀÚÀÔ´Ï´Ù.
 ### Project Team
 
 ```markdown
-# ¹Ú¼ºÁø(PM)
-Ç®½ºÅÃ °³¹ß, ¼­¹ö ±¸Ãà ¹× °ü¸®, ºòµ¥ÀÌÅÍ ºÐ¼®
+# ë°•ì„±ì§„(PM)
+í’€ìŠ¤íƒ ê°œë°œ, ì„œë²„ êµ¬ì¶• ë° ê´€ë¦¬, ë¹…ë°ì´í„° ë¶„ì„
 
-## ¼ÕÇØ¼º(PE)
-¹é¿£µå °³¹ß, ºòµ¥ÀÌÅÍ ºÐ¼®
+## ì†í•´ì„±(PE)
+ë°±ì—”ë“œ ê°œë°œ, ë¹…ë°ì´í„° ë¶„ì„
 
-### ±èÇö¿ì(PL)
-¼­¹ö °ü¸®, ºòµ¥ÀÌÅÍ ºÐ¼®
+### ê¹€í˜„ìš°(PL)
+ì„œë²„ ê´€ë¦¬, ë¹…ë°ì´í„° ë¶„ì„
 ```
 
 
 
 ### Development Environment
-±â¼ú | ¼¼ºÎ »çÇ×
+ê¸°ìˆ  | ì„¸ë¶€ ì‚¬í•­
 ------------------------ | -------------------------
 FRONT-END| HTML, CSS, XML, JAVASCRIPT, Ajax, JQuery, Bootstrap
 BACK-END | Java, Servlet/JSP, SpringFramework, MyBatis
