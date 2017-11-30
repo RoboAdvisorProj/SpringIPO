@@ -1,5 +1,8 @@
 package com.ipo.util.board;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class PageMaker {
 
 	private int totalCount;
@@ -10,6 +13,15 @@ public class PageMaker {
 	private int displayPageNum=10;
 	private PageCriteria pageCri;
 	
+	public String makeQuery(int page) {
+		UriComponents uriComponents=
+				UriComponentsBuilder.newInstance()
+				.queryParam("page", page)
+				.queryParam("perPageNum", pageCri.getPerPageNum())
+				.build();
+		
+		return uriComponents.toUriString();
+	}
 	private void calcData() {
 		
 		endPage=(int)(Math.ceil(pageCri.getPage() /

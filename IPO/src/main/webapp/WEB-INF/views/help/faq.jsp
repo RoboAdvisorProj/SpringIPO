@@ -12,12 +12,12 @@
 </head>
 
 <body>
-	<%@ include file="include/topmenu.jsp"%>
+	<%@ include file="../include/topmenu.jsp"%>
 	<!-- Section Background -->
 	<section class="section-background">
 		<div class="container">
 			<ol class="breadcrumb">
-				<li><a href="${location}/index">Home</a></li>
+				<li><a href="${location}/main/main">Home</a></li>
 				<li class="active">&nbsp;contact</li>
 			</ol>
 		</div>
@@ -95,16 +95,6 @@
 	</section>
 	<!-- /.contact -->
 
-	<%@ include file="include/footer.jsp"%>
-
-
-	<script src="resources/assets/js/jquery-1.11.2.min.js"></script>
-	<script src="resources/assets/js/bootstrap.min.js"></script>
-	<script src="resources/assets/js/owl.carousel.min.js"></script>
-	<script src="resources/assets/js/contact.js"></script>
-	<!-- // <script src="resources/assets/js/smoothscroll.js"></script> -->
-	<script src="resources/assets/js/script.js"></script>
-
-
+	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

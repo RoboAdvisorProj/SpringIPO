@@ -62,4 +62,9 @@ public class BoardDAOImpl implements BoardDAO {
 		// TODO Auto-generated method stub
 		return session.selectList("board.listCriteria",pageCri);
 	}
+	@Override
+	public int countPaging(PageCriteria pageCri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.countPaging",pageCri);
+	}
 }

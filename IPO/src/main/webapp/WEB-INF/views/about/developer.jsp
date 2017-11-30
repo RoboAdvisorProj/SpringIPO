@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- Home -->
-	<%@ include file="include/topmenu.jsp"%>
+	<%@ include file="../include/topmenu.jsp"%>
 
 	<!-- Section Background -->
 	<section class="section-background">
@@ -30,7 +30,7 @@
 	<!-- About Us -->
 	<section class="about" id="about">
 		<div class="container section-wrapper">
-			<h2 class="section-title black">about us</h2>
+			<h2 class="section-title black">DEVELOPER</h2>
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
@@ -277,7 +277,7 @@
 		</div>
 		<!-- /.owl-carousel -->
 	</section>
-	<%@ include file="include/footer.jsp"%>
+	<%@ include file="../include/footer.jsp"%>
 
 
 

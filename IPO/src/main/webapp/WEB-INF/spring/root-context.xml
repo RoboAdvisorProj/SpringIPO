@@ -10,7 +10,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url"
-			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/javatest?useSSL=false" />
+			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/ipo?useSSL=false" />
 		<property name="username" value="root" />
 		<property name="password" value="1234" />
 		<property name="initialSize" value="100" />

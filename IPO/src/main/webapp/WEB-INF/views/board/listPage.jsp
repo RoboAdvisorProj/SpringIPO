@@ -10,13 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
-<script>
-	var result = '${msg}';
 
-	if (result == 'success') {
-		alert("글쓰기를 성공적으로 완료하였습니다.");
-	}
-</script>
 </head>
 
 <body>
@@ -45,7 +39,7 @@
 			<c:forEach items="${list}" var="boardVO">
 				<tr>
 					<td>${boardVO.bno}</td>
-					<td><a href="${location}/board/read?bno=${boardVO.bno}">${boardVO.title}</a></td>
+					<td><a href="${location}/board/read?bno=${boardVO.bno} ">${boardVO.title}</a></td>
 					<td>${boardVO.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${boardVO.regdate}" /></td>
@@ -55,28 +49,43 @@
 		</table>
 	</div>
 
-	<div class="text-center">
-		<ul class="pagination">
 
-			<c:if test="${pageMaker.prev}">
-				<li><a href="listPage?page=${pageMaker.startPage - 1}">&laquo;</a></li>
-			</c:if>
+	<div class="box-footer">
+		<div class="text-center">
+			<ul class="pagination">
 
-			<c:forEach begin="${pageMaker.startPage }"
-				end="${pageMaker.endPage }" var="idx">
-				<li <c:out value="${pageMaker.pageCri.page == idx?'class =active':''}"/>>
-					<a href="listPage?page=${idx}">${idx}</a>
-				</li>
-			</c:forEach>
+				<c:if test="${pageMaker.prev}">
+					<li><a
+						href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+				</c:if>
 
-			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-				<li><a href="listPage?page=${pageMaker.endPage +1}">&raquo;</a></li>
-			</c:if>
+				<c:forEach begin="${pageMaker.startPage }"
+					end="${pageMaker.endPage }" var="idx">
+					<li
+						<c:out value="${pageMaker.pageCri.page == idx?'class =active':''}"/>>
+						<a href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
+					</li>
+				</c:forEach>
 
-		</ul>
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li><a
+						href="listPage${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+				</c:if>
+
+			</ul>
+		</div>
 	</div>
+	<!-- /.box-footer-->
+
+
+
+	<script>
+		var result = '${msg}';
+
+		if (result == 'success') {
+			alert("글쓰기를 성공적으로 완료하였습니다.");
+		}
+	</script>
 	<%@ include file="../include/footer.jsp"%>
-
-
 </body>
 </html>

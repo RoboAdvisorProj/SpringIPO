@@ -14,4 +14,5 @@ public interface BoardDAO {
 	public List<BoardVO> listAll()throws Exception;
 	public List<BoardVO> listPage(int page)throws Exception;
 	public List<BoardVO> listCriteria(PageCriteria pageCri)throws Exception;
+	public int countPaging(PageCriteria pageCri)throws Exception;
 }

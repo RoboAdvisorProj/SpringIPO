@@ -50,4 +50,9 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDAO.listCriteria(pageCri);
 	}
+	@Override
+	public int listCountCriteria(PageCriteria pageCri) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.countPaging(pageCri);
+	}
 }

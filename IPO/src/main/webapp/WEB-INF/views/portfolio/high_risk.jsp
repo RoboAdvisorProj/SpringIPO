@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<%@ include file="include/topmenu.jsp"%>
+	<%@ include file="../include/topmenu.jsp"%>
 	<!-- Section Background -->
 	<section class="section-background">
 		<div class="container">
@@ -32,7 +32,7 @@
 				<div class="underline purple"></div>
 				<div class="row">
 					<div class="">
-						<img src="resources/assets/images/service.png" alt="service"
+						<img src="/resources/assets/images/service.png" alt="service"
 							class="service-img img-responsive">
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
@@ -248,42 +248,42 @@
 	<section class="section-wrapper add container">
 		<div class="owl-carousel add-owl">
 			<div class="item">
-				<img src="resources/assets/images/add-1.png" alt="add"
+				<img src="/resources/assets/images/add-1.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-2.png" alt="add"
+				<img src="/resources/assets/images/add-2.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-3.png" alt="add"
+				<img src="/resources/assets/images/add-3.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-4.png" alt="add"
+				<img src="/resources/assets/images/add-4.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-1.png" alt="add"
+				<img src="/resources/assets/images/add-1.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-2.png" alt="add"
+				<img src="/resources/assets/images/add-2.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-3.png" alt="add"
+				<img src="/resources/assets/images/add-3.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-4.png" alt="add"
+				<img src="/resources/assets/images/add-4.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
@@ -291,16 +291,6 @@
 		<!-- /.owl-carousel -->
 	</section>
 
-	<%@ include file="include/footer.jsp"%>
-
-	<script src="resources/assets/js/jquery-1.11.2.min.js"></script>
-	<script src="resources/assets/js/bootstrap.min.js"></script>
-	<script src="resources/assets/js/owl.carousel.min.js"></script>
-	<script src="resources/assets/js/contact.js"></script>
-	<!-- // <script src="resources/assets/js/smoothscroll.js"></script> -->
-	<script src="resources/assets/js/script.js"></script>
-
-
+	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
-html>

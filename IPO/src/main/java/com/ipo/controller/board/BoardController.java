@@ -67,6 +67,8 @@ public class BoardController {
 		logger.info("modify post.........");
 		boardService.modify(boardVO);
 		rttr.addFlashAttribute("msg","service");
+		String str="abc";
+		str.toCharArray();
 		return "redirect:/board/listAll";
 	}
 	 
@@ -82,7 +84,7 @@ public class BoardController {
 		model.addAttribute("list",boardService.listCriteria(pageCri));
 		PageMaker pageMaker=new PageMaker();
 		pageMaker.setPageCri(pageCri);
-		pageMaker.setTotalCount(131);
+		pageMaker.setTotalCount(boardService.listCountCriteria(pageCri));
 		
 		model.addAttribute("pageMaker",pageMaker);
 	}

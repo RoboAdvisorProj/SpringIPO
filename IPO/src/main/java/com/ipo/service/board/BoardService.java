@@ -12,4 +12,5 @@ public void modify(BoardVO boardVO)throws Exception;
 public void remove(Integer bno)throws Exception;
 public List<BoardVO> listAll()throws Exception;
 public List<BoardVO> listCriteria(PageCriteria pageCri)throws Exception;
+public int listCountCriteria(PageCriteria pageCri)throws Exception;
 }
