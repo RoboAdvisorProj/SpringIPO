@@ -110,7 +110,7 @@
 								<li><a href="${location}/portfolio/moderate_risk">중위험</a></li>
 								<li><a href="${location}/portfolio/low_risk">저위험</a></li>
 							</ul></li>
-						<li><a href="${location}/board/listAll">board</a></li>
+						<li><a href="${location}/board/listPage">board</a></li>
 						<li><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true">Customer
 								Service <span class="caret"></span>

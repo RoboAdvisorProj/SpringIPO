@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html class="noIE" lang="kr">
 <head>
-<title>D O ! P O</title>>
+<title>D O ! P O</title>
 </head>
 <body>
 	<%@ include file="../include/topmenu.jsp"%>

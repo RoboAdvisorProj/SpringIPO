@@ -27,7 +27,11 @@
 	</section>
 	<!-- /.section-background -->
 
-	<div class="container">
+	<div class="container" style="margin-top: 50px">
+		<div class="box-header">
+			<h3 class="box-title">자유게시판</h3>
+		</div>
+
 		<table class="table table-bordered" style="margin-top: 50px">
 			<tr>
 				<th>번호</th>
@@ -39,7 +43,7 @@
 			<c:forEach items="${list}" var="boardVO">
 				<tr>
 					<td>${boardVO.bno}</td>
-					<td><a href="${location}/board/read?bno=${boardVO.bno} ">${boardVO.title}</a></td>
+					<td><a href="${location}/board/readPage?bno=${boardVO.bno} ">${boardVO.title}</a></td>
 					<td>${boardVO.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${boardVO.regdate}" /></td>
@@ -47,8 +51,9 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<a href="${location}/board/register"
+			class="btn btn-primary pull-right" role="button">글쓰기</a>
 	</div>
-
 
 	<div class="box-footer">
 		<div class="text-center">
@@ -82,8 +87,14 @@
 	<script>
 		var result = '${msg}';
 
-		if (result == 'success') {
+		if (result == 'register success') {
 			alert("글쓰기를 성공적으로 완료하였습니다.");
+		}
+		else if(result == 'modify success') {
+			alert("글수정을 성공적으로 완료하였습니다.");
+		}
+		else if(result == 'remove success') {
+			alert("글삭제를 성공적으로 완료하였습니다.");
 		}
 	</script>
 	<%@ include file="../include/footer.jsp"%>
