@@ -18,7 +18,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;contact</li>
+				<li class="active">&nbsp;FAQ</li>
 			</ol>
 		</div>
 		<!-- /.container -->

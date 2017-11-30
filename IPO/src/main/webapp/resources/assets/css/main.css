@@ -53,7 +53,7 @@ body
 ==================================================*/
 .header
 {
-	background: url('../images/multipage-header.jpg');
+	background: url('../images/newyork.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -161,7 +161,7 @@ body
 }
 .service-img{
 	position: absolute;
-	bottom: 0px;
+	left: 100px;
 }
 
 .twitter-feed{

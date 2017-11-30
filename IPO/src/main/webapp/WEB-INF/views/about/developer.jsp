@@ -19,7 +19,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/index">Home</a></li>
-				<li class="active">&nbsp;about us</li>
+				<li class="active">&nbsp;개발자</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -35,12 +35,12 @@
 			<div class="underline purple"></div>
 			<div class="row">
 				<div class="col-md-3 col-sm-6">
-					<img src="resources/assets/images/about-1.png" alt="about"
+					<img src="<c:url value="/resources/assets/images/about-1.png"/>" alt="about"
 						class="about-img">
 				</div>
 				<!-- /.col-md-3 -->
 				<div class="col-md-3 col-sm-6">
-					<img src="resources/assets/images/about-2.png" alt="about"
+					<img src="<c:url value="/resources/assets/images/about-2.png"/>" alt="about"
 						class="about-img">
 				</div>
 				<!-- /.col-md-3 -->
@@ -99,83 +99,43 @@
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-1.png" alt="team-image"
-							class="team-img">
-						<h4 class="team-item-name">David Martin</h4>
-						<p class="team-item-id">founder</p>
-					</div>
-					<!-- /.team-item -->
-				</div>
 				<!-- /.col-md-3 -->
 
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-2.png" alt="team-image"
+			<div class="col-sm-4 col-xs-6">
+					<div class="thumbnail">
+						<img src="<c:url value="/resources/assets/images/team_khw.png"/>" alt="team-image"
 							class="team-img">
-						<h4 class="team-item-name">Reena Scot</h4>
-						<p class="team-item-id">founder</p>
+							<div class="caption">
+						<h2 class="team-item-name text-center">김현우</h2>
+						<p class="team-item-id text-center">프로젝트 엔지니어</p>
+						<p class="text-center">서버 관리, 빅데이터 분석</p>
+						</div>
 					</div>
 					<!-- /.team-item -->
 				</div>
 				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-3.png" alt="team-image"
+				<div class="col-sm-4 col-xs-6">
+					<div class="thumbnail">
+						<img src="<c:url value="/resources/assets/images/team_psj.jpg"/>" alt="team-image"
 							class="team-img">
-						<h4 class="team-item-name">Paul Smith</h4>
-						<p class="team-item-id">founder</p>
+							<div class="caption">
+						<h2 class="team-item-name text-center">박성진</h2>
+						<p class="team-item-id text-center">프로젝트 매니저</p>
+						<p class="text-center">풀스택 개발, 서버 구축 및 관리, 데이터베이스 설계</p>
+						</div>
 					</div>
 					<!-- /.team-item -->
 				</div>
 				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-4.png" alt="team-image"
+			<div class="col-sm-4 col-xs-6">
+					<div class="thumbnail">
+						<img src="<c:url value="/resources/assets/images/team_shs.jpg"/>" alt="team-image"
 							class="team-img">
-						<h4 class="team-item-name">Jeneflr White</h4>
-						<p class="team-item-id">founder</p>
-					</div>
-					<!-- /.team-item -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-5.png" alt="team-image"
-							class="team-img">
-						<h4 class="team-item-name">David Martin</h4>
-						<p class="team-item-id">founder</p>
-					</div>
-					<!-- /.team-item -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-6.png" alt="team-image"
-							class="team-img">
-						<h4 class="team-item-name">Reena Scot</h4>
-						<p class="team-item-id">founder</p>
-					</div>
-					<!-- /.team-item -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-7.png" alt="team-image"
-							class="team-img">
-						<h4 class="team-item-name">Paul Smith</h4>
-						<p class="team-item-id">founder</p>
-					</div>
-					<!-- /.team-item -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="team-item">
-						<img src="resources/assets/images/team-8.png" alt="team-image"
-							class="team-img">
-						<h4 class="team-item-name">Jeneflr White</h4>
-						<p class="team-item-id">founder</p>
+							<div class="caption">
+						<h2 class="team-item-name text-center">손해성</h2>
+						<p class="team-item-id text-center">프로젝트 엔지니어</p>
+						<p class="text-center">포트폴리오 모델 개발, 데이터 분석, 백테스팅</p>
+						</div>
 					</div>
 					<!-- /.team-item -->
 				</div>
@@ -278,15 +238,6 @@
 		<!-- /.owl-carousel -->
 	</section>
 	<%@ include file="../include/footer.jsp"%>
-
-
-
-	<script src="resources/assets/js/jquery-1.11.2.min.js"></script>
-	<script src="resources/assets/js/bootstrap.min.js"></script>
-	<script src="resources/assets/js/owl.carousel.min.js"></script>
-	<script src="resources/assets/js/contact.js"></script>
-	<!-- // <script src="resources/assets/js/smoothscroll.js"></script> -->
-	<script src="resources/assets/js/script.js"></script>
 
 
 </body>

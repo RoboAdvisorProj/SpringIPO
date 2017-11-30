@@ -19,7 +19,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/index">Home</a></li>
-				<li class="active">&nbsp;about us</li>
+				<li class="active">&nbsp;비전</li>
 			</ol>
 		</div>
 		<!-- /.container -->

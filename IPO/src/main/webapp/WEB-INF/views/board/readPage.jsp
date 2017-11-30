@@ -66,22 +66,23 @@
 						$(document).ready(function() {
 
 							var formObj = $("form[role='form']");
-
+			
+							
 							console.log(formObj);
 
 							$(".btn-warning").on("click", function() {
-								formObj.attr("action", "/board/modifyPage");
+								formObj.attr("action", "${location}/board/modifyPage");
 								formObj.attr("method", "get");
 								formObj.submit();
 							});
 
 							$(".btn-danger").on("click", function() {
-								formObj.attr("action", "/board/removePage");
+								formObj.attr("action", "${location}/board/removePage");
 								formObj.submit();
 							});
 							$(".btn-primary").on("click",function(){
 								formObj.attr("method","get");
-								formObj.attr("action","/board/listPage");
+								formObj.attr("action","${location}/board/listPage");
 								formObj.submit();
 							});
 

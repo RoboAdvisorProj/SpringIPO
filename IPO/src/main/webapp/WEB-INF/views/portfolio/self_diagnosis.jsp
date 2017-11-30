@@ -15,7 +15,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/index">Home</a></li>
-				<li class="active">&nbsp;service</li>
+				<li class="active">&nbsp;자가진단</li>
 			</ol>
 		</div>
 		<!-- /.container -->

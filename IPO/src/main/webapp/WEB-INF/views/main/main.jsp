@@ -60,7 +60,7 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2"
 						aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span> <span
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
@@ -70,7 +70,7 @@
 				</div>
 				<!-- /.navbar-header -->
 
-				<div class="collapse navbar-collapse in"
+				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="loginButton" style="font-size: 12px;" href="">
@@ -87,8 +87,8 @@
 				<!-- /.navbar-collapse -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse in"
-					id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-2">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="${location}/main/main">home</a></li>
 						<li><a href="#" class="dropdown-toggle"
@@ -150,7 +150,7 @@
 				<div class="underline purple"></div>
 				<div class="row">
 					<div class="">
-						<img src="resources/assets/images/service.png" alt="service"
+						<img src="<c:url value="/resources/assets/images/service1.png"/>" alt="service"
 							class="service-img img-responsive">
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
@@ -297,13 +297,13 @@
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="resources/assets/images/port-1.png" alt="port-1"
+							<img src="<c:url value="/resources/assets/images/analytics.png"/>" alt="port-1"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
+								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -324,13 +324,13 @@
 					<!-- /.portfolio-item -->
 				</div>
 				<!-- /.col-md-4 -->
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="resources/assets/images/port-2.png" alt="port-2"
+							<img src="/resources/assets/images/high.png" alt="port-2"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
+								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -338,7 +338,7 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								Shift Magazine <br> <small>Photography</small>
+								고위험 <br> <small>Photography</small>
 							</div>
 							<!-- /.portfolio-item-name -->
 							<div class="port-heart">
@@ -351,13 +351,13 @@
 					<!-- /.portfolio-item -->
 				</div>
 				<!-- /.col-md-4 -->
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="resources/assets/images/port-3.png" alt="port-3"
+							<img src="/resources/assets/images/moderate.png" alt="port-3"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
+								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -365,7 +365,7 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								Camp Pine Tree <br> <small>Web Design</small>
+								중위험 <br> <small>Web Design</small>
 							</div>
 							<!-- /.portfolio-item-name -->
 							<div class="port-heart">
@@ -378,13 +378,13 @@
 					<!-- /.portfolio-item -->
 				</div>
 				<!-- /.col-md-4 -->
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="resources/assets/images/port-4.png" alt="port-4"
+							<img src="/resources/assets/images/low.png" alt="port-4"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
+								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -392,7 +392,7 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								Freeart App Design <br> <small>Photography</small>
+								저위험 <br> <small>Photography</small>
 							</div>
 							<!-- /.portfolio-item-name -->
 							<div class="port-heart">
@@ -404,61 +404,6 @@
 					</div>
 					<!-- /.portfolio-item -->
 				</div>
-				<!-- /.col-md-4 -->
-				<div class="col-sm-4 col-xs-6">
-					<div class="portfolio-item">
-						<div class="portfolio-img">
-							<img src="resources/assets/images/port-5.png" alt="port-5"
-								class="port-item">
-							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
-									alt="plus" class="plus"></a>
-							</div>
-							<!-- /.portfolio-img-hover -->
-						</div>
-						<!-- /.portfolio-img -->
-						<div class="portfolio-item-details">
-							<div class="portfolio-item-name">
-								Large Poster Set <br> <small>Marketing</small>
-							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
-						</div>
-						<!-- /.portfolio-item-details -->
-					</div>
-					<!-- /.portfolio-item -->
-				</div>
-				<!-- /.col-md-4 -->
-				<div class="col-sm-4 col-xs-6">
-					<div class="portfolio-item">
-						<div class="portfolio-img">
-							<img src="resources/assets/images/port-6.png" alt="port-6"
-								class="port-item">
-							<div class="portfolio-img-hover">
-								<a href="#"><img src="resources/assets/images/plus.png"
-									alt="plus" class="plus"></a>
-							</div>
-							<!-- /.portfolio-img-hover -->
-						</div>
-						<!-- /.portfolio-img -->
-						<div class="portfolio-item-details">
-							<div class="portfolio-item-name">
-								Skilet Album Cover <br> <small>Business</small>
-							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
-						</div>
-						<!-- /.portfolio-item-details -->
-					</div>
-					<!-- /.portfolio-item -->
-				</div>
-				<!-- /.col-md-4 -->
 			</div>
 			<!-- /.row -->
 		</div>
