@@ -27,8 +27,8 @@
 
 				<form role="form" action="modifyPage" method="post">
 
-					<input type='hidden' name='page' value="${cri.page}"> <input
-						type='hidden' name='perPageNum' value="${cri.perPageNum}">
+					<input type='hidden' name='page' value="${cri.page}"> 
+					<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 
 					<div class="box-body">
 

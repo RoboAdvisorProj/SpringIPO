@@ -19,7 +19,7 @@
 	<section class="section-background">
 		<div class="container">
 			<ol class="breadcrumb">
-				<li><a href="${location}/index">Home</a></li>
+				<li><a href="${location}/main/main">Home</a></li>
 				<li class="active">&nbsp;BOARD</li>
 			</ol>
 		</div>
@@ -43,7 +43,8 @@
 			<c:forEach items="${list}" var="boardVO">
 				<tr>
 					<td>${boardVO.bno}</td>
-					<td><a href="${location}/board/readPage?bno=${boardVO.bno} ">${boardVO.title}</a></td>
+					<td><a href="${location}/board/readPage${pageMaker.makeQuery(pageMaker.pageCri.page)
+					}&bno=${boardVO.bno}">${boardVO.title}</a></td>
 					<td>${boardVO.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${boardVO.regdate}" /></td>
@@ -81,6 +82,11 @@
 		</div>
 	</div>
 	<!-- /.box-footer-->
+	
+<form id="jobForm">
+  <input type='hidden' name="page" value=${pageMaker.pageCri.perPageNum}>
+  <input type='hidden' name="perPageNum" value=${pageMaker.pageCri.perPageNum}>
+</form>
 
 
 
