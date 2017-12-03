@@ -7,6 +7,19 @@
 <c:set var="location" value="${pageContext.request.contextPath}" />
 
 <%@include file="../include/topmenu.jsp"%>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<link rel="stylesheet"
+	href="<c:url value="/resources/assets/css/replytimeline.css"/>">
+	<style>
+hr {
+    height: 1px;
+    background-color:#555;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+	</style>
 <section class="section-background">
 	<div class="container">
 		<ol class="breadcrumb">
@@ -14,10 +27,9 @@
 			<li class="active">&nbsp;BOARD</li>
 		</ol>
 	</div>
-	<!-- /.container -->
 </section>
 
-<div class="container">
+<div class="container" style="margin-top: 50px">
 	<!-- Main content -->
 	<section class="content">
 		<div class="row">
@@ -31,11 +43,11 @@
 					<!-- /.box-header -->
 
 					<form role="form" action="modifyPage" method="post">
-						<input type='hidden' name='bno' value="${boardVO.bno}"> 
-						<input type='hidden' name='page' value="${cri.page}"> 
-						<input	type='hidden' name='perPageNum' value="${cri.perPageNum}">
-						<input	type='hidden' name='searchType' value="${cri.searchType}">
-						<input	type='hidden' name='keyword' value="${cri.keyword}">
+						<input type='hidden' name='bno' value="${boardVO.bno}"> <input
+							type='hidden' name='page' value="${cri.page}"> <input
+							type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='searchType' value="${cri.searchType}">
+						<input type='hidden' name='keyword' value="${cri.keyword}">
 					</form>
 
 					<div class="box-body">
@@ -64,39 +76,76 @@
 					<!-- /.box-body -->
 
 					<div class="box-footer" style="margin-top: 50px">
-						<button type="submit" class="btn btn-warning">수정</button>
-						<button type="submit" class="btn btn-danger ">삭제</button>
-						<button type="submit" class="btn btn-primary">목록보기</button>
+						<button type="submit" class="btn btn-warning" id="postModBtn">수정</button>
+						<button type="submit" class="btn btn-danger" id="postDelBtn">삭제</button>
+						<button type="submit" class="btn btn-primary" id="postListBtn">목록보기</button>
 					</div>
+					<hr>
+					<div class="row">
+							<div class="box box-success">
+								<div class="box-header">
+									<h3 class="box-title">댓글 등록</h3>
+								</div>
+								<div class="box-body">
+									<label for="exampleInputEmail1">작성자</label> 
+									<input	class="form-control" type="text" placeholder="USER ID"
+										id="newReplyWriter"><label for="exampleInputEmail1">댓글
+										내용</label> 
+										<textarea class="form-control" type="text"
+										placeholder="명예훼손, 개인정보 유출, 분쟁 유발, 허위사실 유포 등의 글은 이용약관에 의해 제재는 물론 법률에 의해 처벌받을 수 있습니다. &#13;&#10;건전한 커뮤니티를 위해 자제를 당부 드립니다." 
+										id="newReplyText" rows="5"></textarea>
+								</div>
+								<br>
+								<!-- /.box-body -->
+								<div class="box-footer">
+									<button type="button" class="btn btn-primary" id="replyAddBtn">댓글
+										추가</button>
+								</div>
+							</div><br>
 
+							<!-- The time line -->
+							<ul class="timeline">
+								<!-- timeline time label -->
+								<li class="time-label" id="repliesDiv"><span
+									class="bg-green"> 댓글 보기 </span></li>
+							</ul>
 
-					<script>
-						$(document).ready(function() {
+							<div class='text-center'>
+								<ul id="pagination" class="pagination pagination-sm no-margin ">
 
-							var formObj = $("form[role='form']");
+								</ul>
+							</div>
+
 			
-							
-							console.log(formObj);
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
 
-							$(".btn-warning").on("click", function() {
-								formObj.attr("action", "${location}/board/modifyPage");
-								formObj.attr("method", "get");
-								formObj.submit();
-							});
 
-							$(".btn-danger").on("click", function() {
-								formObj.attr("action", "${location}/board/removePage");
-								formObj.submit();
-							});
-							$(".btn-primary").on("click",function(){
-								formObj.attr("method","get");
-								formObj.attr("action","${location}/board/listPage");
-								formObj.submit();
-							});
-
-						});
-					</script>
-
+					<!-- Modal -->
+					<div id="modifyModal" class="modal modal-primary fade"
+						role="dialog">
+						<div class="modal-dialog">
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title"></h4>
+								</div>
+								<div class="modal-body" data-rno>
+									<p>
+										<textarea type="text" id="replytext" class="form-control" rows="5"></textarea>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-info" id="replyModBtn">수정</button>
+									<button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
 
 
@@ -112,4 +161,196 @@
 </div>
 <!-- /.content-wrapper -->
 
+
+
+
+<script>
+	$(document).ready(function() {
+
+		var formObj = $("form[role='form']");
+
+		console.log(formObj);
+
+		$("#postModBtn").on("click", function() {
+			formObj.attr("action", "${location}/board/modifyPage");
+			formObj.attr("method", "get");
+			formObj.submit();
+		});
+
+		$("#postDelBtn").on("click", function() {
+			formObj.attr("action", "${location}/board/removePage");
+			formObj.submit();
+		});
+		$("#postListBtn").on("click", function() {
+			formObj.attr("method", "get");
+			formObj.attr("action", "${location}/board/listPage");
+			formObj.submit();
+		});
+
+	});
+</script>
+
+<script id="template" type="text/x-handlebars-template">
+{{#each .}}
+<li class="replyLi" data-rno={{rno}}>
+<i class="fa fa-comments bg-blue"></i>
+ <div class="timeline-item" >
+  <span class="time">
+    <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
+  </span>
+  <h3 class="timeline-header"><strong>{{replyer}}</strong></h3>
+  <div class="timeline-body">{{replytext}} </div>
+    <div class="timeline-footer">
+     <a class="btn btn-success btn-xs" 
+	    data-toggle="modal" data-target="#modifyModal">댓글 수정</a>
+    </div>
+  </div>			
+</li>
+{{/each}}
+</script>
+
+<script>
+	Handlebars.registerHelper("prettifyDate", function(timeValue) {
+		var dateObj = new Date(timeValue);
+		var year = dateObj.getFullYear();
+		var month = dateObj.getMonth() + 1;
+		var date = dateObj.getDate();
+		return year + "/" + month + "/" + date;
+	});
+	var printData = function(replyArr, target, templateObject) {
+		var template = Handlebars.compile(templateObject.html());
+		var html = template(replyArr);
+		$(".replyLi").remove();
+		target.after(html);
+	}
+	var bno = ${boardVO.bno};
+
+	var replyPage = 1;
+	function getPage(pageInfo) {
+		$.getJSON(pageInfo, function(data) {
+			printData(data.list, $("#repliesDiv"), $('#template'));
+			printPaging(data.pageMaker, $(".pagination"));
+			$("#modifyModal").modal('hide');
+		});
+	}
+	var printPaging = function(pageMaker, target) {
+		var str = "";
+		if (pageMaker.prev) {
+			str += "<li><a href='" + (pageMaker.startPage - 1)
+					+ "'> << </a></li>";
+		}
+		for (var i = pageMaker.startPage, len = pageMaker.endPage; i <= len; i++) {
+			var strClass = pageMaker.pageCri.page == i ? 'class=active' : '';
+			str += "<li "+strClass+"><a href='"+i+"'>" + i + "</a></li>";
+		}
+		if (pageMaker.next) {
+			str += "<li><a href='" + (pageMaker.endPage + 1)
+					+ "'> >> </a></li>";
+		}
+		target.html(str);
+	};
+	$("#repliesDiv").on("click", function() {
+		if ($(".timeline li").size() > 1) {
+			return;
+		}
+		getPage("/replies/" + bno + "/1");
+	});
+	$(".pagination").on("click", "li a", function(event) {
+
+		event.preventDefault();
+
+		replyPage = $(this).attr("href");
+
+		getPage("/replies/" + bno + "/" + replyPage);
+
+	});
+	$("#replyAddBtn").on("click", function() {
+
+		var replyerObj = $("#newReplyWriter");
+		var replytextObj = $("#newReplyText");
+		var replyer = replyerObj.val();
+		var replytext = replytextObj.val();
+
+		$.ajax({
+			type : 'post',
+			url : '/replies/',
+			headers : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+			},
+			dataType : 'text',
+			data : JSON.stringify({
+				bno : bno,
+				replyer : replyer,
+				replytext : replytext
+			}),
+			success : function(result) {
+				console.log("result: " + result);
+				if (result == 'REPLY REGISTER SUCCESS') {
+					alert("댓글이 등록 되었습니다.");
+					replyPage = 1;
+					getPage("/replies/" + bno + "/" + replyPage);
+					replyerObj.val("");
+					replytextObj.val("");
+				}
+			}
+		});
+	});
+	$(".timeline").on("click", ".replyLi", function(event) {
+
+		var reply = $(this);
+
+		$("#replytext").val(reply.find('.timeline-body').text());
+		$(".modal-title").html(reply.attr("data-rno"));
+
+	});
+
+	$("#replyModBtn").on("click", function() {
+
+		var rno = $(".modal-title").html();
+		var replytext = $("#replytext").val();
+
+		$.ajax({
+			type : 'put',
+			url : '/replies/' + rno,
+			headers : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "PUT"
+			},
+			data : JSON.stringify({
+				replytext : replytext
+			}),
+			dataType : 'text',
+			success : function(result) {
+				console.log("result: " + result);
+				if (result == 'REPLY UPDATE SUCCESS') {
+					alert("댓글이 수정 되었습니다.");
+					getPage("/replies/" + bno + "/" + replyPage);
+				}
+			}
+		});
+	});
+	$("#replyDelBtn").on("click", function() {
+
+		var rno = $(".modal-title").html();
+		var replytext = $("#replytext").val();
+
+		$.ajax({
+			type : 'delete',
+			url : '/replies/' + rno,
+			headers : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "DELETE"
+			},
+			dataType : 'text',
+			success : function(result) {
+				console.log("result: " + result);
+				if (result == 'REPLY REMOVE SUCCESS') {
+					alert("댓글이 삭제 되었습니다.");
+					getPage("/replies/" + bno + "/" + replyPage);
+				}
+			}
+		});
+	});
+</script>
 <%@include file="../include/footer.jsp"%>

@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<div class="copy">Copyright &copy; 2015 Your Company</div>
+					<div class="copy">Copyright &copy; 2018 DO! IPO</div>
 				</div>
 				<div class="col-sm-4 text-center">
 					<div class="social-icon">

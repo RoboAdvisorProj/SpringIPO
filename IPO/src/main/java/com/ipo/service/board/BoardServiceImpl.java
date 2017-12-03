@@ -10,6 +10,7 @@ import com.ipo.dao.board.BoardDAO;
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
+import com.ipo.vo.reply.ReplyVO;
 
 @Service
 public class BoardServiceImpl implements BoardService {

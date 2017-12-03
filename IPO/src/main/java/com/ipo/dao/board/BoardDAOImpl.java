@@ -1,12 +1,9 @@
 package com.ipo.dao.board;
 
 import java.util.List;
-
 import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;

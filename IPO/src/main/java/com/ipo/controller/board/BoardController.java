@@ -1,7 +1,6 @@
 package com.ipo.controller.board;
 
 import javax.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.ipo.service.board.BoardService;
-import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.PageMaker;
 import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
@@ -70,7 +67,7 @@ public class BoardController {
 	  }
 
 	  @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-	  public void modifyPagingGET(@RequestParam("bno") int bno, 
+	  public void modifyPagingGET(int bno, 
 			  										@ModelAttribute("cri") SearchCriteria searchCri, Model model) throws Exception {
 
 	    model.addAttribute(boardService.read(bno));
@@ -78,7 +75,7 @@ public class BoardController {
 		@RequestMapping(value="/modifyPage",method=RequestMethod.POST)
 		public String modifyPagingPOST(BoardVO boardVO,SearchCriteria searchCri,
 														RedirectAttributes rttr) throws Exception{
-			logger.info("modify post.........");
+
 			boardService.modify(boardVO);
 			rttr.addAttribute("page",searchCri.getPage());
 			rttr.addAttribute("perPageNum",searchCri.getPerPageNum());

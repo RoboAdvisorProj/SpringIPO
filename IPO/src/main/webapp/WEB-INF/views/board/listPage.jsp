@@ -46,22 +46,22 @@
 
 		<table class="table table-bordered" style="margin-top: 50px">
 			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>등록일</th>
-				<th>조회수</th>
+				<th style="text-align: center;">번호</th>
+				<th style="text-align: center;">제목</th>
+				<th style="text-align: center;">작성자</th>
+				<th style="text-align: center;">등록일</th>
+				<th style="text-align: center;">조회수</th>
 			</tr>
 			<c:forEach items="${list}" var="boardVO">
 				<tr>
-					<td>${boardVO.bno}</td>
-					<td><a
+					<td class="col-md-1" style="text-align: center;">${boardVO.bno}</td>
+					<td class="col-md-6"><a
 						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
 					}&bno=${boardVO.bno}">${boardVO.title}</a></td>
-					<td>${boardVO.writer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
+					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${boardVO.regdate}" /></td>
-					<td><span class="badge bg-red">${boardVO.viewcnt}</span></td>
+					<td class="col-md-1" style="text-align: center;"><span class="badge bg-red">${boardVO.viewcnt}</span></td>
 				</tr>
 			</c:forEach>
 		</table>

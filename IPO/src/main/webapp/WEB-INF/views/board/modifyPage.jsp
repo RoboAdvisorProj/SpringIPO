@@ -72,7 +72,7 @@
 															"click",
 															function() {
 																self.location = "${location}/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}"
-																		+"&searchType=${cri.searchType}&keyword=${cri.keywrod}";
+																		+"&searchType=${cri.searchType}&keyword=${cri.keyword}";
 															});
 											$(".btn-primary").on("click",
 													function() {
