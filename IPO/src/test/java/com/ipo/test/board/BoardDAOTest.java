@@ -16,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.ipo.dao.board.BoardDAO;
 import com.ipo.util.board.PageCriteria;
+import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -85,7 +86,7 @@ public class BoardDAOTest {
 			logger.info(boardVO.getBno()+":"+boardVO.getTitle());
 		}
 	}
-	@Test
+	@Ignore
 	public void testURI() throws Exception{
 		
 		UriComponents uriComponents=UriComponentsBuilder.newInstance()
@@ -96,5 +97,24 @@ public class BoardDAOTest {
 		
 		logger.info("/board/read.ipo=12&perPageNum=20");
 		
+	}
+	
+	@Test
+	public void testDynamic1() throws Exception{
+		SearchCriteria searchCri=new SearchCriteria();
+		
+		searchCri.setPage(1);
+		searchCri.setKeyword("글");
+		searchCri.setSearchType("t");
+		logger.info("======================");
+		
+		List<BoardVO> list=boardDAO.listSearch(searchCri);
+		
+		for(BoardVO boardVO:list) {
+			logger.info(boardVO.getBno()+":"+boardVO.getTitle());
+		}
+		logger.info("======================");
+		
+		logger.info("COUNT:"+boardDAO.listSearchCount(searchCri));
 	}
 }

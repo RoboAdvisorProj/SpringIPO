@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ipo.dao.board.BoardDAO;
 import com.ipo.util.board.PageCriteria;
+import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
 
 @Service
@@ -54,5 +55,15 @@ public class BoardServiceImpl implements BoardService {
 	public int listCountCriteria(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.countPaging(pageCri);
+	}
+	@Override
+	public List<BoardVO> listSearchCriteria(SearchCriteria searchCri) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.listSearch(searchCri);
+	}
+	@Override
+	public int listSearchCount(SearchCriteria searchCri) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.listSearchCount(searchCri);
 	}
 }

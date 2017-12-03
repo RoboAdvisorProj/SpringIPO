@@ -27,8 +27,10 @@
 
 					<form role="form" action="modifyPage" method="post">
 
-						<input type='hidden' name='page' value="${cri.page}"> <input
-							type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='page' value="${cri.page}"> 
+						<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='searchType' value="${cri.searchType}">
+						<input type='hidden' name='keyword' value="${cri.keyword}">
 
 						<div class="box-body">
 
@@ -69,7 +71,8 @@
 													.on(
 															"click",
 															function() {
-																self.location = "${location}/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
+																self.location = "${location}/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}"
+																		+"&searchType=${cri.searchType}&keyword=${cri.keywrod}";
 															});
 											$(".btn-primary").on("click",
 													function() {

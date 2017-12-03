@@ -26,14 +26,16 @@
 				<!-- general form elements -->
 				<div class="box box-primary">
 					<div class="box-header">
-						<h3 class="box-title">READ BOARD</h3>
+						<h3 class="box-title">글보기</h3>
 					</div>
 					<!-- /.box-header -->
 
 					<form role="form" action="modifyPage" method="post">
-						<input type='hidden' name='bno' value="${boardVO.bno}"> <input
-							type='hidden' name='page' value="${cri.page}"> <input
-							type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input type='hidden' name='bno' value="${boardVO.bno}"> 
+						<input type='hidden' name='page' value="${cri.page}"> 
+						<input	type='hidden' name='perPageNum' value="${cri.perPageNum}">
+						<input	type='hidden' name='searchType' value="${cri.searchType}">
+						<input	type='hidden' name='keyword' value="${cri.keyword}">
 					</form>
 
 					<div class="box-body">
@@ -62,9 +64,9 @@
 					<!-- /.box-body -->
 
 					<div class="box-footer" style="margin-top: 50px">
-						<button type="submit" class="btn btn-warning">Modify</button>
-						<button type="submit" class="btn btn-danger ">REMOVE</button>
-						<button type="submit" class="btn btn-primary">LIST ALL</button>
+						<button type="submit" class="btn btn-warning">수정</button>
+						<button type="submit" class="btn btn-danger ">삭제</button>
+						<button type="submit" class="btn btn-primary">목록보기</button>
 					</div>
 
 

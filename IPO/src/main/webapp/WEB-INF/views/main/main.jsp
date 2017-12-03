@@ -303,7 +303,7 @@
 							<img src="<c:url value="/resources/assets/images/analytics.png"/>" alt="port-1"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/self_diagnosis"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -311,7 +311,7 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								Olivera Note <br> <small>Fashion</small>
+								자가진단 <br> <small>Fashion</small>
 							</div>
 							<!-- /.portfolio-item-name -->
 							<div class="port-heart">
@@ -327,10 +327,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="/resources/assets/images/high.png" alt="port-2"
+							<img src="<c:url value="/resources/assets/images/high.png"/>" alt="port-2"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/high_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -354,10 +354,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="/resources/assets/images/moderate.png" alt="port-3"
+							<img src="<c:url value="/resources/assets/images/moderate.png"/>" alt="port-3"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/moderate_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -381,10 +381,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="/resources/assets/images/low.png" alt="port-4"
+							<img src="<c:url value="/resources/assets/images/low.png"/>" alt="port-4"
 								class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="#"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/low_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -415,14 +415,10 @@
 	<!-- Note -->
 	<section class="note purple">
 		<div class="container section-wrapper text-center">
-			<p class="quote">“When you’re a carpenter making a beautiful
-				chest of drawers, you’re not going to use a piece of plywood on the
-				back, even though it faces the wall and nobody will see it. You’ll
-				know it’s there, so you’re going to use a beautiful piece of wood on
-				the back. For you to sleep well at night, the aesthetic, the
-				quality, has to be carried all the way through.”</p>
+			<p class="quote">“우리는 금융시장 전반을 분석하며, 이해할 수 있는 회사를 찾을 뿐이다. 
+			그리고 그 회사들이 지속적인 경쟁력을 가지고 있는지, 신뢰할만한 경영진이 있는지, 가격이 합리적인지를 알아본다.”</p>
 			<!-- /.quote -->
-			<div class="quoter">Steve Jobs</div>
+			<div class="quoter">워렌 버핏</div>
 		</div>
 		<!-- /.container -->
 	</section>

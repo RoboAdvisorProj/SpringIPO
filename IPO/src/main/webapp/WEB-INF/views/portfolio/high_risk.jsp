@@ -27,7 +27,7 @@
 	<section class="service" id="service">
 		<div class="container">
 			<div class="_section-wrapper">
-				<h2 class="section-title black">our services</h2>
+				<h2 class="section-title black">고위험</h2>
 				<!-- /.section-title -->
 				<div class="underline purple"></div>
 				<div class="row">

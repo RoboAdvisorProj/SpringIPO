@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ipo.service.board.BoardService;
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.PageMaker;
+import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
 
 @Controller
@@ -49,50 +50,70 @@ public class BoardController {
 		
 		return "redirect:/board/listPage";
 	}
-	@RequestMapping(value="/listPage",method=RequestMethod.GET)
-	public void listPage(PageCriteria pageCri,Model model)throws Exception{
-		logger.info(pageCri.toString());
-		
-		model.addAttribute("list",boardService.listCriteria(pageCri));
-		PageMaker pageMaker=new PageMaker();
-		pageMaker.setPageCri(pageCri);
-		pageMaker.setTotalCount(boardService.listCountCriteria(pageCri));
-		
-		model.addAttribute("pageMaker",pageMaker);
-	}
-	
+
 	@RequestMapping(value="/readPage",method=RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno,
-							@ModelAttribute("cri") PageCriteria pageCri,
+							@ModelAttribute("cri") SearchCriteria searchCri,
 							Model model)throws Exception{
 		model.addAttribute(boardService.read(bno));
 	}
 	  @RequestMapping(value = "/removePage", method = RequestMethod.POST)
-	  public String remove(@RequestParam("bno") int bno, PageCriteria pageCri, RedirectAttributes rttr) throws Exception {
+	  public String remove(@RequestParam("bno") int bno, SearchCriteria searchCri, RedirectAttributes rttr) throws Exception {
 
 	    boardService.remove(bno);
 
-	    rttr.addAttribute("page", pageCri.getPage());
-	    rttr.addAttribute("perPageNum", pageCri.getPerPageNum());
+	    rttr.addAttribute("page", searchCri.getPage());
+	    rttr.addAttribute("perPageNum", searchCri.getPerPageNum());
 	    rttr.addFlashAttribute("msg", "remove success");
 
 	    return "redirect:/board/listPage";
 	  }
 
 	  @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-	  public void modifyPagingGET(@RequestParam("bno") int bno, @ModelAttribute("cri") PageCriteria pageCri, Model model)
-	      throws Exception {
+	  public void modifyPagingGET(@RequestParam("bno") int bno, 
+			  										@ModelAttribute("cri") SearchCriteria searchCri, Model model) throws Exception {
 
 	    model.addAttribute(boardService.read(bno));
 	  }
 		@RequestMapping(value="/modifyPage",method=RequestMethod.POST)
-		public String modifyPagingPOST(BoardVO boardVO,PageCriteria pageCri,
+		public String modifyPagingPOST(BoardVO boardVO,SearchCriteria searchCri,
 														RedirectAttributes rttr) throws Exception{
 			logger.info("modify post.........");
 			boardService.modify(boardVO);
-			rttr.addAttribute("page",pageCri.getPage());
-			rttr.addAttribute("perPageNum",pageCri.getPerPageNum());
+			rttr.addAttribute("page",searchCri.getPage());
+			rttr.addAttribute("perPageNum",searchCri.getPerPageNum());
+			rttr.addAttribute("searchType",searchCri.getSearchType());
+			rttr.addAttribute("keyword",searchCri.getKeyword());
+			
 			rttr.addFlashAttribute("msg","modify success");
+			
+			logger.info(rttr.toString());
+			
 			return "redirect:/board/listPage";
+		}
+		/*	@RequestMapping(value="/listPage",method=RequestMethod.GET)
+		public void listPage(PageCriteria pageCri,Model model)throws Exception{
+			logger.info(pageCri.toString());
+			
+			model.addAttribute("list",boardService.listCriteria(pageCri));
+			PageMaker pageMaker=new PageMaker();
+			pageMaker.setPageCri(pageCri);
+			pageMaker.setTotalCount(boardService.listCountCriteria(pageCri));
+			
+			model.addAttribute("pageMaker",pageMaker);
+		}
+		*/
+		@RequestMapping(value="/listPage",method=RequestMethod.GET)
+		public void listPage(@ModelAttribute("cri") SearchCriteria searchCri,Model model)throws Exception{
+			logger.info(searchCri.toString());
+			
+			model.addAttribute("list",boardService.listSearchCriteria(searchCri));
+
+			PageMaker pageMaker=new PageMaker();
+			pageMaker.setPageCri(searchCri);
+			
+			pageMaker.setTotalCount(boardService.listSearchCount(searchCri));
+			
+			model.addAttribute("pageMaker",pageMaker);
 		}
 }
