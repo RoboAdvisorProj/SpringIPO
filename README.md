@@ -3,9 +3,8 @@
 
 
 ### Amazon Web Services(AWS) 주소
-```
 [Go to IPO PROJECT](http://52.79.187.44:8080/IPO/main/main)
-```
+
 
 
 
