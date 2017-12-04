@@ -253,7 +253,7 @@ hr {
 		if ($(".timeline li").size() > 1) {
 			return;
 		}
-		getPage("/replies/" + bno + "/1");
+		getPage("${location}/replies/" + bno + "/1");
 	});
 	$(".pagination").on("click", "li a", function(event) {
 
@@ -261,7 +261,7 @@ hr {
 
 		replyPage = $(this).attr("href");
 
-		getPage("/replies/" + bno + "/" + replyPage);
+		getPage("${location}/replies/" + bno + "/" + replyPage);
 
 	});
 	$("#replyAddBtn").on("click", function() {
@@ -273,7 +273,7 @@ hr {
 
 		$.ajax({
 			type : 'post',
-			url : '/replies/',
+			url : '${location}/replies/',
 			headers : {
 				"Content-Type" : "application/json",
 				"X-HTTP-Method-Override" : "POST"
@@ -289,7 +289,7 @@ hr {
 				if (result == 'REPLY REGISTER SUCCESS') {
 					alert("댓글이 등록 되었습니다.");
 					replyPage = 1;
-					getPage("/replies/" + bno + "/" + replyPage);
+					getPage("${location}/replies/" + bno + "/" + replyPage);
 					replyerObj.val("");
 					replytextObj.val("");
 				}
@@ -312,7 +312,7 @@ hr {
 
 		$.ajax({
 			type : 'put',
-			url : '/replies/' + rno,
+			url : '${location}/replies/' + rno,
 			headers : {
 				"Content-Type" : "application/json",
 				"X-HTTP-Method-Override" : "PUT"
@@ -325,7 +325,7 @@ hr {
 				console.log("result: " + result);
 				if (result == 'REPLY UPDATE SUCCESS') {
 					alert("댓글이 수정 되었습니다.");
-					getPage("/replies/" + bno + "/" + replyPage);
+					getPage("${location}/replies/" + bno + "/" + replyPage);
 				}
 			}
 		});
@@ -337,7 +337,7 @@ hr {
 
 		$.ajax({
 			type : 'delete',
-			url : '/replies/' + rno,
+			url : '${location}/replies/' + rno,
 			headers : {
 				"Content-Type" : "application/json",
 				"X-HTTP-Method-Override" : "DELETE"
@@ -347,7 +347,7 @@ hr {
 				console.log("result: " + result);
 				if (result == 'REPLY REMOVE SUCCESS') {
 					alert("댓글이 삭제 되었습니다.");
-					getPage("/replies/" + bno + "/" + replyPage);
+					getPage("${location}/replies/" + bno + "/" + replyPage);
 				}
 			}
 		});
