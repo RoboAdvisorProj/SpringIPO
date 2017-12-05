@@ -324,14 +324,14 @@ body
 ||				10. Footer
 ==================================================*/
 footer{
-	background: #eaeaea;
+	background: #4D4D4D;
 	padding: 20px 0px;
 	margin-top: 50px;
 }
 .copy{
 	font-size: 14px;
 	font-weight: 300;
-	color: #929292;
+	color: #fff;
 	padding: 10px 0px;
 	display: inline-block;
 }

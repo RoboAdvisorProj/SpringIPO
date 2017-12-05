@@ -44,6 +44,7 @@
 			<h3 class="box-title">자유게시판</h3>
 		</div>
 
+<div class="table-responsive">
 		<table class="table table-bordered" style="margin-top: 50px">
 			<tr>
 				<th style="text-align: center;">번호</th>
@@ -65,6 +66,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+</div>
 		<a href="${location}/board/register"
 			class="btn btn-primary pull-right" role="button">글쓰기</a>
 	</div>

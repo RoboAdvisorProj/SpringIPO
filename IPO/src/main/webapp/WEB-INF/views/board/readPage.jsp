@@ -11,15 +11,15 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 <link rel="stylesheet"
 	href="<c:url value="/resources/assets/css/replytimeline.css"/>">
-	<style>
+<style>
 hr {
-    height: 1px;
-    background-color:#555;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
+	height: 1px;
+	background-color: #555;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
 }
-	</style>
+</style>
 <section class="section-background">
 	<div class="container">
 		<ol class="breadcrumb">
@@ -82,41 +82,45 @@ hr {
 					</div>
 					<hr>
 					<div class="row">
-							<div class="box box-success">
-								<div class="box-header">
-									<h3 class="box-title">댓글 등록</h3>
+						<div class="box box-success">
+							<div class="box-header">
+								<h3 class="box-title">댓글 등록</h3>
+							</div>
+							<div class="box-body">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">작성자</label>
+								<div class="col-sm-10">
+									<input class="form-control" type="text"
+										placeholder="당신의 아이디를 입력하세요." id="newReplyWriter">
 								</div>
-								<div class="box-body">
-									<label for="exampleInputEmail1">작성자</label> 
-									<input	class="form-control" type="text" placeholder="USER ID"
-										id="newReplyWriter"><label for="exampleInputEmail1">댓글
-										내용</label> 
-										<textarea class="form-control" type="text"
-										placeholder="명예훼손, 개인정보 유출, 분쟁 유발, 허위사실 유포 등의 글은 이용약관에 의해 제재는 물론 법률에 의해 처벌받을 수 있습니다. &#13;&#10;건전한 커뮤니티를 위해 자제를 당부 드립니다." 
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">댓글
+									내용</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" type="text"
+										placeholder="명예훼손, 개인정보 유출, 분쟁 유발, 허위사실 유포 등의 글은 이용약관에 의해 제재는 물론 법률에 의해 처벌받을 수 있습니다. &#13;&#10;건전한 커뮤니티를 위해 자제를 당부 드립니다."
 										id="newReplyText" rows="5"></textarea>
 								</div>
-								<br>
-								<!-- /.box-body -->
-								<div class="box-footer">
-									<button type="button" class="btn btn-primary" id="replyAddBtn">댓글
-										추가</button>
-								</div>
-							</div><br>
-
-							<!-- The time line -->
-							<ul class="timeline">
-								<!-- timeline time label -->
-								<li class="time-label" id="repliesDiv"><span
-									class="bg-green"> 댓글 보기 </span></li>
-							</ul>
-
-							<div class='text-center'>
-								<ul id="pagination" class="pagination pagination-sm no-margin ">
-
-								</ul>
 							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<button type="button" class="btn btn-primary" id="replyAddBtn">댓글 추가</button>
+							</div>
+						</div>
+						<br>
 
-			
+						<!-- The time line -->
+						<ul class="timeline">
+							<!-- timeline time label -->
+							<li class="time-label" id="repliesDiv" style="cursor: pointer;"><span
+								class="bg-green"> 댓글 보기 </span></li>
+						</ul>
+
+						<div class='text-center'>
+							<ul id="pagination" class="pagination pagination-sm no-margin ">
+
+							</ul>
+						</div>
+
+
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
@@ -134,7 +138,8 @@ hr {
 								</div>
 								<div class="modal-body" data-rno>
 									<p>
-										<textarea type="text" id="replytext" class="form-control" rows="5"></textarea>
+										<textarea type="text" id="replytext" class="form-control"
+											rows="5"></textarea>
 									</p>
 								</div>
 								<div class="modal-footer">
