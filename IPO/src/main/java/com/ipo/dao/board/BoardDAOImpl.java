@@ -1,6 +1,9 @@
 package com.ipo.dao.board;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -74,5 +77,20 @@ public class BoardDAOImpl implements BoardDAO {
 	public int listSearchCount(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne("board.listSearchCount",searchCri);
+	}
+	@Override
+	public void updateReplyCnt(Integer bno, int amount) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String,Object> paramMap=new HashMap<String,Object>();
+		
+		paramMap.put("bno", bno);
+		paramMap.put("amout", amount);
+		
+		session.update("board.updateReplyCnt",paramMap);
+	}
+	@Override
+	public void updateViewCnt(Integer bno) throws Exception {
+		// TODO Auto-generated method stub
+		session.update("board.updateViewCnt",bno);
 	}
 }

@@ -88,18 +88,7 @@ public class BoardController {
 			
 			return "redirect:/board/listPage";
 		}
-		/*	@RequestMapping(value="/listPage",method=RequestMethod.GET)
-		public void listPage(PageCriteria pageCri,Model model)throws Exception{
-			logger.info(pageCri.toString());
-			
-			model.addAttribute("list",boardService.listCriteria(pageCri));
-			PageMaker pageMaker=new PageMaker();
-			pageMaker.setPageCri(pageCri);
-			pageMaker.setTotalCount(boardService.listCountCriteria(pageCri));
-			
-			model.addAttribute("pageMaker",pageMaker);
-		}
-		*/
+
 		@RequestMapping(value="/listPage",method=RequestMethod.GET)
 		public void listPage(@ModelAttribute("cri") SearchCriteria searchCri,Model model)throws Exception{
 			logger.info(searchCri.toString());

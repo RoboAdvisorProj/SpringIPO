@@ -3,6 +3,9 @@ package com.ipo.service.reply;
 import java.util.List;
 import javax.inject.Inject;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ipo.dao.board.BoardDAO;
 import com.ipo.dao.reply.ReplyDAO;
 import com.ipo.util.board.PageCriteria;
 import com.ipo.vo.reply.ReplyVO;
@@ -13,10 +16,15 @@ public class ReplyServiceImpl implements ReplyService {
 	@Inject 
 	private ReplyDAO replyDAO;
 	
+	@Inject
+	private BoardDAO boardDAO;
+	
+	@Transactional
 	@Override
 	public void addReply(ReplyVO replyVO) throws Exception {
 		// TODO Auto-generated method stub
 		replyDAO.create(replyVO);
+		boardDAO.updateReplyCnt(replyVO.getBno(), 1);
 	}
 
 	@Override
@@ -31,10 +39,13 @@ public class ReplyServiceImpl implements ReplyService {
 		replyDAO.update(replyVO);
 	}
 
+	@Transactional	
 	@Override
-	public void removeReply(Integer bno) throws Exception {
+	public void removeReply(Integer rno) throws Exception {
 		// TODO Auto-generated method stub
-		replyDAO.delete(bno);
+		int bno=replyDAO.getBno(rno);
+		replyDAO.delete(rno);
+		boardDAO.updateReplyCnt(bno, -1);
 	}
 	
 	@Override
@@ -47,4 +58,5 @@ public class ReplyServiceImpl implements ReplyService {
 		// TODO Auto-generated method stub
 		return replyDAO.count(bno);
 	}
+
 }

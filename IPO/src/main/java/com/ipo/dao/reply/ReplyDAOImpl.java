@@ -56,5 +56,10 @@ public class ReplyDAOImpl implements ReplyDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("reply.count",bno);
 	}
+	@Override
+	public int getBno(Integer rno) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("reply.getBno",rno);
+	}
 
 }

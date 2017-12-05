@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
-
+<title>D O ! P O</title>
 <%@include file="../include/topmenu.jsp"%>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
@@ -111,16 +111,13 @@ hr {
 						<ul class="timeline">
 							<!-- timeline time label -->
 							<li class="time-label" id="repliesDiv" style="cursor: pointer;"><span
-								class="bg-green"> 댓글 보기 </span></li>
+								class="bg-green"> 댓글 보기 <small id="replycntSmall"> [ ${boardVO.replycnt} ] </small> </span></li>
 						</ul>
 
 						<div class='text-center'>
 							<ul id="pagination" class="pagination pagination-sm no-margin ">
-
 							</ul>
 						</div>
-
-
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
@@ -236,6 +233,7 @@ hr {
 			printData(data.list, $("#repliesDiv"), $('#template'));
 			printPaging(data.pageMaker, $(".pagination"));
 			$("#modifyModal").modal('hide');
+			$("#replycntSmall").html("[ "+data.pageMaker.totalCount+" ]");
 		});
 	}
 	var printPaging = function(pageMaker, target) {
