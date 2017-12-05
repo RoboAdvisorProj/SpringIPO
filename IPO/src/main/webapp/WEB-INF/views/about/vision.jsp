@@ -35,12 +35,12 @@
 			<div class="underline purple"></div>
 			<div class="row">
 				<div class="col-md-3 col-sm-6">
-					<img src="resources/assets/images/about-1.png" alt="about"
+					<img src="/resources/assets/images/about-1.png" alt="about"
 						class="about-img">
 				</div>
 				<!-- /.col-md-3 -->
 				<div class="col-md-3 col-sm-6">
-					<img src="resources/assets/images/about-2.png" alt="about"
+					<img src="/resources/assets/images/about-2.png" alt="about"
 						class="about-img">
 				</div>
 				<!-- /.col-md-3 -->
@@ -101,7 +101,7 @@
 			<div class="row">
 				<div class="col-sm-3 col-xs-6">
 					<div class="team-item">
-						<img src="resources/assets/images/team-1.png" alt="team-image"
+						<img src="/resources/assets/images/team-1.png" alt="team-image"
 							class="team-img">
 						<h4 class="team-item-name">David Martin</h4>
 						<p class="team-item-id">founder</p>
@@ -112,7 +112,7 @@
 
 				<div class="col-sm-3 col-xs-6">
 					<div class="team-item">
-						<img src="resources/assets/images/team-2.png" alt="team-image"
+						<img src="/resources/assets/images/team-2.png" alt="team-image"
 							class="team-img">
 						<h4 class="team-item-name">Reena Scot</h4>
 						<p class="team-item-id">founder</p>
@@ -122,7 +122,7 @@
 				<!-- /.col-md-3 -->
 				<div class="col-sm-3 col-xs-6">
 					<div class="team-item">
-						<img src="resources/assets/images/team-3.png" alt="team-image"
+						<img src="/resources/assets/images/team-3.png" alt="team-image"
 							class="team-img">
 						<h4 class="team-item-name">Paul Smith</h4>
 						<p class="team-item-id">founder</p>
@@ -132,7 +132,7 @@
 				<!-- /.col-md-3 -->
 				<div class="col-sm-3 col-xs-6">
 					<div class="team-item">
-						<img src="resources/assets/images/team-4.png" alt="team-image"
+						<img src="/resources/assets/images/team-4.png" alt="team-image"
 							class="team-img">
 						<h4 class="team-item-name">Jeneflr White</h4>
 						<p class="team-item-id">founder</p>

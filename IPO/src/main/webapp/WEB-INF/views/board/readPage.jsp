@@ -7,10 +7,9 @@
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <title>D O ! P O</title>
 <%@include file="../include/topmenu.jsp"%>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-<link rel="stylesheet"
-	href="<c:url value="/resources/assets/css/replytimeline.css"/>">
+
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/replytimeline.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/assets/css/mailbox.css"/>">
 <style>
 hr {
 	height: 1px;
@@ -20,6 +19,36 @@ hr {
 	width: 100%;
 }
 </style>
+<style type="text/css">
+.popup {
+	position: absolute;
+}
+
+.back {
+	background-color: gray;
+	opacity: 0.5;
+	width: 100%;
+	height: 300%;
+	overflow: hidden;
+	z-index: 1101;
+}
+
+.front {
+	z-index: 1110;
+	opacity: 1;
+	boarder: 1px;
+	margin: auto;
+}
+
+.show {
+	position: relative;
+	max-width: 1200px;
+	max-height: 800px;
+	overflow: auto;
+}
+</style>
+
+
 <section class="section-background">
 	<div class="container">
 		<ol class="breadcrumb">
@@ -28,6 +57,11 @@ hr {
 		</ol>
 	</div>
 </section>
+
+<div class='popup back' style="display: none;"></div>
+	<div id="popup_front" class='popup front' style="display: none;">
+	<img id='popup_img'>
+</div>
 
 <div class="container" style="margin-top: 50px">
 	<!-- Main content -->
@@ -73,8 +107,9 @@ hr {
 						</div>
 
 					</div>
+					
+<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
 					<!-- /.box-body -->
-
 					<div class="box-footer" style="margin-top: 50px">
 						<button type="submit" class="btn btn-warning" id="postModBtn">수정</button>
 						<button type="submit" class="btn btn-danger" id="postDelBtn">삭제</button>
@@ -102,7 +137,8 @@ hr {
 							</div>
 							<!-- /.box-body -->
 							<div class="box-footer">
-								<button type="button" class="btn btn-primary" id="replyAddBtn">댓글 추가</button>
+								<button type="button" class="btn btn-primary" id="replyAddBtn">댓글
+									추가</button>
 							</div>
 						</div>
 						<br>
@@ -111,7 +147,9 @@ hr {
 						<ul class="timeline">
 							<!-- timeline time label -->
 							<li class="time-label" id="repliesDiv" style="cursor: pointer;"><span
-								class="bg-green"> 댓글 보기 <small id="replycntSmall"> [ ${boardVO.replycnt} ] </small> </span></li>
+								class="bg-green"> 댓글 보기 <small id="replycntSmall">
+										[ ${boardVO.replycnt} ] </small>
+							</span></li>
 						</ul>
 
 						<div class='text-center'>
@@ -142,15 +180,11 @@ hr {
 								<div class="modal-footer">
 									<button type="button" class="btn btn-info" id="replyModBtn">수정</button>
 									<button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">닫기</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 								</div>
 							</div>
 						</div>
 					</div>
-
-
-
 				</div>
 				<!-- /.box -->
 			</div>
@@ -164,32 +198,17 @@ hr {
 <!-- /.content-wrapper -->
 
 
-
-
-<script>
-	$(document).ready(function() {
-
-		var formObj = $("form[role='form']");
-
-		console.log(formObj);
-
-		$("#postModBtn").on("click", function() {
-			formObj.attr("action", "${location}/board/modifyPage");
-			formObj.attr("method", "get");
-			formObj.submit();
-		});
-
-		$("#postDelBtn").on("click", function() {
-			formObj.attr("action", "${location}/board/removePage");
-			formObj.submit();
-		});
-		$("#postListBtn").on("click", function() {
-			formObj.attr("method", "get");
-			formObj.attr("action", "${location}/board/listPage");
-			formObj.submit();
-		});
-
-	});
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<script type="text/javascript" src="<c:url value="/resources/assets/js/upload.js"/>"></script>
+<script id="templateAttach" type="text/x-handlebars-template">
+<li data-src='{{fullName}}'>
+  <span class="mailbox-attachment-icon has-img">
+<img src="{{imgsrc}}" alt="Attachment"></span>
+  <div class="mailbox-attachment-info">
+	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
+	</span>
+  </div>
+</li>                
 </script>
 
 <script id="template" type="text/x-handlebars-template">
@@ -210,8 +229,15 @@ hr {
 </li>
 {{/each}}
 </script>
-
 <script>
+	
+	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
+		var accum = '';
+		if (replyer == '${login.uid}') {
+			accum += block.fn();
+		}
+		return accum;
+	});
 	Handlebars.registerHelper("prettifyDate", function(timeValue) {
 		var dateObj = new Date(timeValue);
 		var year = dateObj.getFullYear();
@@ -226,14 +252,13 @@ hr {
 		target.after(html);
 	}
 	var bno = ${boardVO.bno};
-
 	var replyPage = 1;
 	function getPage(pageInfo) {
 		$.getJSON(pageInfo, function(data) {
 			printData(data.list, $("#repliesDiv"), $('#template'));
 			printPaging(data.pageMaker, $(".pagination"));
 			$("#modifyModal").modal('hide');
-			$("#replycntSmall").html("[ "+data.pageMaker.totalCount+" ]");
+			$("#replycntSmall").html("[ " + data.pageMaker.totalCount + " ]");
 		});
 	}
 	var printPaging = function(pageMaker, target) {
@@ -259,21 +284,15 @@ hr {
 		getPage("${location}/replies/" + bno + "/1");
 	});
 	$(".pagination").on("click", "li a", function(event) {
-
 		event.preventDefault();
-
 		replyPage = $(this).attr("href");
-
 		getPage("${location}/replies/" + bno + "/" + replyPage);
-
 	});
 	$("#replyAddBtn").on("click", function() {
-
 		var replyerObj = $("#newReplyWriter");
 		var replytextObj = $("#newReplyText");
 		var replyer = replyerObj.val();
 		var replytext = replytextObj.val();
-
 		$.ajax({
 			type : 'post',
 			url : '${location}/replies/',
@@ -293,26 +312,20 @@ hr {
 					alert("댓글이 등록 되었습니다.");
 					replyPage = 1;
 					getPage("${location}/replies/" + bno + "/" + replyPage);
-					replyerObj.val("");
+					//replyerObj.val("");
 					replytextObj.val("");
 				}
 			}
 		});
 	});
 	$(".timeline").on("click", ".replyLi", function(event) {
-
 		var reply = $(this);
-
 		$("#replytext").val(reply.find('.timeline-body').text());
 		$(".modal-title").html(reply.attr("data-rno"));
-
 	});
-
 	$("#replyModBtn").on("click", function() {
-
 		var rno = $(".modal-title").html();
 		var replytext = $("#replytext").val();
-
 		$.ajax({
 			type : 'put',
 			url : '${location}/replies/' + rno,
@@ -334,10 +347,8 @@ hr {
 		});
 	});
 	$("#replyDelBtn").on("click", function() {
-
 		var rno = $(".modal-title").html();
 		var replytext = $("#replytext").val();
-
 		$.ajax({
 			type : 'delete',
 			url : '${location}/replies/' + rno,
@@ -356,4 +367,98 @@ hr {
 		});
 	});
 </script>
+
+
+<script>
+$(document).ready(function(){
+	
+	var formObj = $("form[role='form']");
+	
+	console.log(formObj);
+	
+	$("#postModBtn").on("click", function(){
+		formObj.attr("action", "${location}/board/modifyPage");
+		formObj.attr("method", "get");		
+		formObj.submit();
+	});
+	
+/* 	$("#removeBtn").on("click", function(){
+		formObj.attr("action", "/sboard/removePage");
+		formObj.submit();
+	}); */
+	
+	$("#postDelBtn").on("click", function(){
+		
+		var replyCnt =  $("#replycntSmall").html().replace(/[^0-9]/g,"");
+		
+		if(replyCnt > 0 ){
+			alert("댓글이 달린 게시물을 삭제할 수 없습니다.");
+			return;
+		}	
+		
+		var arr = [];
+		$(".uploadedList li").each(function(index){
+			 arr.push($(this).attr("data-src"));
+		});
+		
+		if(arr.length > 0){
+			$.post("${location}/deleteAllFiles",{files:arr}, function(){
+				
+			});
+		}
+		
+		formObj.attr("action", "${location}/board/removePage");
+		formObj.submit();
+	});	
+	
+	$("#postListBtn ").on("click", function(){
+		formObj.attr("method", "get");
+		formObj.attr("action", "${location}/board/listPage");
+		formObj.submit();
+	});
+	
+	var bno = ${boardVO.bno};
+	var template = Handlebars.compile($("#templateAttach").html());
+	
+	$.getJSON("${location}/board/getAttach/"+bno,function(list){
+		$(list).each(function(){
+			
+			var fileInfo = getFileInfo(this);
+			
+			var html = template(fileInfo);
+			
+			 $(".uploadedList").append(html);
+			
+		});
+	});
+	
+	$(".uploadedList").on("click", ".mailbox-attachment-info a", function(event){
+		
+		var fileLink = $(this).attr("href");
+		
+		if(checkImageType(fileLink)){
+			
+			event.preventDefault();
+					
+			var imgTag = $("#popup_img");
+			imgTag.attr("src", fileLink);
+			
+			console.log(imgTag.attr("src"));
+					
+			$(".popup").show('slow');
+			imgTag.addClass("show");		
+		}	
+	});
+	
+	$("#popup_img").on("click", function(){
+		
+		$(".popup").hide('slow');
+		
+	});	
+	
+		
+	
+});
+</script>
+
 <%@include file="../include/footer.jsp"%>

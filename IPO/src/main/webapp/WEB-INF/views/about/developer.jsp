@@ -195,42 +195,42 @@
 	<section class="section-wrapper add container">
 		<div class="owl-carousel add-owl">
 			<div class="item">
-				<img src="resources/assets/images/add-1.png" alt="add"
+				<img src="/resources/assets/images/add-1.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-2.png" alt="add"
+				<img src="/resources/assets/images/add-2.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-3.png" alt="add"
+				<img src="/resources/assets/images/add-3.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-4.png" alt="add"
+				<img src="/resources/assets/images/add-4.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-1.png" alt="add"
+				<img src="/resources/assets/images/add-1.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-2.png" alt="add"
+				<img src="/resources/assets/images/add-2.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-3.png" alt="add"
+				<img src="/resources/assets/images/add-3.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="resources/assets/images/add-4.png" alt="add"
+				<img src="/resources/assets/images/add-4.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->

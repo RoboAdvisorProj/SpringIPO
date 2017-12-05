@@ -1,11 +1,9 @@
 package com.ipo.service.board;
 
 import java.util.List;
-
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.SearchCriteria;
 import com.ipo.vo.board.BoardVO;
-import com.ipo.vo.reply.ReplyVO;
 
 public interface BoardService {
 	public void regist(BoardVO boardVO) throws Exception;
@@ -25,4 +23,6 @@ public interface BoardService {
 	public List<BoardVO> listSearchCriteria(SearchCriteria searchCri) throws Exception;
 
 	public int listSearchCount(SearchCriteria searchCri) throws Exception;
+	
+	public List<String> getAttach(Integer bno)throws Exception;
 }
