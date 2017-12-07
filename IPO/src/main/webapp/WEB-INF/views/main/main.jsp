@@ -77,7 +77,7 @@
 								<i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;Sing
 								Up
 						</a></li>
-						<li><a class="loginButton" style="font-size: 12px;" href="">
+						<li><a class="loginButton" style="font-size: 12px;" href="${location}/user/login">
 								<i class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;Login
 						</a></li>
 						<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
