@@ -130,6 +130,24 @@ $(".fileDrop").on("drop", function(event){
 		  }
 		});	
 });
+$(".uploadedList").on("click", ".delbtn", function(event){
+	
+	event.preventDefault();
+	
+	var that = $(this);
+	 
+	$.ajax({
+	   url:"${location}/deleteFile",
+	   type:"post",
+	   data: {fileName:$(this).attr("href")},
+	   dataType:"text",
+	   success:function(result){
+		   if(result == 'deleted'){
+			   that.closest("li").remove();
+		   }
+	   }
+   });
+});
 $("#registerForm").submit(function(event){
 	event.preventDefault();
 	
