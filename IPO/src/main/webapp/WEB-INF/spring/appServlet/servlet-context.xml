@@ -30,6 +30,6 @@
 	</beans:bean>
 	
 	<beans:bean id="uploadPath" class="java.lang.String">
-	<beans:constructor-arg value="C:\\img\\upload"></beans:constructor-arg>
+	<beans:constructor-arg value="/var/lib/tomcat8/webapps/upload"></beans:constructor-arg>
 	</beans:bean>
 </beans:beans>
