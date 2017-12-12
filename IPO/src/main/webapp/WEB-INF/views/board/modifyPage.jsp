@@ -55,7 +55,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">작성자</label> <input type="text"
-									name="writer" class="form-control" value="${boardVO.writer}">
+									name="writer" class="form-control" value="${boardVO.writer}" readonly="readonly">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">제목</label> <input type="text"

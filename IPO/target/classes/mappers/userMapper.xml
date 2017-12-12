@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+	<select id="login" resultType="UserVO">
+	select 
+		mid, mpwd, mname
+	from
+		ipo_member
+	where
+		mid=#{mid} AND mpwd=#{mpwd}
+	</select>
+
+  <update id="keepLogin" >
+  update ipo_member set sessionKey = #{sessionId}, sessionLimit = #{next} where mid = #{mid}
+  </update>
+
+	<select id="checkUserWithSessionKey" resultType="UserVO">
+	select * from ipo_member where sessionKey = #{value}  and sessionlimit > now()
+	</select>	
+	
+</mapper>

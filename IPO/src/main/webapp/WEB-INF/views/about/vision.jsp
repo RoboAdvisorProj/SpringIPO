@@ -46,16 +46,15 @@
 				<!-- /.col-md-3 -->
 
 				<div class="col-md-6 col-sm-12">
-					<p class="about-detail">The Earth was small, light blue, and so
-						touchingly alone, our home that must be defended like a holy
-						relic. The Earth was absolutely round. I believe I never knew what
-						saw for the first time how beautiful our planet is. Mankind, let
-						us preserve and increase this beauty, and not destroy
-						it!Houston.landed.We are all connected; To each other,
-						biologically. To the earth, chemically. To the rest of the
-						universe atomically. The Earth was absolutely round. I believe I
-						never knew what saw for the first time how beautiful our planet
-						is.</p>
+					<p class="about-detail">
+<strong>DO! IPO (DO! Inversion of Potential On investment)</strong><br>
+
+투자의 바다에 몸을 던지신 투자자 여러분 환영합니다. 저희 DOIPO는 험난하고 위험한 투자의 세계 속에서 중장기적 관점으로 가치투자를 지향하는 Auto stock selector 입니다. 
+가치투자라는 장기적 비전을 통해 단기적 이슈나 이벤트에 흔들리지 않고 기업의 주주로서 묵묵히 동행하는 그런 투자를 지향하는 바입니다.
+저희는 기업의 회계자료와 산업계 시황을 통해 기업의 펀더멘털을 분석하고 엄격한 기준을 통해 종목을 스크리닝 합니다. 더불어 5가지로 세분화된 고객의 투자위험도에 따라 각기 다른 기준을 적용해 선별한 종목들을 제시하고 있습니다.
+현명한 가치투자자 여러분! 저희 DOIPO와 함께 엄선하고 또 엄선한 갯벌의 진주를 찾아 함께 떠나지 않으시겠습니까.
+					
+					</p>
 					<!-- /.about-detail -->
 				</div>
 				<!-- /.col-md-6 -->

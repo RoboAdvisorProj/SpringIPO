@@ -53,7 +53,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">작성자</label> <input type="text"
-										name="writer" class="form-control" placeholder="Enter Writer">
+										name="writer" class="form-control" value="${login.mid}" readonly="readonly">
 								</div>
 									<div class="form-group">
 									<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서 올려주세요.</label>

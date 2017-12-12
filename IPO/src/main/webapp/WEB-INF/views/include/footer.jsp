@@ -31,7 +31,7 @@
 				</div>
 				<div class="col-sm-4 text-right">
 					<div class="copy">
-						Theme by <a href="http://www.themewagon.com">themewagon.com</a>.
+						Theme by <a href="http://www.themewagon.com">DOIPO.com</a>.
 						All Rights Reserved
 					</div>
 				</div>

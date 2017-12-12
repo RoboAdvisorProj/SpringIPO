@@ -8,7 +8,6 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <style>
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
@@ -67,8 +66,10 @@
 			</c:forEach>
 		</table>
 </div>
+	<c:if test="${not empty login}">
 		<a href="${location}/board/register"
 			class="btn btn-primary pull-right" role="button">글쓰기</a>
+	</c:if>
 	</div>
 
 	<div class="box-footer">

@@ -3,7 +3,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <title>D O ! P O</title>
 <%@include file="../include/topmenu.jsp"%>
@@ -108,11 +107,13 @@ hr {
 
 					</div>
 					
-<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
+			<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
 					<!-- /.box-body -->
 					<div class="box-footer" style="margin-top: 50px">
+					<c:if test="${login.mid == boardVO.writer}">
 						<button type="submit" class="btn btn-warning" id="postModBtn">수정</button>
 						<button type="submit" class="btn btn-danger" id="postDelBtn">삭제</button>
+					</c:if>
 						<button type="submit" class="btn btn-primary" id="postListBtn">목록보기</button>
 					</div>
 					<hr>
@@ -121,11 +122,12 @@ hr {
 							<div class="box-header">
 								<h3 class="box-title">댓글 등록</h3>
 							</div>
+							<c:if test="${not empty login}">
 							<div class="box-body">
 								<label for="exampleInputEmail1" class="col-sm-2 control-label">작성자</label>
 								<div class="col-sm-10">
 									<input class="form-control" type="text"
-										placeholder="당신의 아이디를 입력하세요." id="newReplyWriter">
+										placeholder="당신의 아이디를 입력하세요." id="newReplyWriter" value="${login.mid}" readonly="readonly">
 								</div>
 								<label for="exampleInputEmail1" class="col-sm-2 control-label">댓글
 									내용</label>
@@ -140,6 +142,13 @@ hr {
 								<button type="button" class="btn btn-primary" id="replyAddBtn">댓글
 									추가</button>
 							</div>
+							</c:if>
+							
+							<c:if test="${empty login}">
+							<div class="box-body">
+							<div><a href="javascript:goLogin();">댓글 서비스는 로그인해야 사용하실 수 있습니다.</a></div>
+							</div>
+							</c:if>
 						</div>
 						<br>
 
@@ -148,7 +157,9 @@ hr {
 							<!-- timeline time label -->
 							<li class="time-label" id="repliesDiv" style="cursor: pointer;"><span
 								class="bg-green"> 댓글 보기 <small id="replycntSmall">
-										[ ${boardVO.replycnt} ] </small>
+										[ ${boardVO.replycnt} ] </small> 
+										<i class="fa fa-refresh fa-spin fa-lg fa-fw"></i>
+										<span class="sr-only">Loading...</span>
 							</span></li>
 						</ul>
 
@@ -178,7 +189,7 @@ hr {
 									</p>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-info" id="replyModBtn">수정</button>
+									<button type="button" class="btn btn-warning" id="replyModBtn">수정</button>
 									<button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>
 									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 								</div>
@@ -219,11 +230,13 @@ hr {
   <span class="time">
     <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
   </span>
-  <h3 class="timeline-header"><strong>{{replyer}}</strong></h3>
+  <h3 class="timeline-header">작성자-<strong>{{replyer}}</strong></h3>
   <div class="timeline-body">{{replytext}} </div>
     <div class="timeline-footer">
+	{{#eqReplyer replyer}}
      <a class="btn btn-success btn-xs" 
 	    data-toggle="modal" data-target="#modifyModal">댓글 수정</a>
+	{{/eqReplyer}}
     </div>
   </div>			
 </li>
@@ -233,7 +246,7 @@ hr {
 	
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
-		if (replyer == '${login.uid}') {
+		if (replyer == '${login.mid}') {
 			accum += block.fn();
 		}
 		return accum;
@@ -456,9 +469,12 @@ $(document).ready(function(){
 		
 	});	
 	
-		
-	
 });
+
+function goLogin(){
+	self.location ="/user/login";
+}
+
 </script>
 
 <%@include file="../include/footer.jsp"%>

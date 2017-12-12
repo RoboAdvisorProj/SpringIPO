@@ -70,21 +70,40 @@
 				</div>
 				<!-- /.navbar-header -->
 
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a class="loginButton" style="font-size: 12px;" href="">
-								<i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;Sing
-								Up
-						</a></li>
-						<li><a class="loginButton" style="font-size: 12px;" href="${location}/user/login">
-								<i class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;Login
-						</a></li>
-						<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
-					</ul>
-					<!-- /.nav -->
-				</div>
-				<!-- /.navbar-collapse -->
+						<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><c:choose>
+							<c:when test="${empty sessionScope.id}">
+								<a class="SignButton" style="font-size: 12px;" href="${location}/user/join_first"> <i
+									class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;회원가입
+								</a>
+							</c:when>
+							<c:otherwise>
+								<a class="myInfoButton" style="font-size: 12px;" href=""> <i
+									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이
+									페이지
+								</a>
+							</c:otherwise>
+						</c:choose></li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.id}">
+								<a class="loginButton" style="font-size: 12px;"
+									href="${location}/user/login"> <i
+									class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;로그인
+								</a>
+							</c:when>
+							<c:otherwise>
+							<a class="loginButton" style="font-size: 12px;"
+									href="javascript:logOutCheck()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+									&nbsp;로그아웃
+								</a>
+							</c:otherwise>
+						</c:choose></li>
+					<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
+				</ul>
+				<!-- /.nav -->
+			</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
@@ -472,6 +491,14 @@
 	<!-- /.fun -->
 
 	<%@ include file="../include/footer.jsp"%>
-
+<script>
+function logOutCheck(){
+	if(confirm("${sessionScope.id}님 정말 로그아웃 하시겠습니까?")){
+		location.href="${location}/user/logout";
+	}else{
+		return;
+	}
+}
+</script>
 </body>
 </html>

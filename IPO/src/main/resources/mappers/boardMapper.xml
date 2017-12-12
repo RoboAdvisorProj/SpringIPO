@@ -31,7 +31,7 @@ delete from tbl_board where bno=#{bno}
 <select id="listAll" resultType="BoardVO">
 <![CDATA[
 select
-	bno, title, content, writer, regdate, viewcnt
+	bno, title, content, writer, regdate, viewcnt, replycnt
 from
 	tbl_board
 where bno > 0
@@ -100,12 +100,24 @@ where
    </if>              
  </if>  
 </sql>
- 
+
+<!-- 중간에 게시판 번호가 삭제되면 게시글 번호를 초기화시켜서 인덱싱 -->
 <select id="listSearch" resultType="BoardVO">
 <![CDATA[  
-  select * 
-  from tbl_board 
-  where bno > 0 
+SELECT @RNUM := @RNUM + 1 AS bno, t.*
+
+FROM
+
+  (
+
+    SELECT *
+
+    FROM tbl_board
+
+    ORDER BY tbl_board.bno
+  ) t,
+
+  ( SELECT @RNUM := 0 ) R
 ]]>  
 
   <include refid="search"></include>
@@ -151,4 +163,6 @@ delete from tbl_attach where bno=#{bno}
 <insert id="replaceAttach">
 insert into tbl_attach(fullname,bno) values(#{fullName},#{bno})
 </insert>
+
+
 </mapper>

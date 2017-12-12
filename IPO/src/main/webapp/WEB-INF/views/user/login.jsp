@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="noIE" lang="kr">
 <head>
-<title>D O ! P O | LOGIN</title>
+<title>D O ! P O | 로그인</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="location" value="${pageContext.request.contextPath}" />
 
 </head>
 <body>
@@ -15,7 +16,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;LOGIN</li>
+				<li class="active">&nbsp;로그인</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -28,22 +29,23 @@
 					<div class="panel-heading">D&nbsp;O&nbsp;!&nbsp;P&nbsp;O<p>환영합니다!</p></div>
 					<br>
 				<div class="panel-body">
-					<form id="login-form">
+				
+					<form id="login-form" role="form" action="/user/loginPost" method="post">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user fa"
 								aria-hidden="true"></i></span> <input type="text" class="form-control"
-								name="name" id="name" placeholder="아이디를 입력하세요." />
+								name="mid" id="name" placeholder="아이디를 입력하세요." />
 						</div>
 						<br>
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="fa fa-lock fa-lg" aria-hidden="true"></i></span> <input
-								type="password" class="form-control" name="password"
+								type="password" class="form-control" name="mpwd"
 								id="password" placeholder="비밀번호를 입력하세요." />
 						</div>
 						<br>
-						<div class="checkbox">
-							<label><input type="checkbox" value="remember-me">
+						<div class="checkbox icheck">
+							<label><input type="checkbox" name="useCookie">
 								사용자 정보 저장 </label>
 						</div>
 						<div>
@@ -55,6 +57,7 @@
 						</div>
 						<br>
 					</form>
+					
 				</div>
 			</div>
 		</div>
