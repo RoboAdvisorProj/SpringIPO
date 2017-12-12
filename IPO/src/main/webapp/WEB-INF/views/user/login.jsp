@@ -29,20 +29,30 @@
 					<div class="panel-heading">D&nbsp;O&nbsp;!&nbsp;P&nbsp;O<p>환영합니다!</p></div>
 					<br>
 				<div class="panel-body">
-				
-					<form id="login-form" role="form" action="/user/loginPost" method="post">
+			
+					<form id="login-form" role="form" name="form1" method="post">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user fa"
 								aria-hidden="true"></i></span> <input type="text" class="form-control"
-								name="mid" id="name" placeholder="아이디를 입력하세요." />
+								name="mid" id="userId" placeholder="아이디를 입력하세요." />
 						</div>
 						<br>
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="fa fa-lock fa-lg" aria-hidden="true"></i></span> <input
 								type="password" class="form-control" name="mpwd"
-								id="password" placeholder="비밀번호를 입력하세요." />
+								id="userPw" placeholder="비밀번호를 입력하세요." />
 						</div>
+						<br>
+					<div class="input-group center-block">
+					<c:if test="${msg == 'failure'}">
+			      <div class="alert alert-danger alert-dismissible" role="alert">
+			  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			 		 <strong>경고!</strong>   아이디 또는 비밀번호가 일치하지 않습니다.
+			 		 </div>
+			 		 </c:if>
+				</div>
+       
 						<br>
 						<div class="checkbox icheck">
 							<label><input type="checkbox" name="useCookie">
@@ -53,7 +63,7 @@
 						</div>
 						<br>
 						<div>
-							<button type="submit" class="form-control btn btn-primary">로그인</button>
+							<button id="btnLogin" type="submit" class="form-control btn btn-primary">로그인</button>
 						</div>
 						<br>
 					</form>
@@ -62,6 +72,31 @@
 			</div>
 		</div>
 	</div>
+		<script>
+    $(document).ready(function(){
+        $("#btnLogin").click(function(){
+            // 태크.val() : 태그에 입력된 값
+            // 태크.val("값") : 태그의 값을 변경 
+            var userId = $("#userId").val();
+            var userPw = $("#userPw").val();
+            if(userId == ""){
+                alert("아이디를 입력하세요.");
+                $("#userId").focus(); // 입력포커스 이동
+                return; // 함수 종료
+            }
+            if(userPw == ""){
+                alert("비밀번호를 입력하세요.");
+                $("#userPw").focus();
+                return;
+            }
+            // 폼 내부의 데이터를 전송할 주소
+            document.form1.action="${location}/user/loginPost"
+            // 제출
+            document.form1.submit();
+        });
+    });
+</script>
 	<%@ include file="../include/footer.jsp"%>
+
 </body>
 </html>

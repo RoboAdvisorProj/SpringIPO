@@ -7,7 +7,7 @@ import com.ipo.vo.user.UserVO;
 
 public interface UserDAO {
 
-	public UserVO logn(LoginDTO loginDTO) throws Exception;
+	public UserVO login(LoginDTO loginDTO) throws Exception;
 
 	public void keepLogin(String mid, String sessionId, Date next);
 

@@ -104,20 +104,9 @@ where
 <!-- 중간에 게시판 번호가 삭제되면 게시글 번호를 초기화시켜서 인덱싱 -->
 <select id="listSearch" resultType="BoardVO">
 <![CDATA[  
-SELECT @RNUM := @RNUM + 1 AS bno, t.*
-
-FROM
-
-  (
-
-    SELECT *
-
-    FROM tbl_board
-
-    ORDER BY tbl_board.bno
-  ) t,
-
-  ( SELECT @RNUM := 0 ) R
+  select * 
+  from tbl_board 
+  where bno > 0 
 ]]>  
 
   <include refid="search"></include>

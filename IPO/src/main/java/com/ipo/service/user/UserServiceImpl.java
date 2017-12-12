@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO login(LoginDTO loginDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return userDAO.logn(loginDTO);
+		return userDAO.login(loginDTO);
 	}
 	@Override
 	public void keepLogin(String mid, String sessionId, Date next) throws Exception {

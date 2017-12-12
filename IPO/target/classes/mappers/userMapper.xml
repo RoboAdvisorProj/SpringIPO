@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="login" resultType="UserVO">
 	select 
-		mid, mpwd, mname
+		mid, mpwd
 	from
 		ipo_member
 	where

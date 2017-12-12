@@ -37,8 +37,7 @@ public class UserController {
 	}
 	
 	  @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
-	  public ModelAndView loginPOST(LoginDTO dto, 
-			  HttpSession session, Model model) 
+	  public ModelAndView loginPOST(LoginDTO dto, HttpSession session, Model model) 
 			  throws Exception {
 
 	    UserVO vo = userService.login(dto);
@@ -56,14 +55,14 @@ public class UserController {
 	      userService.keepLogin(vo.getMid(), session.getId(), sessionLimit);
 	    }
 	    
-		if(session!=null) {
-			logger.info("Login Success");
+		if(session.getId()==dto.getMid()) {
+			logger.info("`````````Login Success```````````");
 			
 		mav.setViewName("main/main");
-		}
-		else {
-		logger.info("Login failure");
+		}else {
+			logger.info("```````````Login failure```````````");
 			mav.setViewName("user/login");
+			mav.addObject("msg", "failure");
 		}
 	    return mav;
 	  }

@@ -30,7 +30,7 @@
 			<div class="article">
 				<i class="fa fa-check-circle-o" id="all-check" aria-hidden="true"></i>
 				<div class="agree">
-					DOIPO 서비스 이용약관, 위치정보,개인정보 수집 및 이용에 모두 동의합니다.
+					DOIPO 서비스 이용약관, 개인정보 수집 및 이용에 모두 동의합니다.
 				</div>	
 			</div>
 			

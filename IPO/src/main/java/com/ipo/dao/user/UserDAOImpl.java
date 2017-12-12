@@ -19,7 +19,7 @@ public class UserDAOImpl implements UserDAO {
 	private SqlSession session;
 	
 	@Override
-	public UserVO logn(LoginDTO loginDTO) throws Exception {
+	public UserVO login(LoginDTO loginDTO) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne("user.login",loginDTO);
 	}
