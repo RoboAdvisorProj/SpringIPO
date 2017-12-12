@@ -58,7 +58,7 @@ public class UserController {
 		if(session.getId()==dto.getMid()) {
 			logger.info("`````````Login Success```````````");
 			
-		mav.setViewName("main/main");
+			mav.setViewName("user/loginPost");
 		}else {
 			logger.info("```````````Login failure```````````");
 			mav.setViewName("user/login");
