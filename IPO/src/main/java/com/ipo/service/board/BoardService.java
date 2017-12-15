@@ -25,4 +25,6 @@ public interface BoardService {
 	public int listSearchCount(SearchCriteria searchCri) throws Exception;
 	
 	public List<String> getAttach(Integer bno)throws Exception;
+	
+	public void replyUpdate()throws Exception;
 }

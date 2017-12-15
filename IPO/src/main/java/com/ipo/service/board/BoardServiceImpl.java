@@ -95,4 +95,9 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDAO.getAttach(bno);
 	}
+	@Override
+	public void replyUpdate() throws Exception {
+		// TODO Auto-generated method stub
+	boardDAO.replyUpdate();	
+	}
 }

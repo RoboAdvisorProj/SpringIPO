@@ -11,6 +11,7 @@ public class UserVO {
 	private String memail;
 	private String mgender;
 	private Date mregdate;
+	private Date mupdatedate;
 	private int mage;
 	public String getMid() {
 		return mid;
@@ -54,6 +55,12 @@ public class UserVO {
 	public void setMregdate(Date mregdate) {
 		this.mregdate = mregdate;
 	}
+	public Date getMupdatedate() {
+		return mupdatedate;
+	}
+	public void setMupdatedate(Date mupdatedate) {
+		this.mupdatedate = mupdatedate;
+	}
 	public int getMage() {
 		return mage;
 	}
@@ -63,7 +70,8 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [mid=" + mid + ", mpwd=" + mpwd + ", mname=" + mname + ", mtel=" + mtel + ", memail=" + memail
-				+ ", mgender=" + mgender + ", mregdate=" + mregdate + ", mage=" + mage + "]";
+				+ ", mgender=" + mgender + ", mregdate=" + mregdate + ", mupdatedate=" + mupdatedate + ", mage=" + mage
+				+ "]";
 	}
 	
 	

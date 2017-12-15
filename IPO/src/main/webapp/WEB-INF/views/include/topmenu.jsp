@@ -53,10 +53,15 @@
 								</a>
 							</c:when>
 							<c:otherwise>
-								<a class="myInfoButton" style="font-size: 12px;" href=""> <i
-									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이
-									페이지
-								</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+						role="button" aria-haspopup="true" style="font-size: 12px;"><i
+									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이페이지<span
+							class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
+							<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
+							<li><a href="${location}/portfolio/moderate_risk">자가진단 결과보기</a></li>
+								</ul>
 							</c:otherwise>
 						</c:choose></li>
 					<li><c:choose>

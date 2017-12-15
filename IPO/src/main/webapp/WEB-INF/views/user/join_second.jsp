@@ -12,6 +12,35 @@
 <script src="<c:url value="/resources/assets/signup/checkEffect.js"/>"></script>
 <script src="<c:url value="/resources/assets/signup/join_second.js"/>"></script>
 <link rel="stylesheet" href="<c:url value="/resources/assets/signup/join_second.css"/>">
+<script>
+	/* 스프링 시큐리티의 CSRF라는 기능으로 인해 POST방식으로 보낼때 CSRF처리를 해줘야함. AJAX에서 POST요청을함으로 로딩과 동시에 CSRF처리 */
+
+	/* --------------------------------------------------- */
+	function idCheckAjax(){
+		var mid = $("#username").val()
+		
+		var data={
+			mid:mid
+		}
+		
+		$.ajax({
+			type:"POST",
+			url:"${location}/user/isIdExist",
+			headers:{
+				"Content-Type":"application/json; charset=UTF-8"
+			},
+			data:JSON.stringify(data),
+			success:function(msg){
+				if(msg == "possible"){
+					$("#id_field > .input_check").css("color","green").text("사용가능한 아이디입니다")
+					 successCheckEffect($("#id_field"));
+				}
+				else
+					$("#id_field > .input_check").css("color","red").text("이미 있는 아이디입니다")
+			}
+		})
+	}
+</script>
 </head>
 <body>
 
@@ -29,17 +58,17 @@
 
 	<div class="container">
 		<h3>기본정보입력</h3>
-		<form enctype="multipart/form-data" method="post" action="" id="join_second_form">
+		<form  action="" id="join_second_form" method="post" >
 			<div id="id_field" class="join_row">
 				<label for="id">아이디 </label>
-				<input type="text" id="username" name="username" placeholder="ID를 입력">
+				<input type="text" id="username" name="mid" placeholder="ID를 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="pwd_field" class="join_row">
 				<label for="pwd">비밀번호 </label>
-				<input type="password" id="password" name="password" placeholder="영문,숫자,특수문자혼합하여 8~20자리입력">
+				<input type="password" id="password" name="mpwd" placeholder="영문,숫자,특수문자혼합하여 8~20자리입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
@@ -53,21 +82,21 @@
 			
 			<div id="name_field" class="join_row">
 				<label for="name">이름 </label>
-				<input type="text" id="name" name="mName" placeholder="이름 입력">
+				<input type="text" id="name" name="mname" placeholder="이름 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="age_field" class="join_row">
 				<label for="age">나이</label>
-				<input type="text" id="age" name="mAge" placeholder="나이 입력" onkeydown="javascript:onlyNumber(this)">
+				<input type="text" id="age" name="mage" placeholder="나이 입력" onkeydown="javascript:onlyNumber(this)">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="gender_field" class="join_row">
 				<label for="gender_box">성별 </label>
-				<select name="mGender" id="gender_box">
+				<select name="mgender" id="gender_box">
 					<option value="M">남자</option>
 					<option value="W">여자</option>
 				</select>
@@ -86,22 +115,22 @@
 					<option value="hanmir.com">hanmir.com</option>
 					<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<input type="hidden" name="mEmail" id="mEmail">
+				<input type="hidden" name="memail" id="mEmail">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="tel_field" class="join_row">
 				<label for="tel">전화번호</label>
-				<input type="text" id="tel" name="mTel" placeholder="'-'를 제외하고 입력하세요">
+				<input type="text" id="tel" name="mtel" placeholder="'-'를 제외하고 입력하세요">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
-			<input type="hidden" name="authority" value="ROLE_USER">
+			<!-- <input type="hidden" name="authority" value="ROLE_USER"> -->
 			
 			<div class="submit_group">
-				<input type="button" id="joinBtn" value="가입" onclick="goNextPage('${location}/member/joinSuccess.amg?${_csrf.parameterName}=${_csrf.token}')">
+				<input type="button" id="joinBtn" value="가입" onclick="goNextPage('${location}/user/signupSuccess')">
 				<input type="button" id="cancelBtn" value="취소" onclick="exitPage('${location}/main/main')">
 			</div>
 		</form>

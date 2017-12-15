@@ -22,4 +22,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from ipo_member where sessionKey = #{value}  and sessionlimit > now()
 	</select>	
 	
+	<insert id="register">
+	insert into ipo_member(mid,mpwd,mname,mtel,memail,mgender,mage)
+	values(#{mid},#{mpwd},#{mname},#{mtel},#{memail},#{mgender},#{mage})
+	</insert>
+	
+	 <!-- 아이디 중복 확인 -->
+  	<select id="selectUser" resultType="UserVO">
+  		SELECT 
+  			mid,mpwd,mname,mtel,memail,mgender,mregdate,mage,mupdatedate				       
+  		FROM
+  			ipo_member
+  		WHERE
+  			mid=#{mid} 
+  	</select>
+  	<!-- 회원 정보 수정 -->
+  	<update id="updateUser">
+  	update
+  		ipo_member
+  	set
+  		mpwd=#{mpwd},
+  		mname=#{mname},
+  		mtel=#{mtel},
+  		memail=#{memail},
+  		mupdatedate=now()
+  	where
+  		mid=#{mid}
+  	</update>
+  	<!-- 회원 탈퇴 -->
+
 </mapper>

@@ -38,7 +38,7 @@ public class BoardController {
 		logger.info("regist post .........");
 		logger.info(boardVO.toString());
 		boardService.regist(boardVO);
-		
+	
 		rttr.addFlashAttribute("msg","register success");
 		
 		return "redirect:/board/listPage";
@@ -98,13 +98,14 @@ public class BoardController {
 			logger.info(searchCri.toString());
 			
 			model.addAttribute("list",boardService.listSearchCriteria(searchCri));
-
+			boardService.replyUpdate();
 			PageMaker pageMaker=new PageMaker();
 			pageMaker.setPageCri(searchCri);
 			
 			pageMaker.setTotalCount(boardService.listSearchCount(searchCri));
 			
 			model.addAttribute("pageMaker",pageMaker);
+
 		}
 		  @RequestMapping("/getAttach/{bno}")
 		  @ResponseBody

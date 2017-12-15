@@ -12,4 +12,10 @@ public interface UserDAO {
 	public void keepLogin(String mid, String sessionId, Date next);
 
 	public UserVO checkUserWithSessionKey(String value);
+	
+	public void register(UserVO userVO)throws Exception;
+	
+	public UserVO selectUser(String mId)throws Exception;
+	
+	public void updateUser(UserVO userVO)throws Exception;
 }

@@ -119,4 +119,9 @@ public class BoardDAOImpl implements BoardDAO {
 		session.insert("board.replaceAttach",paramMap);
 		
 	}
+	@Override
+	public void replyUpdate() throws Exception {
+		// TODO Auto-generated method stub
+	session.update("board.replyUpdate");	
+	}
 }

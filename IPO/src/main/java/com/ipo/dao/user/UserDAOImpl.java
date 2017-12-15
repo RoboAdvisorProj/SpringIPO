@@ -41,4 +41,19 @@ public class UserDAOImpl implements UserDAO {
 
 	    return session.selectOne("user.checkUserWithSessionKey", value);
 	  }	
+	  @Override
+	public void register(UserVO userVO) throws Exception {
+		// TODO Auto-generated method stub
+		  session.insert("user.register",userVO);
+	}
+	  @Override
+	public UserVO selectUser(String mId) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("user.selectUser", mId);
+	}
+	  @Override
+	public void updateUser(UserVO userVO) throws Exception {
+		// TODO Auto-generated method stub
+		  session.update("user.updateUser",userVO);
+	}
 }

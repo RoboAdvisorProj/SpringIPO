@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+body{
+	background-color: #eee;
+	font-family: 'Jeju Gothic', serif;
+}
+#content{
+	position: relative;
+	padding-top:200px;
+	padding-bottom:100px;
+	width:100%;
+	height:100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#modify_form{
+	width: 850px;
+	text-align: center;
+	margin: 0 auto;
+	height: 100%;
+	padding-top: 20px;
+	background-color: white;
+}
+
+#modify_form > h2{
+	font-weight: 800;
+	font-size: 45px;
+	color:#b49759;
+	letter-spacing: 2px;
+	padding-bottom: 30px;
+}
+
+#modify_form > .inform_row{
+	margin-bottom: 20px;
+}
+
+#modify_form > p{
+	text-align: left;
+	border-bottom: 1px solid rgba(50,50,50,.3);
+	margin-bottom: 20px;
+	color: rgba(0,0,0,.5);
+}
+
+#modify_form > .inform_row >  label{
+	font-family: 'Jeju Gothic', serif;
+	display: block;
+	text-align: left;
+	font-size: 15px;
+	color: rgba(0,0,0,.5);
+	width: 100px;
+	padding-left: 30px;
+	padding-bottom: 25px;
+	padding-top: 40px;
+}
+	
+#modify_form > .inform_row input{
+	width: 90%;
+	height: 35px;
+	font-size: 25px;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	color: rgba(0,0,0,.7);
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+#email_select{
+	display: flex;
+}
+
+#first_email{
+	margin-left: 40px;
+	flex:2 2 50%;
+}
+
+#esp{
+	font-size: 40px;
+}
+#last_email{
+	flex: 2 2 60%;
+	margin: 0 20px;
+}
+#email_box{
+	flex:2 2 40%;
+	margin-right: 50px;
+}
+.submit_group{
+	margin-top:20px;
+	margin-bottom:40px;
+	text-align: center;
+}
+
+
+.submit_group > input[type="button"]{
+	margin:10px auto;
+	display: block;
+	width: 90%;
+	height: 70px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	border: none;
+	background-color: rgba(0,0,0,.8);
+}
+
+input[type='button']:hover,
+input[type="submit"]:hover{
+	cursor: pointer;
+}
+
+#modifyBtn{
+	color: black;
+	background-color: rgba(250,250,250,.8);
+	border:1px solid black;
+}
+
+.link_group{
+	width: 100%;
+	height: 100%;
+	margin-bottom: 40px;
+}
+
+.link_group > a{
+	margin: 10px;
+	display: inline-block;
+	text-decoration: none;
+	color: rgba(0,0,0,.7);
+}
+
+.link_group > a:hover{
+	color: rgba(0,0,0,1);
+}
+.wraper_img{
+	display: block;
+	width: 130px;
+	height: 120px;
+	margin-left: 40px;
+	vertical-align: -50px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+#pro_pic{
+	max-width: 140px;
+	min-height: 140px;
+}
+.wraper_pic{
+	position: relative;
+	right: 300px;
+	top: 20px;
+}
+
+.wraper_pic > .sel_pic{
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,.2);
+	padding:8px 5px 7px 5px;
+	width: 70px;
+}
+
+.wraper_pic > #pic{
+	position: absolute;
+	border: none;
+	left: 0;
+	top: 0;
+	overflow:hidden;
+	width:1px;
+	height:1px;
+	clip:rect(0,0,0,0);
+}
+#modify_form > div.inform_row:nth-child(7) > .wraper_pic > input{
+	font-size:18px;
+	width: 77px;
+	background: none;
+	border: 1px solid rgba(0,0,0,.2);
+}
+#email_check{
+	display:block;
+}
+#profile{
+	font-size: 120px;
+	margin-top: -30px;
+	color: black;
+}
+.fa-check{
+	display: none;
+	color:green;
+}
+
+.view{
+	display: inline-block;
+}
+.input_check{
+	display: block;
+}
