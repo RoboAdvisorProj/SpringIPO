@@ -15,6 +15,7 @@
 	content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 <title>D O ! P O</title>
 
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 
@@ -69,13 +70,12 @@
 							<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><c:choose>
-							<c:when test="${empty sessionScope.id}">
+					<li> 	<sec:authorize access="permitAll"> 
 								<a class="SignButton" style="font-size: 12px;" href="${location}/user/join_first"> <i
 									class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;회원가입
 								</a>
-							</c:when>
-							<c:otherwise>
+							</sec:authorize>
+							<sec:authorize access="hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"
 						role="button" aria-haspopup="true" style="font-size: 12px;"><i
 									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이페이지<span
@@ -85,22 +85,19 @@
 							<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
 							<li><a href="${location}/portfolio/moderate_risk">자가진단 결과보기</a></li>
 								</ul>
-							</c:otherwise>
-						</c:choose></li>
-					<li><c:choose>
-							<c:when test="${empty sessionScope.id}">
+						</sec:authorize></li>
+					<li><sec:authorize access="permitAll"> 
 								<a class="loginButton" style="font-size: 12px;"
 									href="${location}/user/login"> <i
 									class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;로그인
 								</a>
-							</c:when>
-							<c:otherwise>
+							</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')">
 							<a class="loginButton" style="font-size: 12px;"
 									href="javascript:logOutCheck()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
 									&nbsp;로그아웃
 								</a>
-							</c:otherwise>
-						</c:choose></li>
+							</sec:authorize></li>
 					<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
 				</ul>
 				<!-- /.nav -->

@@ -23,8 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>	
 	
 	<insert id="register">
-	insert into ipo_member(mid,mpwd,mname,mtel,memail,mgender,mage)
-	values(#{mid},#{mpwd},#{mname},#{mtel},#{memail},#{mgender},#{mage})
+	insert into ipo_member(mid,mpwd,mname,mtel,memail,mgender,mage,enabled,authority)
+	values(#{mid},#{mpwd},#{mname},#{mtel},#{memail},#{mgender},#{mage},1,'ROLE_USER')
 	</insert>
 	
 	 <!-- 아이디 중복 확인 -->
