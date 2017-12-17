@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 <title>D O ! P O</title>
 
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %> 
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 
@@ -57,7 +57,8 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2"
+						data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1,#bs-example-navbar-collapse-2"
 						aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span> <span
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
@@ -67,41 +68,41 @@
 				</div>
 				<!-- /.navbar-header -->
 
-							<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li> 	<sec:authorize access="permitAll"> 
-								<a class="SignButton" style="font-size: 12px;" href="${location}/user/join_first"> <i
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><sec:authorize access="isAnonymous()">
+								<a class="SignButton" style="font-size: 12px;"
+									href="${location}/user/join_first"> <i
 									class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;회원가입
 								</a>
-							</sec:authorize>
-							<sec:authorize access="hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"
-						role="button" aria-haspopup="true" style="font-size: 12px;"><i
+							</sec:authorize> <sec:authorize access="isAuthenticated()">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" style="font-size: 12px;"><i
 									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이페이지<span
-							class="caret"></span></a>
-							<ul class="dropdown-menu">
-							<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
-							<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
-							<li><a href="${location}/portfolio/moderate_risk">자가진단 결과보기</a></li>
+									class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
+									<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
+									<li><a href="${location}/portfolio/moderate_risk">자가진단
+											결과보기</a></li>
 								</ul>
-						</sec:authorize></li>
-					<li><sec:authorize access="permitAll"> 
+							</sec:authorize></li>
+						<li><sec:authorize access="isAnonymous()">
 								<a class="loginButton" style="font-size: 12px;"
 									href="${location}/user/login"> <i
 									class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;로그인
 								</a>
-							</sec:authorize>
-						<sec:authorize access="hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')">
-							<a class="loginButton" style="font-size: 12px;"
-									href="javascript:logOutCheck()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
-									&nbsp;로그아웃
+							</sec:authorize> <sec:authorize access="isAuthenticated()">
+								<a class="loginButton" style="font-size: 12px;"
+									href="javascript:logOutCheck()"><i
+									class="fa fa-sign-out fa-lg" aria-hidden="true"></i> &nbsp;로그아웃
 								</a>
 							</sec:authorize></li>
-					<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
-				</ul>
-				<!-- /.nav -->
-			</div>
+						<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
+					</ul>
+					<!-- /.nav -->
+				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
@@ -167,8 +168,8 @@
 				<div class="underline purple"></div>
 				<div class="row">
 					<div class="">
-						<img src="<c:url value="/resources/assets/images/service1.png"/>" alt="service"
-							class="service-img img-responsive">
+						<img src="<c:url value="/resources/assets/images/service1.png"/>"
+							alt="service" class="service-img img-responsive">
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
@@ -317,10 +318,12 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/analytics.png"/>" alt="port-1"
-								class="port-item">
+							<img
+								src="<c:url value="/resources/assets/images/analytics.png"/>"
+								alt="port-1" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/self_diagnosis"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/self_diagnosis"><img
+									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -344,10 +347,11 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/high.png"/>" alt="port-2"
-								class="port-item">
+							<img src="<c:url value="/resources/assets/images/high.png"/>"
+								alt="port-2" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/high_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/high_risk"><img
+									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -371,10 +375,11 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/moderate.png"/>" alt="port-3"
-								class="port-item">
+							<img src="<c:url value="/resources/assets/images/moderate.png"/>"
+								alt="port-3" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/moderate_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/moderate_risk"><img
+									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -398,10 +403,11 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/low.png"/>" alt="port-4"
-								class="port-item">
+							<img src="<c:url value="/resources/assets/images/low.png"/>"
+								alt="port-4" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/low_risk"><img src="<c:url value="/resources/assets/images/plus.png"/>"
+								<a href="${location}/portfolio/low_risk"><img
+									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
 							<!-- /.portfolio-img-hover -->
@@ -432,8 +438,8 @@
 	<!-- Note -->
 	<section class="note purple">
 		<div class="container section-wrapper text-center">
-			<p class="quote">“우리는 금융시장 전반을 분석하며, 이해할 수 있는 회사를 찾을 뿐이다. 
-			그리고 그 회사들이 지속적인 경쟁력을 가지고 있는지, 신뢰할만한 경영진이 있는지, 가격이 합리적인지를 알아본다.”</p>
+			<p class="quote">“우리는 금융시장 전반을 분석하며, 이해할 수 있는 회사를 찾을 뿐이다. 그리고 그
+				회사들이 지속적인 경쟁력을 가지고 있는지, 신뢰할만한 경영진이 있는지, 가격이 합리적인지를 알아본다.”</p>
 			<!-- /.quote -->
 			<div class="quoter">워렌 버핏</div>
 		</div>
@@ -489,14 +495,14 @@
 	<!-- /.fun -->
 
 	<%@ include file="../include/footer.jsp"%>
-<script>
-function logOutCheck(){
-	if(confirm("${sessionScope.id}님 정말 로그아웃 하시겠습니까?")){
-		location.href="${location}/user/logout";
-	}else{
-		return;
-	}
-}
-</script>
+	<script>
+		function logOutCheck() {
+			if (confirm("${sessionScope.id}님 정말 로그아웃 하시겠습니까?")) {
+				location.href = "${location}/user/logout";
+			} else {
+				return;
+			}
+		}
+	</script>
 </body>
 </html>

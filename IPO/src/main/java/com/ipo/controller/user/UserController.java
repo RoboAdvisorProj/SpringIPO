@@ -1,5 +1,6 @@
 package com.ipo.controller.user;
 
+import java.security.Principal;
 import java.util.Date;
 import java.util.Map;
 import javax.annotation.Resource;
@@ -119,7 +120,9 @@ public class UserController {
 	@RequestMapping(value = "/signupSuccess", method = RequestMethod.POST)
 	public String singUpSecondPOST(UserVO userVO, RedirectAttributes rttr) throws Exception {
 		
+		//사용자 비밀번호를 가져옴
 		String dbpw=userVO.getMpwd();
+		//사용자 비밀번호를 SHA256 해쉬 암호화 처리함
 		userVO.setMpwd(encoder.encoding(dbpw));
 		
 		userService.register(userVO);
@@ -136,8 +139,8 @@ public class UserController {
 
 	/* 회원수정에서 내정보를 표시 */
 	@RequestMapping("/modify_update")
-	public String modify(HttpSession session, Model model) throws Exception {
-		UserVO userVO=userService.selectUser(session.getId());
+	public String modify(Principal principal, Model model) throws Exception {
+		UserVO userVO=userService.selectUser(principal.getName());
 		model.addAttribute("user",userVO);
 		return "user/modify_update";
 	}

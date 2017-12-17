@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 
@@ -43,45 +43,41 @@
 			</div>
 			<!-- /.navbar-header -->
 
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li><c:choose>
-							<c:when test="${empty sessionScope.id}">
-								<a class="SignButton" style="font-size: 12px;" href="${location}/user/join_first"> <i
+						<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><sec:authorize access="isAnonymous()">
+								<a class="SignButton" style="font-size: 12px;"
+									href="${location}/user/join_first"> <i
 									class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp;회원가입
 								</a>
-							</c:when>
-							<c:otherwise>
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"
-						role="button" aria-haspopup="true" style="font-size: 12px;"><i
+							</sec:authorize> <sec:authorize access="isAuthenticated()">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" style="font-size: 12px;"><i
 									class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>&nbsp;마이페이지<span
-							class="caret"></span></a>
-							<ul class="dropdown-menu">
-							<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
-							<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
-							<li><a href="${location}/portfolio/moderate_risk">자가진단 결과보기</a></li>
+									class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
+									<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
+									<li><a href="${location}/portfolio/moderate_risk">자가진단
+											결과보기</a></li>
 								</ul>
-							</c:otherwise>
-						</c:choose></li>
-					<li><c:choose>
-							<c:when test="${empty sessionScope.id}">
+							</sec:authorize></li>
+						<li><sec:authorize access="isAnonymous()">
 								<a class="loginButton" style="font-size: 12px;"
 									href="${location}/user/login"> <i
 									class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;로그인
 								</a>
-							</c:when>
-							<c:otherwise>
-							<a class="loginButton" style="font-size: 12px;"
-									href="javascript:logOutCheck()"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
-									&nbsp;로그아웃
+							</sec:authorize> <sec:authorize access="isAuthenticated()">
+								<a class="loginButton" style="font-size: 12px;"
+									href="javascript:logOutCheck()"><i
+									class="fa fa-sign-out fa-lg" aria-hidden="true"></i> &nbsp;로그아웃
 								</a>
-							</c:otherwise>
-						</c:choose></li>
-					<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
-				</ul>
-				<!-- /.nav -->
-			</div>
+							</sec:authorize></li>
+						<!-- <li><a class="loginButton" href=""><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>로그인</a></li> -->
+					</ul>
+					<!-- /.nav -->
+				</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
