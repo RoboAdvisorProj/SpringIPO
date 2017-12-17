@@ -6,6 +6,7 @@
 <!--<![endif]-->
 <head>
 <title>D O ! P O</title>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
@@ -66,10 +67,10 @@
 			</c:forEach>
 		</table>
 </div>
-	<c:if test="${not empty login}">
+	<sec:authorize access="isAuthenticated()">
 		<a href="${location}/board/register"
 			class="btn btn-primary pull-right" role="button">글쓰기</a>
-	</c:if>
+	</sec:authorize>
 	</div>
 
 	<div class="box-footer">

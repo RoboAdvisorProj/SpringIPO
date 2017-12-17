@@ -4,6 +4,7 @@
 <html class="noIE" lang="kr">
 <head>
 <title>D O ! P O</title>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" href="<c:url value="/resources/assets/css/mailbox.css"/>">
@@ -40,6 +41,8 @@
 						</div>
 						<!-- /.box-header -->
 
+	<sec:authorize access="isAuthenticated()"> 
+	  		<sec:authentication property="principal" var="user"/>
 						<form id='registerForm' role="form" method="post">
 							<div class="box-body">
 								<div class="form-group">
@@ -53,7 +56,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">작성자</label> <input type="text"
-										name="writer" class="form-control" value="${login.mid}" readonly="readonly">
+										name="writer" class="form-control" value="${user.username}" readonly="readonly">
 								</div>
 									<div class="form-group">
 									<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서 올려주세요.</label>
@@ -69,7 +72,7 @@
 								<button type="submit" class="btn btn-primary pull-right">완료</button>
 							</div>
 						</form>
-
+				</sec:authorize>
 
 					</div>
 					<!-- /.box -->

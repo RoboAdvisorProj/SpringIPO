@@ -3,6 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <title>D O ! P O</title>
 <%@include file="../include/topmenu.jsp"%>
@@ -106,14 +107,18 @@ hr {
 						</div>
 
 					</div>
-					
+			
+			
 			<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
 					<!-- /.box-body -->
 					<div class="box-footer" style="margin-top: 50px">
-					<c:if test="${login.mid == boardVO.writer}">
+					<sec:authorize access="isAuthenticated()"> 
+					<sec:authentication property="principal" var="user"/> 
+					<c:if test="${user.username == boardVO.writer}">
 						<button type="submit" class="btn btn-warning" id="postModBtn">수정</button>
 						<button type="submit" class="btn btn-danger" id="postDelBtn">삭제</button>
 					</c:if>
+					</sec:authorize>
 						<button type="submit" class="btn btn-primary" id="postListBtn">목록보기</button>
 					</div>
 					<hr>
@@ -122,12 +127,12 @@ hr {
 							<div class="box-header">
 								<h3 class="box-title">댓글 등록</h3>
 							</div>
-							<c:if test="${not empty login}">
+								<sec:authorize access="isAuthenticated()"> 
 							<div class="box-body">
 								<label for="exampleInputEmail1" class="col-sm-2 control-label">작성자</label>
 								<div class="col-sm-10">
 									<input class="form-control" type="text"
-										placeholder="당신의 아이디를 입력하세요." id="newReplyWriter" value="${login.mid}" readonly="readonly">
+										placeholder="당신의 아이디를 입력하세요." id="newReplyWriter" value="${user.username}" readonly="readonly">
 								</div>
 								<label for="exampleInputEmail1" class="col-sm-2 control-label">댓글
 									내용</label>
@@ -142,13 +147,13 @@ hr {
 								<button type="button" class="btn btn-primary" id="replyAddBtn">댓글
 									추가</button>
 							</div>
-							</c:if>
+							</sec:authorize>
 							
-							<c:if test="${empty login}">
+						 <sec:authorize access="isAnonymous()">
 							<div class="box-body">
 							<div><a href="javascript:goLogin();">댓글 서비스는 로그인해야 사용하실 수 있습니다.</a></div>
 							</div>
-							</c:if>
+						</sec:authorize>
 						</div>
 						<br>
 
