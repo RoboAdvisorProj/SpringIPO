@@ -4,6 +4,7 @@
 <html class="noIE" lang="kr">
 <head>
 <title>D O ! P O | 로그인</title>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />

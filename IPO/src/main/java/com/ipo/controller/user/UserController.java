@@ -42,7 +42,7 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = "/loginPost", method = RequestMethod.POST)
+/*	@RequestMapping(value = "/loginPost", method = RequestMethod.POST)
 	public ModelAndView loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		UserVO vo = userService.login(dto);
@@ -70,7 +70,7 @@ public class UserController {
 
 		}
 		return mav;
-	}
+	}*/
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)

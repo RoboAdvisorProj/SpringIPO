@@ -34,7 +34,7 @@
 		<beans:constructor-arg value="/var/lib/tomcat8/webapps/upload"></beans:constructor-arg>
 	</beans:bean>
 
-	<beans:bean id="loginInterceptor" class="com.ipo.interceptor.login.LoginInterceptor"></beans:bean>
+<!-- 	<beans:bean id="loginInterceptor" class="com.ipo.interceptor.login.LoginInterceptor"></beans:bean>
 	<beans:bean id="authentication" class="com.ipo.interceptor.authentication.Authentication"></beans:bean>
 
 	<interceptors>
@@ -49,6 +49,6 @@
 			<mapping path="/board/removePage" />
 			<beans:ref bean="authentication" />
 		</interceptor>
-	</interceptors>
+	</interceptors> -->
 
 </beans:beans>
