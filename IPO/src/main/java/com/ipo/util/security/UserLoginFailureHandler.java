@@ -30,7 +30,7 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler{
 	   logger.info(s.getLineNumber()+"");
 	   logger.info(s.isNativeMethod()+"");
 	  }
-	  req.setAttribute("errMsg",auth.getMessage());
+	  req.setAttribute("msg","failure");
 	  req.getRequestDispatcher("/WEB-INF/views/user/login.jsp").forward(req, res);
 	 }
 	  
