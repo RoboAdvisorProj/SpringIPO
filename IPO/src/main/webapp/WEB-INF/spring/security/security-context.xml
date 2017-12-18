@@ -33,8 +33,12 @@
 			authentication-failure-handler-ref="userLoginFailureHandler"
 			username-parameter="mid" password-parameter="mpwd" />
 
-		<logout delete-cookies="true" logout-success-url="/user/login"
-			logout-url="/user/logout" invalidate-session="true" />
+		<logout 
+			delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE" 
+			logout-success-url="/user/login"
+			logout-url="/user/logout" 
+			invalidate-session="true" />
+		<remember-me key="nieeKey" token-validity-seconds="604800"/>
 		<session-management>
 			<concurrency-control max-sessions="1" />
 		</session-management>

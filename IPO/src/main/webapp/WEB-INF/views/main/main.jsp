@@ -504,5 +504,12 @@
 			}
 		}
 	</script>
+	<script type="text/javascript">
+	var result = '${msg}';
+
+	if (result == 'userModify success') {
+		alert("다시 로그인해주세요.");
+	}
+	</script>
 </body>
 </html>

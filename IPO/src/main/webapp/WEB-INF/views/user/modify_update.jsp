@@ -35,7 +35,7 @@
 					
 					<div id="pwd_field" class="inform_row">
 						<label for="pwd">패스워드 </label>
-						<input type="password" id="mpwd" name="mpwd">
+						<input type="password" id="password" name="mpwd">
 						<span class="input_check"></span>
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</div>
@@ -92,7 +92,7 @@
 					</div>
 					
 					<div id="update_field" class="inform_row">
-						<label for="update_date">*최근수정일자 </label>
+						<label for="update_date">*최근 수정일자 </label>
 						<input type="text" id="update_date" value="<fmt:formatDate value="${user.mupdatedate}" pattern="yyyy-MM-dd HH:mm:ss"/>" readonly="readonly">
 					</div>
 					

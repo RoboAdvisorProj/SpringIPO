@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 body{
 	background-color: #eee;
-	font-family: 'Jeju Gothic', serif;
+	/* font-family: 'Jeju Gothic', serif; */
 }
 #content{
 	position: relative;
@@ -32,6 +32,7 @@ body{
 
 #modify_form > .inform_row{
 	margin-bottom: 20px;
+	/* color: black; */
 }
 
 #modify_form > p{
@@ -55,7 +56,7 @@ body{
 	
 #modify_form > .inform_row input{
 	width: 90%;
-	height: 35px;
+	/* height: 35px; */
 	font-size: 25px;
 	font-weight: bold;
 	outline: none;
