@@ -120,10 +120,15 @@ public class UserController {
 	@RequestMapping(value = "/signupSuccess", method = RequestMethod.POST)
 	public String singUpSecondPOST(UserVO userVO, RedirectAttributes rttr) throws Exception {
 		
-		//사용자 비밀번호를 가져옴
-		String dbpw=userVO.getMpwd();
-		//사용자 비밀번호를 SHA256 해쉬 암호화 처리함
-		userVO.setMpwd(encoder.encoding(dbpw));
+	
+		/*
+		 	다른 암호화도 대부분 마찬가지지만, 비밀 번호를 암호화 했다고 해도 DB에 저장 됐을때 같은 암호면 
+			암호화된 형태(hash값이)가 같다. 
+			그로 인해 하나의 암호화된 값을 알아 내면 같은 암호를 쉽게 찾을수 있다. 
+			이를 방지하기 위한 방법이 salt암호화 방식이다. 별다른건 아니고 사용자가 입력한 비밀번호에 사용자마다 중복되지 않는 특정 문자를 추가하여 암호화 하는 방식이다. 
+			예를 들면 회원 가입시 중복되지 않는 아이디를 (아이디 + 비밀번호) 또는 (비밀번호 + 아이디) 형태로 붙이고 암호화를 하면된다.
+		 */
+		userVO.setMpwd(encoder.saltEncoding(userVO.getMpwd(), userVO.getMid()));
 		
 		userService.register(userVO);
 		rttr.addFlashAttribute("user", userVO.getMid());
