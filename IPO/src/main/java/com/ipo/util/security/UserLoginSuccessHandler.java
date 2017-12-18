@@ -35,7 +35,7 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler{
 	  logger.info(String.valueOf(u.isCredentialsNonExpired()));
 	  logger.info(String.valueOf(u.isEnabled()));
 	   
-	  res.sendRedirect(req.getContextPath()+"/");
+	  res.sendRedirect(req.getContextPath()+"/main/main");
 	 }
 	  
 	} 

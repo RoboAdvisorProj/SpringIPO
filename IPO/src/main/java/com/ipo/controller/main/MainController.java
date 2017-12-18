@@ -16,9 +16,10 @@ public class MainController {
 
 	private static Logger logger=LoggerFactory.getLogger(Main.class);
 	
-	@RequestMapping(value="/main",method=RequestMethod.GET)
-	public void registerGet(BoardVO board,Model model) throws Exception{
+	@RequestMapping("/main")
+	public String registerGet() throws Exception{
 		logger.info("main get! .........");
+		return "main/main";
 	}
 }
  
