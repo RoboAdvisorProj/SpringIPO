@@ -497,7 +497,7 @@
 	<%@ include file="../include/footer.jsp"%>
 	<script>
 		function logOutCheck() {
-			if (confirm("${sessionScope.id}님 정말 로그아웃 하시겠습니까?")) {
+			if (confirm("${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}님 정말 로그아웃 하시겠습니까?")) {
 				location.href = "${location}/user/logout";
 			} else {
 				return;

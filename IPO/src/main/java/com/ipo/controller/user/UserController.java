@@ -71,7 +71,7 @@ public class UserController {
 	 * } return mav; }
 	 */
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 
@@ -98,7 +98,7 @@ public class UserController {
 		}
 
 		return "redirect:/main/main";
-	}
+	}*/
 
 	@RequestMapping(value = "/join_first", method = RequestMethod.GET)
 	public void singUpFirstGET() {
