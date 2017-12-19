@@ -187,7 +187,7 @@ hr {
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
 									<h4 class="modal-title"></h4>
 								</div>
-								<div class="modal-body" data-rno>
+								<div class="modal-body" data-replyer>
 									<p>
 										<textarea type="text" id="replytext" class="form-control"
 											rows="5"></textarea>
@@ -229,13 +229,13 @@ hr {
 
 <script id="template" type="text/x-handlebars-template">
 {{#each .}}
-<li class="replyLi" data-rno={{rno}}>
+<li class="replyLi" data-replyer={{replyer}}>
 <i class="fa fa-comments bg-blue"></i>
  <div class="timeline-item" >
   <span class="time">
     <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
   </span>
-  <h3 class="timeline-header">작성자-<strong>{{replyer}}</strong></h3>
+  <h3 class="timeline-header"><strong>{{replyer}}</strong></h3>
   <div class="timeline-body">{{replytext}} </div>
     <div class="timeline-footer">
 	{{#eqReplyer replyer}}
@@ -251,7 +251,7 @@ hr {
 	
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
-		if (replyer == '${login.mid}') {
+		if (replyer == '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}') {
 			accum += block.fn();
 		}
 		return accum;
@@ -339,7 +339,7 @@ hr {
 	$(".timeline").on("click", ".replyLi", function(event) {
 		var reply = $(this);
 		$("#replytext").val(reply.find('.timeline-body').text());
-		$(".modal-title").html(reply.attr("data-rno"));
+		$(".modal-title").html(reply.attr("data-replyer"));
 	});
 	$("#replyModBtn").on("click", function() {
 		var rno = $(".modal-title").html();

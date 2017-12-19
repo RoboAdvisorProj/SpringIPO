@@ -19,18 +19,26 @@ public class PortfolioController {
 		logger.info("self_diagnosis get! .........");
 	}
 	
-	@RequestMapping(value = "/high_risk", method = RequestMethod.GET)
-	public void highRiskGet() throws Exception {
-		logger.info("high_risk get! .........");
+	@RequestMapping(value = "/riskAvoid", method = RequestMethod.GET)
+	public void riskAvoidGet() throws Exception {
+		logger.info("riskAvoid get! .........");
 	}
 	
-	@RequestMapping(value = "/moderate_risk", method = RequestMethod.GET)
-	public void moderateRiskGet() throws Exception {
-		logger.info("moderate_risk get! .........");
+	@RequestMapping(value = "/safetyPre", method = RequestMethod.GET)
+	public void safetyPreGet() throws Exception {
+		logger.info("safetyPre get! .........");
 	}
 	
-	@RequestMapping(value = "/low_risk", method = RequestMethod.GET)
+	@RequestMapping(value = "/riskNeu", method = RequestMethod.GET)
+	public void riskNeuGet() throws Exception {
+		logger.info("riskNeu get! .........");
+	}
+	@RequestMapping(value = "/activeInv", method = RequestMethod.GET)
+	public void activeInvGet() throws Exception {
+		logger.info("activeInvget! .........");
+	}
+	@RequestMapping(value = "/riskPre", method = RequestMethod.GET)
 	public void lowRiskGet() throws Exception {
-		logger.info("low_risk get! .........");
+		logger.info("riskPre get! .........");
 	}
 }

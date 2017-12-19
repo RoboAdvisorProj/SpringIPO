@@ -6,8 +6,12 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
+<style>
+.section-item-title, .section-item-detail{
+	text-align: left !important;
+}
+</style>
 </head>
-
 <body>
 	<%@ include file="../include/topmenu.jsp"%>
 	<!-- Section Background -->
@@ -15,7 +19,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/index">Home</a></li>
-				<li class="active">&nbsp;저위험</li>
+				<li class="active">&nbsp;위험중립형</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -27,7 +31,7 @@
 	<section class="service" id="service">
 		<div class="container">
 			<div class="_section-wrapper">
-				<h2 class="section-title black">저위험</h2>
+				<h2 class="section-title black">위험중립형</h2>
 				<!-- /.section-title -->
 				<div class="underline purple"></div>
 				<div class="row">
@@ -37,57 +41,17 @@
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
-							<div class="col-xs-6 col-sm-4">
+							<div class="col-xs-6 col-sm-12">
 								<div class="service-item">
-									<h3 class="section-item-title">free delivery</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">refund money</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">24/7 support</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">summer offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">winter offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">best gift</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
+									<h3 class="section-item-title">위험중립형이란?</h3>
+									<p class="section-item-detail">
+투자에는 그에 상응하는 투자위험이 있음을 충분히 인식하고 있으며, 
+예․적금보다 높은 수익을 기대할 수 있다면 일정수준의 손실위험을 감수할 수 있습니다. 
+우리는 중간위험의 스크리닝 조건들을 적용하여 주식종목을 선별하고 있습니다.</p>
+<p class="section-item-detail">
+Investors are fully recognizing investment risk and willing to accept some level of the risk for more gain from the investment. 
+This type has middle level of the risk criteria so that we select the stocks by using this method.
+</p>
 								</div>
 								<!-- /.service-item -->
 							</div>

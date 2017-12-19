@@ -56,7 +56,7 @@
        
 						<br>
 						<div class="checkbox icheck">
-							<label><input type="checkbox" name="useCookie">
+							<label><input type="checkbox" id="remember_me" name="_spring_security_remember_me">
 								사용자 정보 저장 </label>
 						</div>
 						<div>

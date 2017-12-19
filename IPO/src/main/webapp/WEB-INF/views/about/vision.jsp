@@ -65,22 +65,20 @@
 			<div class="row">
 
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we care</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">WE CARE</h3>
+					<p class="section-item-detail">우리는 투자자들을  소중하게 생각하며 가치투자에 대한 올바른 방향으로 나아가기를 목표로 합니다. 
+					기업의 견고한 펀더멘탈을 기본으로 투자자들의 투자지표가 되어 투기가 아닌 투자를 고집하고 있습니다.</p>
 				</div>
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we deliver</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">WE DELIVER</h3>
+					<p class="section-item-detail">우리는 기업의 재무적 상황과 실시간으로 변하는 여러 지표들을 토대로 추천 종목을 투자자들에게 전달하고 있습니다. 
+					개인별 위험 감내 수준에 따라 지표의 기준이 상이하며, 
+					성향에 적합한 투자를 할 수 있는 적극적인 기회를 제공하고 있습니다.</p>
 				</div>
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we're creative</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">WE’RE DYNAMIC</h3>
+					<p class="section-item-detail">우리는 변화하고 요동치는 시장을 주시하며 지속적으로 기준을 갱신하며 점검하고 있습니다. 
+					과거의 데이터는 미래에서 효용가치가 없을 수 있기에 최신 정보를 수집하며 트렌드와 경기변화에 발맞추어 동적으로 변화합니다.</p>
 				</div>
 			</div>
 			<!-- /.row -->

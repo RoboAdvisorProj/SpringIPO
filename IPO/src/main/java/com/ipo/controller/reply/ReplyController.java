@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ipo.service.board.BoardService;
 import com.ipo.service.reply.ReplyService;
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.PageMaker;
@@ -26,6 +27,9 @@ public class ReplyController {
 	@Inject
 	private ReplyService replyService;
 	
+	@Inject 
+	BoardService boardService;
+	
 	 @RequestMapping(value = "", method = RequestMethod.POST)
 	  public ResponseEntity<String> register(@RequestBody ReplyVO replyVO) {
 
@@ -33,6 +37,7 @@ public class ReplyController {
 	    try {
 	      replyService.addReply(replyVO);
 	      entity = new ResponseEntity<String>("REPLY REGISTER SUCCESS", HttpStatus.OK);
+	      boardService.replyUpdate();
 	    } catch (Exception e) {
 	      e.printStackTrace();
 	      entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);

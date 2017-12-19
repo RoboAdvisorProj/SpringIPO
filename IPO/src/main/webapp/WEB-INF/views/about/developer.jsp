@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-
 <html class="noIE" lang="ko">
-
 <head>
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -122,6 +119,7 @@
 						<h2 class="team-item-name text-center">박성진</h2>
 						<p class="team-item-id text-center">프로젝트 매니저</p>
 						<p class="text-center">풀스택 개발, 서버 구축 및 관리, 데이터베이스 설계</p>
+						<p class="text-center">해킹 보안</p>
 						</div>
 					</div>
 					<!-- /.team-item -->

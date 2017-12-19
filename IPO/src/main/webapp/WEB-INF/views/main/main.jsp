@@ -124,9 +124,11 @@
 						</a>
 							<ul class="dropdown-menu">
 								<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
-								<li><a href="${location}/portfolio/high_risk">고위험</a></li>
-								<li><a href="${location}/portfolio/moderate_risk">중위험</a></li>
-								<li><a href="${location}/portfolio/low_risk">저위험</a></li>
+								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
+								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
+								<li><a href="${location}/portfolio/riskNeu">위험중립형</a></li>
+								<li><a href="${location}/portfolio/activeInv">적극투자형</a></li>
+								<li><a href="${location}/portfolio/riskPre">공격투자형</a></li>
 							</ul></li>
 						<li><a href="${location}/board/listPage">board</a></li>
 						<li><a href="#" class="dropdown-toggle"
@@ -175,55 +177,27 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
-									<h3 class="section-item-title">free delivery</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
+									<h3 class="section-item-title">개인별 위험성향 체크 서비스</h3>
+									<p class="section-item-detail">개인별 위험성향 체크 서비스는 개인별 투자 위험성향을 알려주며, 
+									위험성향별로  투자종목 선정과 추천 전략이 달라질 수 있습니다.</p>
 								</div>
 								<!-- /.service-item -->
 							</div>
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
-									<h3 class="section-item-title">refund money</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
+									<h3 class="section-item-title">투자자별 종목 추천 서비스</h3>
+									<p class="section-item-detail">투자자는 위험성향을 토대로 5가지 성향으로 분류되며, 
+									이에 대해 각자 다른 투자 기준으로 종목이 선정되고 추천이 됩니다. 
+									추천 종목들은 DOIPO가 정해놓은 엄격한 기준을 통해 선정된 가치있는 자산이 될 것입니다.</p>
 								</div>
 								<!-- /.service-item -->
 							</div>
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
 									<h3 class="section-item-title">24/7 support</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">summer offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">winter offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">best gift</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
+									<p class="section-item-detail">저희는 연중무휴 24시간 내내 홈페이지 게시판과 
+									Q&A를 통한 문제사항과 의견들을 수렴하며 해결하고 있습니다. 
+									언제든지 저희 서비스와 궁금한 점에 대해 문의해주시면 친절하게 답변해드리겠습니다.</p>
 								</div>
 								<!-- /.service-item -->
 							</div>

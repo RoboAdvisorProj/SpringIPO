@@ -97,9 +97,11 @@
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
-							<li><a href="${location}/portfolio/high_risk">고위험</a></li>
-							<li><a href="${location}/portfolio/moderate_risk">중위험</a></li>
-							<li><a href="${location}/portfolio/low_risk">저위험</a></li>
+								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
+								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
+								<li><a href="${location}/portfolio/riskNeu">위험중립형</a></li>
+								<li><a href="${location}/portfolio/activeInv">적극투자형</a></li>
+								<li><a href="${location}/portfolio/riskPre">공격투자형</a></li>
 						</ul></li>
 					<li><a href="${location}/board/listPage">board</a></li>
 					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -120,7 +122,7 @@
 
 <script>
 function logOutCheck(){
-	if(confirm("${sessionScope.id}님 정말 로그아웃 하시겠습니까?")){
+	if(confirm("${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}님 정말 로그아웃 하시겠습니까?")){
 		location.href="${location}/user/logout";
 	}else{
 		return;

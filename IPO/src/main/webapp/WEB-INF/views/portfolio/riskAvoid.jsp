@@ -6,8 +6,12 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
+<style>
+.section-item-title, .section-item-detail{
+	text-align: left !important;
+}
+</style>
 </head>
-
 <body>
 	<%@ include file="../include/topmenu.jsp"%>
 	<!-- Section Background -->
@@ -15,7 +19,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/index">Home</a></li>
-				<li class="active">&nbsp;중위험</li>
+				<li class="active">&nbsp;안정형</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -27,7 +31,7 @@
 	<section class="service" id="service">
 		<div class="container">
 			<div class="_section-wrapper">
-				<h2 class="section-title black">중위험</h2>
+				<h2 class="section-title black">안정형</h2>
 				<!-- /.section-title -->
 				<div class="underline purple"></div>
 				<div class="row">
@@ -37,57 +41,18 @@
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
-							<div class="col-xs-6 col-sm-4">
+							<div class="col-xs-6 col-sm-12">
 								<div class="service-item">
-									<h3 class="section-item-title">free delivery</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">refund money</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">24/7 support</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">summer offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">winter offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">best gift</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
+									<h3 class="section-item-title">안정형이란?</h3>
+									<p class="section-item-detail">
+예금 또는 적금 수준의 수익률을 기대하며, 투자원금에 손실이 발생하는 것을 원하지 않습니다. 
+개인별 위험성형 측정결과 안정형에 해당하는 투자자에게 적합한 투자형태입니다. 
+낮은 변동성으로 손실에 대한 위험이 가장 작은 주식들을 선별하였으며, 재무제표상 안전한 기업들을 선별하였습니다.</p>
+<p class="section-item-detail">
+We prefer to select stocks recommended as a low volatility. 
+Low risk and stable status of the company will make sure investors to not to worry and anxious about their choices. 
+According to balance sheet, these safety group stocks shows moderate growth like cash cows in the market.
+</p>
 								</div>
 								<!-- /.service-item -->
 							</div>
