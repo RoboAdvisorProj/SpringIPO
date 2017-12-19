@@ -80,6 +80,7 @@ public class ReplyController {
 	    ResponseEntity<String> entity = null;
 	    try {
 	      replyService.removeReply(rno);
+	      boardService.replyUpdate();
 	      entity = new ResponseEntity<String>("REPLY REMOVE SUCCESS", HttpStatus.OK);
 	    } catch (Exception e) {
 	      e.printStackTrace();

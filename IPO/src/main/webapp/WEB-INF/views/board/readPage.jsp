@@ -187,7 +187,7 @@ hr {
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
 									<h4 class="modal-title"></h4>
 								</div>
-								<div class="modal-body" data-replyer>
+								<div class="modal-body" data-rno>
 									<p>
 										<textarea type="text" id="replytext" class="form-control"
 											rows="5"></textarea>
@@ -229,7 +229,7 @@ hr {
 
 <script id="template" type="text/x-handlebars-template">
 {{#each .}}
-<li class="replyLi" data-replyer={{replyer}}>
+<li class="replyLi" data-rno={{rno}}>
 <i class="fa fa-comments bg-blue"></i>
  <div class="timeline-item" >
   <span class="time">
@@ -339,7 +339,7 @@ hr {
 	$(".timeline").on("click", ".replyLi", function(event) {
 		var reply = $(this);
 		$("#replytext").val(reply.find('.timeline-body').text());
-		$(".modal-title").html(reply.attr("data-replyer"));
+		$(".modal-title").html(reply.attr("data-rno"));
 	});
 	$("#replyModBtn").on("click", function() {
 		var rno = $(".modal-title").html();
