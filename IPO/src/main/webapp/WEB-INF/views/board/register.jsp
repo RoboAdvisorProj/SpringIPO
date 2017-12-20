@@ -46,17 +46,16 @@
 						<form id='registerForm' role="form" method="post">
 							<div class="box-body">
 								<div class="form-group">
+									<label for="exampleInputEmail1">작성자</label> <input type="text"
+										name="writer" class="form-control" value="${user.username}" readonly="readonly">
+								</div>
+								<div class="form-group">
 									<label for="exampleInputEmail1">제목</label> <input type="text"
-										name='title' class="form-control" placeholder="Enter Title">
+										name='title' class="form-control" placeholder="제목을 입력하세요">
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1">내용</label>
-									<textarea class="form-control" name="content" rows="3"
-										placeholder="Enter ..."></textarea>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">작성자</label> <input type="text"
-										name="writer" class="form-control" value="${user.username}" readonly="readonly">
+									<textarea class="form-control" name="content" rows="15" placeholder="내용을 입력하세요."></textarea>
 								</div>
 									<div class="form-group">
 									<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서 올려주세요.</label>

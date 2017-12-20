@@ -102,7 +102,7 @@ hr {
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">내용</label>
-							<textarea class="form-control" name="content" rows="10"
+							<textarea class="form-control" name="content" rows="15"
 								readonly="readonly">${boardVO.content}</textarea>
 						</div>
 

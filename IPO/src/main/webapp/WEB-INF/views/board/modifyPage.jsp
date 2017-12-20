@@ -63,7 +63,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">내용</label>
-								<textarea class="form-control" name="content" rows="10">${boardVO.content}</textarea>
+								<textarea class="form-control" name="content" rows="15">${boardVO.content}</textarea>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서
