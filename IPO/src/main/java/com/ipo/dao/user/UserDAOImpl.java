@@ -39,4 +39,9 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		  session.update("user.updateUser",userVO);
 	}
+	  @Override
+	public void deleteUser(String mid) throws Exception {
+		// TODO Auto-generated method stub
+		session.delete("user.deleteUser",mid);
+	}
 }

@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ipo.service.user.UserService;
@@ -30,7 +33,7 @@ public class UserController {
 	private ShaEncoder encoder;
 
 	@Inject
-	UserService userService;
+	private UserService userService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO loginDTO) {
@@ -79,6 +82,7 @@ public class UserController {
 	/* 회원수정에서 내정보를 표시 */
 	@RequestMapping("/modify_update")
 	public String modify(Principal principal, Model model) throws Exception {
+
 		logger.info("==========modify==========");
 		UserVO userVO = userService.selectUser(principal.getName());
 		model.addAttribute("user", userVO);
@@ -96,6 +100,20 @@ public class UserController {
 		SecurityContextHolder.clearContext();
 		rttr.addFlashAttribute("msg","userModify success");
 		logger.info("==========회원정보 수정 완료==========");
+		return "redirect:/main/main";
+	}
+	@RequestMapping(value = "/user_delete", method = RequestMethod.GET)
+	public void userDeleteGET() {
+
+		logger.info("==========userDeleteGET==========");
+	}
+	@RequestMapping("/user_delete_ok")
+	public String userDeletePOST(Authentication auth,RedirectAttributes rttr) throws Exception {
+		logger.info("삭제할 아이디================>"+auth.getName());
+		userService.deleteUser(auth.getName());
+		rttr.addFlashAttribute("msg","delete_user_success");
+		//강제 로그아웃
+		SecurityContextHolder.clearContext();
 		return "redirect:/main/main";
 	}
 }

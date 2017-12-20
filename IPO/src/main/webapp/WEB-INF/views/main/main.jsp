@@ -83,7 +83,7 @@
 									class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="${location}/user/modify_update">회원정보 수정</a></li>
-									<li><a href="${location}/portfolio/high_risk">회원탈퇴</a></li>
+									<li><a href="${location}/user/user_delete">회원탈퇴</a></li>
 									<li><a href="${location}/portfolio/moderate_risk">자가진단
 											결과보기</a></li>
 								</ul>
@@ -483,6 +483,8 @@
 
 	if (result == 'userModify success') {
 		alert("다시 로그인해주세요.");
+	}else if(result=='delete_user_success'){
+		alert("회원탈퇴가 정상적으로 완료되었습니다.\n그동안 DOIPO를 이용해주셔서 감사합니다.")
 	}
 	</script>
 </body>

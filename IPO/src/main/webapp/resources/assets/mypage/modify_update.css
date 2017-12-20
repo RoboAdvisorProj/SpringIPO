@@ -47,8 +47,8 @@ body{
 	display: block;
 	text-align: left;
 	font-size: 15px;
-	color: rgba(0,0,0,.5);
-	width: 100px;
+	/* color: rgba(0,0,0,.5); */
+	/* width: 100px; */
 	padding-left: 30px;
 	padding-bottom: 25px;
 	padding-top: 40px;
@@ -63,7 +63,7 @@ body{
 	border: none;
 	color: rgba(0,0,0,.7);
 	padding-bottom: 20px;
-	border-bottom: 1px solid rgba(0,0,0,.2);
+	border-bottom: 1px solid rgba(0,0,0,0.7);
 }
 
 #email_select{

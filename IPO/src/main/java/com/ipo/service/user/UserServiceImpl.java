@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stu
 		 userDAO.updateUser(userVO);
 	}
+	 @Override
+	public void deleteUser(String mid) throws Exception {
+		// TODO Auto-generated method stub
+		userDAO.deleteUser(mid);
+	}
 }

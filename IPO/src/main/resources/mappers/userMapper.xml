@@ -42,5 +42,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   		mid=#{mid}
   	</update>
   	<!-- 회원 탈퇴 -->
-
+  	<delete id="deleteUser">
+  		delete from
+  			ipo_member
+  		where
+  			mid=#{mid}
+  	</delete>
 </mapper>

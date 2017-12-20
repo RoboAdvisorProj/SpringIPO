@@ -46,12 +46,6 @@
 						</div>
 						<br>
 					<div class="input-group center-block">
-					<c:if test="${msg == 'failure'}">
-			      <div class="alert alert-danger alert-dismissible" role="alert">
-			  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			 		 <strong>경고!</strong>   아이디 또는 비밀번호가 일치하지 않습니다.
-			 		 </div>
-			 		 </c:if>
 				</div>
        
 						<br>
@@ -83,12 +77,12 @@
             if(userId == ""){
                 alert("아이디를 입력하세요.");
                 $("#userId").focus(); // 입력포커스 이동
-                return; // 함수 종료
+                return false; // 함수 종료
             }
             if(userPw == ""){
                 alert("비밀번호를 입력하세요.");
                 $("#userPw").focus();
-                return;
+                return false;
             }
             // 폼 내부의 데이터를 전송할 주소
             document.form1.action="${location}/user/loginPost"

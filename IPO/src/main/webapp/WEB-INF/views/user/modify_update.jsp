@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="<c:url value='/resources/assets/mypage/modify_update.css'/>">
 <script src="<c:url value="/resources/assets/mypage/modify_update.js"/>"></script>
 <title>D O ! P | 회원정보 수정</title>
+<style>
+.text-danger{
+font-size:20px !important;
+}
+</style>
 </head>
 <body>
 	<section class="section-background">
@@ -21,15 +26,18 @@
 		</div>
 		<!-- /.container -->
 	</section>
-	
 <div id="wrapper">
 		<div id="img_main">	
 			<div id="content">
 				<form method="post" id="modify_form" action="${location}/user/modify_ok">				
 					<h2>회원정보</h2>	
-					<p>&nbsp;&nbsp;*는 수정불가능한 항목입니다.</p>
+					<p>
+					<strong><span class='text-danger'>
+					&nbsp;&nbsp;*는 수정불가능한 항목입니다.
+					</span></strong>
+					</p>
 					<div id="id_field" class="inform_row">
-						<label for="mid">*아이디 </label>
+						<label for="mid"><span class='text-danger'>*</span>아이디 </label>
 						<input type="text" id="username" name="mid" value="${user.mid}" readonly="readonly">
 					</div>
 					
@@ -82,22 +90,22 @@
 					</div>
 					
 					<div id="gender_field" class="inform_row">
-						<label for="gender">*성별 </label>
+						<label for="gender"><span class='text-danger'>*</span>성별 </label>
 						<input type="text" id="gender" value="${user.mgender}" readonly="readonly">
 					</div>
 					
 					<div id="date_field" class="inform_row">
-						<label for="regdate">*가입일자 </label>
+						<label for="regdate"><span class='text-danger'>*</span>가입일자 </label>
 						<input type="text" id="regdate" value="<fmt:formatDate value="${user.mregdate}" pattern="yyyy-MM-dd HH:mm:ss"/>" readonly="readonly">
 					</div>
 					
 					<div id="update_field" class="inform_row">
-						<label for="update_date">*최근 수정일자 </label>
+						<label for="update_date"><span class='text-danger'>*</span>최근 수정일자 </label>
 						<input type="text" id="update_date" value="<fmt:formatDate value="${user.mupdatedate}" pattern="yyyy-MM-dd HH:mm:ss"/>" readonly="readonly">
 					</div>
 					
 					<div id="age_field" class="inform_row">
-						<label for="age">*나이 </label>
+						<label for="age"><span class='text-danger'>*</span>나이 </label>
 						<input type="text" id="age" value="${user.mage}"readonly="readonly">
 					</div>
 					

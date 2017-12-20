@@ -105,7 +105,8 @@
 							<div class="caption">
 						<h2 class="team-item-name text-center">김현우</h2>
 						<p class="team-item-id text-center">프로젝트 엔지니어</p>
-						<p class="text-center">서버 관리, 빅데이터 분석</p>
+						<p class="text-center">서버 관리, 데이터 분석</p>
+						<p class="text-center">테스트</p>
 						</div>
 					</div>
 					<!-- /.team-item -->
@@ -133,6 +134,7 @@
 						<h2 class="team-item-name text-center">손해성</h2>
 						<p class="team-item-id text-center">프로젝트 엔지니어</p>
 						<p class="text-center">포트폴리오 모델 개발, 데이터 분석, 백테스팅</p>
+						<p class="text-center">테스트</p>
 						</div>
 					</div>
 					<!-- /.team-item -->
