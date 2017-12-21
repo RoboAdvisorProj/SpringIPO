@@ -177,7 +177,7 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
-									<h3 class="section-item-title">개인별 위험성향 체크 서비스</h3>
+									<h3 class="section-item-title">위험성향 체크 서비스</h3><br/>
 									<p class="section-item-detail">개인별 위험성향 체크 서비스는 개인별 투자 위험성향을 알려주며, 
 									위험성향별로  투자종목 선정과 추천 전략이 달라질 수 있습니다.</p>
 								</div>
@@ -185,7 +185,7 @@
 							</div>
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
-									<h3 class="section-item-title">투자자별 종목 추천 서비스</h3>
+									<h3 class="section-item-title">종목 추천 서비스</h3><br/>
 									<p class="section-item-detail">투자자는 위험성향을 토대로 5가지 성향으로 분류되며, 
 									이에 대해 각자 다른 투자 기준으로 종목이 선정되고 추천이 됩니다. 
 									추천 종목들은 DOIPO가 정해놓은 엄격한 기준을 통해 선정된 가치있는 자산이 될 것입니다.</p>
@@ -194,7 +194,7 @@
 							</div>
 							<div class="col-xs-6 col-sm-4">
 								<div class="service-item">
-									<h3 class="section-item-title">24/7 support</h3>
+									<h3 class="section-item-title">24/7 support</h3><br/>
 									<p class="section-item-detail">저희는 연중무휴 24시간 내내 홈페이지 게시판과 
 									Q&A를 통한 문제사항과 의견들을 수렴하며 해결하고 있습니다. 
 									언제든지 저희 서비스와 궁금한 점에 대해 문의해주시면 친절하게 답변해드리겠습니다.</p>

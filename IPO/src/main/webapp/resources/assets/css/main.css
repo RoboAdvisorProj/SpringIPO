@@ -38,10 +38,10 @@ body
 }
 .section-item-detail{
 	font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 50px;
-    color: #999;
-    letter-spacing: .39px;
+	font-weight: 300;
+	margin-bottom: 50px;
+	color: #999;
+	letter-spacing: .39px;
 }
 .underline{
 	height: 2px;
@@ -300,7 +300,7 @@ body
 ||				9. Fun Facts
 ==================================================*/
 .fun{
-	background: #f3f3f3;
+	/* background: #f3f3f3; */
 }
 .fun-box{
 	border: 2px solid #313131;
