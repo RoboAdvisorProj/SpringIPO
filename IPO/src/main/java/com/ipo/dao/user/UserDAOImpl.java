@@ -44,4 +44,14 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		session.delete("user.deleteUser",mid);
 	}
+	  @Override
+	public UserVO findAccount(String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("user.findAccount",memail);
+	}
+	  @Override
+	public void findPw(UserVO userVO) throws Exception {
+		// TODO Auto-generated method stub
+		  session.update("user.findPw",userVO);
+	}
 }

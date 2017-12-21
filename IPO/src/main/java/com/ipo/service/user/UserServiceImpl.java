@@ -37,4 +37,14 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userDAO.deleteUser(mid);
 	}
+	 @Override
+	public UserVO findAccount(String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return userDAO.findAccount(memail);
+	}
+	 @Override
+	public void findPw(UserVO userVO) throws Exception {
+		// TODO Auto-generated method stub
+		 userDAO.findPw(userVO);
+	}
 }

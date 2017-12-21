@@ -48,4 +48,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   		where
   			mid=#{mid}
   	</delete>
+  	
+  	<!-- 이메일을 통한 회원 정보 찾기 -->
+  	<select id="findAccount" resultType="UserVO">
+  	<![CDATA[
+  	select * from ipo_member
+  	where memail=#{memail}
+	]]>
+  	</select>
+  	
+  	<!-- 이메일을 통한 회원 비밀번호 임시 발급 -->
+  	<update id="findPw">
+  	update
+  		ipo_member
+  	set 
+  		mpwd=#{mpwd}
+  	where 
+  		mid=#{mid} and memail=#{memail}
+  	</update>
 </mapper>

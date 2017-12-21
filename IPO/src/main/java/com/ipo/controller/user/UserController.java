@@ -2,6 +2,8 @@ package com.ipo.controller.user;
 
 import java.security.Principal;
 import java.util.Map;
+import java.util.Random;
+
 import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.ipo.service.mail.MailService;
 import com.ipo.service.user.UserService;
 import com.ipo.util.security.ShaEncoder;
 import com.ipo.vo.login.LoginDTO;
@@ -34,6 +38,9 @@ public class UserController {
 
 	@Inject
 	private UserService userService;
+	
+	@Inject
+	private MailService mailService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO loginDTO) {
@@ -116,4 +123,61 @@ public class UserController {
 		SecurityContextHolder.clearContext();
 		return "redirect:/main/main";
 	}
+	@RequestMapping(value = "/findId", method = RequestMethod.GET)
+	public void findId() {
+		logger.info("==========findIdGET==========");
+	}
+	@RequestMapping(value = "/findPw", method = RequestMethod.GET)
+	public void findPw() {
+		logger.info("==========findPwGET==========");
+	}
+ 
+    // 아이디 찾기
+    @RequestMapping(value = "/sendMail/id", method = RequestMethod.POST)
+    public String sendMailId(@RequestParam String memail, RedirectAttributes rttr) throws Exception {
+ 
+        UserVO userVO = userService.findAccount(memail);
+        logger.info("회원정보=========>"+userVO);
+        if (userVO != null) {
+            String subject = "DOIPO 아이디 찾기 안내 입니다.";
+            StringBuilder sb = new StringBuilder();
+            sb.append("귀하의 아이디는 " + userVO.getMid() + " 입니다.");
+            mailService.send(subject, sb.toString(), "seongjin605@gmail.com", memail, null);
+            rttr.addFlashAttribute("resultSuccessMsg", "귀하의 이메일로 가입된 아이디를 발송 하였습니다.");
+        } else {
+            rttr.addFlashAttribute("resultFailMsg", "귀하의 이메일로 가입된 아이디가 존재하지 않습니다.");
+        }
+        return "redirect:/user/findId";
+    }
+ 
+    // 비밀번호 찾기
+    @RequestMapping(value = "/sendMail/password", method = RequestMethod.POST)
+    public String sendMailPassword(@RequestParam String mid,
+    				@RequestParam String memail, RedirectAttributes rttr) throws Exception {
+     
+        UserVO userVO = userService.findAccount(memail);
+        logger.info("회원 정보=====>"+userVO);
+        if (userVO != null) {
+            if (!userVO.getMid().equals(mid)) {
+                rttr.addFlashAttribute("resultErrorMsg", "입력하신 이메일의 회원정보와 아이디가 일치하지 않습니다.");
+                return "redirect:/user/findPw";
+            }
+            int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
+            String password = String.valueOf(ran);
+            //비밀번호 암호화
+            userVO.setMpwd(encoder.saltEncoding(password,userVO.getMid()));
+            userService.findPw(userVO); // 해당 유저의 DB정보 변경
+            
+            String subject = "DOIPO 임시 비밀번호 발급 안내입니다.";
+            StringBuilder sb = new StringBuilder();
+            sb.append("귀하의 임시 비밀번호는 " + password + " 입니다.");
+            mailService.send(subject, sb.toString(), "seongjin605@gmail.com", memail, null);
+            rttr.addFlashAttribute("resultSuccessMsg", 
+            		"귀하의 이메일 주소로 새로운 임시 비밀번호를 발송 하였습니다.\n"
+            		+ "로그인 하신 후 비밀번호를 재설정해주세요.");
+        } else {
+            rttr.addFlashAttribute("resultFailIdMsg", "귀하의 이메일로 가입된 아이디가 존재하지 않습니다.");
+        }
+        return "redirect:/user/findPw";
+    }
 }

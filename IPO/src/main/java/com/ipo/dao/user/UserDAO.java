@@ -14,4 +14,8 @@ public interface UserDAO {
 	public void updateUser(UserVO userVO)throws Exception;
 	
 	public void deleteUser(String mid)throws Exception;
+	
+	public UserVO findAccount(String memail)throws Exception;
+	
+	public void findPw(UserVO userVO)throws Exception;
 }
