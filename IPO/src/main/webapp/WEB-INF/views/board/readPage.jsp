@@ -114,7 +114,7 @@ hr {
 					<div class="box-footer" style="margin-top: 50px">
 					<sec:authorize access="isAuthenticated()"> 
 					<sec:authentication property="principal" var="user"/> 
-					<c:if test="${user.username == boardVO.writer}">
+					<c:if test="${user.username == boardVO.writer || sessionScope.SPRING_SECURITY_CONTEXT.authentication.authorities=='[ROLE_ADMIN]'}">
 						<button type="submit" class="btn btn-warning" id="postModBtn">수정</button>
 						<button type="submit" class="btn btn-danger" id="postDelBtn">삭제</button>
 					</c:if>

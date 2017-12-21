@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html class="noIE" lang="kr">
 <head>
-<title>D O ! P O | 로그인</title>
+<title>D O ! P O | 비밀번호 찾기</title>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

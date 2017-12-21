@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>D O ! P O | 로그인</title>
+<title>D O ! P O | 회원가입 성공</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
@@ -14,7 +14,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;회원가입</li>
+				<li class="active">&nbsp;회원가입 성공</li>
 			</ol>
 		</div>
 		<!-- /.container -->

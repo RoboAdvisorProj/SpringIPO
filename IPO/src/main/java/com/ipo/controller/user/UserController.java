@@ -89,7 +89,7 @@ public class UserController {
 	/* 회원수정에서 내정보를 표시 */
 	@RequestMapping("/modify_update")
 	public String modify(Principal principal, Model model) throws Exception {
-
+		
 		logger.info("==========modify==========");
 		UserVO userVO = userService.selectUser(principal.getName());
 		model.addAttribute("user", userVO);
