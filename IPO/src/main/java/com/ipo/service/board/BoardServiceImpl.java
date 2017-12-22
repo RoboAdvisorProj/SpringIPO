@@ -110,4 +110,9 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		boardDAO.replyUpdate();
 	}
+	@Override
+	public void boardNumReset() throws Exception {
+		// TODO Auto-generated method stub
+		boardDAO.boardNumReset();
+	}
 }

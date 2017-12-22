@@ -27,4 +27,6 @@ public interface BoardService {
 	public List<String> getAttach(Integer bno)throws Exception;
 	
 	public void replyUpdate()throws Exception;
+	
+	public void  boardNumReset()throws Exception;
 }

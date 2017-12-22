@@ -43,14 +43,6 @@ public class BoardController {
 		
 		return "redirect:/board/listPage";
 	}
-	
-	@RequestMapping(value="/remove",method=RequestMethod.POST)
-	public String remove(@RequestParam("bno") int bno,RedirectAttributes rttr) throws Exception{
-		boardService.remove(bno);
-		rttr.addFlashAttribute("msg","remove success");
-		
-		return "redirect:/board/listPage";
-	}
 
 	@RequestMapping(value="/readPage",method=RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno,
@@ -62,7 +54,7 @@ public class BoardController {
 	  public String remove(@RequestParam("bno") int bno, SearchCriteria searchCri, RedirectAttributes rttr) throws Exception {
 
 	    boardService.remove(bno);
-
+		boardService.boardNumReset();
 	    rttr.addAttribute("page", searchCri.getPage());
 	    rttr.addAttribute("perPageNum", searchCri.getPerPageNum());
 	    rttr.addFlashAttribute("msg", "remove success");

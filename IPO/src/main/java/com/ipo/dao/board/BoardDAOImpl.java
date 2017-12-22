@@ -58,70 +58,87 @@ public class BoardDAOImpl implements BoardDAO {
 
 		return session.selectList("board.listPage", page);
 	}
+
 	@Override
 	public List<BoardVO> listCriteria(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.listCriteria",pageCri);
+		return session.selectList("board.listCriteria", pageCri);
 	}
+
 	@Override
 	public int countPaging(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne("board.countPaging",pageCri);
+		return session.selectOne("board.countPaging", pageCri);
 	}
+
 	@Override
 	public List<BoardVO> listSearch(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.listSearch",searchCri);
+		return session.selectList("board.listSearch", searchCri);
 	}
+
 	@Override
 	public int listSearchCount(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne("board.listSearchCount",searchCri);
+		return session.selectOne("board.listSearchCount", searchCri);
 	}
+
 	@Override
 	public void updateReplyCnt(Integer bno, int amount) throws Exception {
 		// TODO Auto-generated method stub
-		Map<String,Object> paramMap=new HashMap<String,Object>();
-		
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+
 		paramMap.put("bno", bno);
 		paramMap.put("amout", amount);
-		
-		session.update("board.updateReplyCnt",paramMap);
+
+		session.update("board.updateReplyCnt", paramMap);
 	}
+
 	@Override
 	public void updateViewCnt(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		session.update("board.updateViewCnt",bno);
+		session.update("board.updateViewCnt", bno);
 	}
+
 	@Override
 	public void addAttach(String fullName) throws Exception {
 		// TODO Auto-generated method stub
-	session.insert("board.addAttach",fullName);	
+		session.insert("board.addAttach", fullName);
 	}
+
 	@Override
 	public List<String> getAttach(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.getAttach",bno);
+		return session.selectList("board.getAttach", bno);
 	}
+
 	@Override
 	public void deleteAttach(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		session.delete("board.deleteAttach",bno);
+		session.delete("board.deleteAttach", bno);
 	}
+
 	@Override
 	public void replaceAttach(String fullName, Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		Map<String,Object> paramMap=new HashMap<String,Object>();
-		
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+
 		paramMap.put("bno", bno);
 		paramMap.put("fullName", fullName);
-		
-		session.insert("board.replaceAttach",paramMap);
-		
+
+		session.insert("board.replaceAttach", paramMap);
+
 	}
+
 	@Override
 	public void replyUpdate() throws Exception {
 		// TODO Auto-generated method stub
-	session.update("board.replyUpdate");	
+		session.update("board.replyUpdate");
+	}
+
+	@Override
+	public void boardNumReset() throws Exception {
+		// TODO Auto-generated method stub
+		session.update("board.boardNumReset");
 	}
 }
