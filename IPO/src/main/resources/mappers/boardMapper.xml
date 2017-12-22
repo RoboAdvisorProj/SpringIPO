@@ -158,15 +158,14 @@ insert into tbl_attach(fullname,bno) values(#{fullName},#{bno})
 update tbl_board set replycnt=(select count(rno) from tbl_reply where bno=tbl_board.bno) where bno>0
 ]]>
 </update>
-<!-- 중간에 게시글이 삭제되더면 번호 rownum으로 초기화후 인덱싱 -->
+
+<!-- 중간에 게시글이 삭제되면 번호 초기화후 인덱싱 -->
 <update id="boardNumReset">
 <![CDATA[
-UPDATE tbl_board AS t, 
-       (SELECT @rownum:=@rownum+1 rownum, bno
-        FROM tbl_board, (SELECT @rownum := 0) rn
-        ORDER BY bno) AS r
-SET t.bno=r.ROWNUM
-WHERE t.bno=r.bno
+ALTER TABLE tbl_board AUTO_INCREMENT=1;
+SET @COUNT = 0;
+UPDATE tbl_board SET tbl_board.bno = @COUNT:=@COUNT+1;
 ]]>
 </update>
+
 </mapper>

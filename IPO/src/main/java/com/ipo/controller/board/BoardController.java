@@ -37,8 +37,8 @@ public class BoardController {
 	public String registPOST(BoardVO boardVO,RedirectAttributes rttr) throws Exception{
 		logger.info("regist post .........");
 		logger.info(boardVO.toString());
+		boardService.boardNumReset();
 		boardService.regist(boardVO);
-	
 		rttr.addFlashAttribute("msg","register success");
 		
 		return "redirect:/board/listPage";
