@@ -85,11 +85,11 @@ hr {
 					</form>
 
 					<div class="box-body">
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="exampleInputEmail1">번호</label> <input type="text"
 								name='bno' class="form-control" value="${boardVO.bno}"
 								readonly="readonly">
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label for="exampleInputEmail1">작성자</label> <input type="text"
 								name="writer" class="form-control" value="${boardVO.writer}"
@@ -105,7 +105,6 @@ hr {
 							<textarea class="form-control" name="content" rows="15"
 								readonly="readonly">${boardVO.content}</textarea>
 						</div>
-
 					</div>
 			
 			

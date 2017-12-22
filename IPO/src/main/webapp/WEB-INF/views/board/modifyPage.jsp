@@ -5,6 +5,7 @@
 <!-- Section Background -->
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/assets/css/mailbox.css"/>">
@@ -47,12 +48,11 @@
 						<input type='hidden' name='keyword' value="${cri.keyword}">
 
 						<div class="box-body">
-
-							<div class="form-group">
+							<!--<div class="form-group">
 								<label for="exampleInputEmail1">번호</label> <input type="text"
 									name='bno' class="form-control" value="${boardVO.bno}"
 									readonly="readonly">
-							</div>
+							</div> -->
 							<div class="form-group">
 								<label for="exampleInputEmail1">작성자</label> <input type="text"
 									name="writer" class="form-control" value="${boardVO.writer}" readonly="readonly">

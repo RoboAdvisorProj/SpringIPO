@@ -12,26 +12,28 @@ import com.ipo.vo.board.BoardVO;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-	
+
 	@Inject
 	private BoardDAO boardDAO;
-	
+
 	@Transactional
 	@Override
 	public void regist(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
 		boardDAO.create(boardVO);
-		
-		String[] files=boardVO.getFiles();
-		
-		if(files==null) {return;}
-		
-		for(String fileName:files) {
+
+		String[] files = boardVO.getFiles();
+
+		if (files == null) {
+			return;
+		}
+
+		for (String fileName : files) {
 			boardDAO.addAttach(fileName);
 		}
 	}
 
-	@Transactional(isolation=Isolation.READ_COMMITTED)
+	@Transactional(isolation = Isolation.READ_COMMITTED)
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
@@ -43,16 +45,18 @@ public class BoardServiceImpl implements BoardService {
 	public void modify(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
 		boardDAO.update(boardVO);
-		
-		Integer bno=boardVO.getBno();
-		
+
+		Integer bno = boardVO.getBno();
+
 		boardDAO.deleteAttach(bno);
-		
-		String[] files=boardVO.getFiles();
-		
-		if(files==null) {return;}
-		
-		for(String fileName:files) {
+
+		String[] files = boardVO.getFiles();
+
+		if (files == null) {
+			return;
+		}
+
+		for (String fileName : files) {
 			boardDAO.replaceAttach(fileName, bno);
 		}
 	}
@@ -70,34 +74,40 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDAO.listAll();
 	}
+
 	@Override
 	public List<BoardVO> listCriteria(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.listCriteria(pageCri);
 	}
+
 	@Override
 	public int listCountCriteria(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.countPaging(pageCri);
 	}
+
 	@Override
 	public List<BoardVO> listSearchCriteria(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.listSearch(searchCri);
 	}
+
 	@Override
 	public int listSearchCount(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.listSearchCount(searchCri);
 	}
+
 	@Override
 	public List<String> getAttach(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.getAttach(bno);
 	}
+
 	@Override
 	public void replyUpdate() throws Exception {
 		// TODO Auto-generated method stub
-	boardDAO.replyUpdate();	
+		boardDAO.replyUpdate();
 	}
 }
