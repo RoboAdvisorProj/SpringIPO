@@ -250,7 +250,7 @@ hr {
 	
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
-		if (replyer == '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}') {
+		if (replyer == '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}'| ${sessionScope.SPRING_SECURITY_CONTEXT.authentication.authorities=='[ROLE_ADMIN]'}) {
 			accum += block.fn();
 		}
 		return accum;
