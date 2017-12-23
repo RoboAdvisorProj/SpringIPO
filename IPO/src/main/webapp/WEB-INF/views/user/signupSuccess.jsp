@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="jumbotron" style="margin-top: 100px">
 			<h1>환영합니다!</h1>
-			<p>${user}님 DOIPO 회원이 되신 걸 진심으로 환영합니다.</p>
+			<p>${user}님 DO!PO 회원이 되신 걸 진심으로 환영합니다.</p>
 			<p>
 				<a class="btn btn-primary btn-lg" href="${location}/user/login"
 					role="button">로그인 하기</a>

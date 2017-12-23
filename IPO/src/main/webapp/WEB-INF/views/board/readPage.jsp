@@ -423,9 +423,13 @@ $(document).ready(function(){
 				
 			});
 		}
-		
-		formObj.attr("action", "${location}/board/removePage");
-		formObj.submit();
+			if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+				formObj.attr("action", "${location}/board/removePage");
+				formObj.submit();
+			}else{   //취소
+			    return;
+			}
+
 	});	
 	
 	$("#postListBtn ").on("click", function(){

@@ -40,7 +40,7 @@ public class HelpController {
     public String sendMailId(Authentication auth,@RequestParam String mid,
     										@RequestParam String memailContents, RedirectAttributes rttr) throws Exception {
     	
-    	String email="seongjin605@gmail.com";
+    	String email="hidoipo@gmail.com";
     	
     	UserVO userVO=new UserVO();
     	userService.selectUser(auth.getName());
@@ -49,7 +49,7 @@ public class HelpController {
     	logger.info("메일 내용====>"+memailContents);
     	
     	if(memailContents!=null && userVO!=null) {
-    	 String subject = "DOIPO 고객"+"("+auth.getName()+")"+"님이 문의한 접수입니다.";
+    	 String subject = "DO!PO 회원"+"("+auth.getName()+")"+"님이 문의한 접수입니다.";
          StringBuilder sb = new StringBuilder();
          sb.append(memailContents);
     	  mailService.send(subject, sb.toString(), email, email, null);

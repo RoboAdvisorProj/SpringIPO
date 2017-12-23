@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<div class="copy">Copyright &copy; 2018 DO! IPO</div>
+					<div class="copy">Copyright &copy; 2018 DO!PO</div>
 				</div>
 				<div class="col-sm-4 text-center">
 					<div class="social-icon">
@@ -29,12 +29,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-4 text-right">
-					<div class="copy">
-						Theme by <a href="http://www.themewagon.com">DOIPO.com</a>.
-						All Rights Reserved
-					</div>
-				</div>
+
 			</div>
 			<!-- /.row -->
 		</div>

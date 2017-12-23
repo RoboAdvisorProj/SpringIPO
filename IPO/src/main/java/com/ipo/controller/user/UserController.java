@@ -139,7 +139,7 @@ public class UserController {
         UserVO userVO = userService.findAccount(memail);
         logger.info("회원정보=========>"+userVO);
         if (userVO != null) {
-            String subject = "DOIPO 아이디 찾기 안내 입니다.";
+            String subject = "DO!PO 아이디 찾기 안내 입니다.";
             StringBuilder sb = new StringBuilder();
             sb.append("귀하의 아이디는 " + userVO.getMid() + " 입니다.");
             mailService.send(subject, sb.toString(), "seongjin605@gmail.com", memail, null);
@@ -168,7 +168,7 @@ public class UserController {
             userVO.setMpwd(encoder.saltEncoding(password,userVO.getMid()));
             userService.findPw(userVO); // 해당 유저의 DB정보 변경
             
-            String subject = "DOIPO 임시 비밀번호 발급 안내입니다.";
+            String subject = "DO!PO 임시 비밀번호 발급 안내입니다.";
             StringBuilder sb = new StringBuilder();
             sb.append("귀하의 임시 비밀번호는 " + password + " 입니다.");
             mailService.send(subject, sb.toString(), "seongjin605@gmail.com", memail, null);

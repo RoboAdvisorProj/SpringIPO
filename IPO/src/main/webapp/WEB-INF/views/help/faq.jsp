@@ -39,20 +39,20 @@
 	<div class="container"  style="margin-top: 50px">
 		<div id="content">			
 			<div class="article" id="use_site">
-				<h2>DOIPO 이용 서비스</h2>
+				<h2>DO!PO 이용 서비스</h2>
 				<ul>
-					<li><span class="base_question"><strong><span class='text-primary'>1.DOIPO는 어떻게 이용하나요?</span></strong></span>
+					<li><span class="base_question"><strong><span class='text-primary'>1.DO!PO는 어떻게 이용하나요?</span></strong></span>
 						<div class="detail_answer">
-						DOIPO는 회원들에게 자가진단을 해서 사용자의 주식 성향을 판별해주고, 주식 시장을 예측 서비스를 제공합니다.
-						 또한, DOIPO 회원이 아닐시 일부 서비스 제약을 받습니다.</div>
+						DO!PO는 회원들에게 자가진단을 해서 사용자의 주식 성향을 판별해주고, 주식 시장을 예측 서비스를 제공합니다.
+						 또한, DO!PO 회원이 아닐시 일부 서비스 제약을 받습니다.</div>
 					</li>
 					<li><span class="base_question"><strong><span class='text-primary'>2.게시글에 전화번호,이메일을 기재해도 되나요?</span></strong></span>
-						<div class="detail_answer">DOIPO에서는 무분별한 스팸 문자나 장난 전화 등을 막기 위해서 연락처 열람 시 해당 정보가 사이트에 기록되어 열람한 회원을 
+						<div class="detail_answer">DO!PO에서는 무분별한 스팸 문자나 장난 전화 등을 막기 위해서 연락처 열람 시 해당 정보가 사이트에 기록되어 열람한 회원을 
 																확인 할 수 있는 기능을 제공하고 있으며 운영에 필요한 주 수입원 중 하나이므로 불편하시더라도 연락처를 본문 등에 기재하지 않도록 부탁드립니다
 						</div>
 					</li>
 					<li><span class="base_question"><strong><span class='text-primary'>3.사이트에 치명적인 오류나 건의사항이 있어요.</span></strong></span>
-						<div class="detail_answer">doipo@gmail.com로 보내주시면 됩니다.
+						<div class="detail_answer">DO!PO@gmail.com로 보내주시면 됩니다.
 																치명적인 버그라던가 좋은 건의 사항인 경우에는 소정의 상품을 드리고 있으니 많이 제보해주세요</div>
 					</li>
 
@@ -64,7 +64,7 @@
 			</div>
 			
 			<div class="article" id="use_member">
-				<h2>DOIPO 회원 서비스</h2>
+				<h2>DO!PO 회원 서비스</h2>
 				<ul>
 					<li><span class="base_question"><strong><span class='text-primary'>1.회원수정은 어떻게 하나요?</span></strong></span>
 						<div class="detail_answer">로그인 하신후, 마이페이지로 들어가시면 바로 회원수정페이지로 링크가 됩니다.</div>

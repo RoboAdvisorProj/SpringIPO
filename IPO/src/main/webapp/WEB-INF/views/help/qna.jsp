@@ -53,7 +53,7 @@
 					<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
 					<h3>Email Address</h3>
 					<p class="contact">
-						<a href="mailto:doipo@gmail.com">doipo@gmail.com</a> <br> <a
+						<a href="mailto:DO!PO@gmail.com">hidoipo@gmail.com</a> <br> <a
 							href="www.themewagon.com">www.themewagon.com</a>
 					</p>
 				</div>

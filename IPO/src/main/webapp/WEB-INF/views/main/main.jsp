@@ -190,7 +190,7 @@
 									<h3 class="section-item-title">종목 추천 서비스</h3><br/>
 									<p class="section-item-detail">투자자는 위험성향을 토대로 5가지 성향으로 분류되며, 
 									이에 대해 각자 다른 투자 기준으로 종목이 선정되고 추천이 됩니다. 
-									추천 종목들은 DOIPO가 정해놓은 엄격한 기준을 통해 선정된 가치있는 자산이 될 것입니다.</p>
+									추천 종목들은 DO!PO가 정해놓은 엄격한 기준을 통해 선정된 가치있는 자산이 될 것입니다.</p>
 								</div>
 								<!-- /.service-item -->
 							</div>
@@ -486,7 +486,7 @@
 	if (result == 'userModify success') {
 		alert("다시 로그인해주세요.");
 	}else if(result=='delete_user_success'){
-		alert("회원탈퇴가 정상적으로 완료되었습니다.\n그동안 DOIPO를 이용해주셔서 감사합니다.")
+		alert("회원탈퇴가 정상적으로 완료되었습니다.\n그동안 DO!PO를 이용해주셔서 감사합니다.")
 	}
 	</script>
 </body>
