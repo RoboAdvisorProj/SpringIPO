@@ -108,8 +108,10 @@
 						role="button" aria-haspopup="true">Customer Service <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="${location}/help/faq">faq</a></li>
-							<li><a href="${location}/help/qna">q&a</a></li>
+							<li><a href="${location}/help/faq">자주 하는 질문</a></li>
+							<sec:authorize access="isAuthenticated()">
+							<li><a href="${location}/help/qna">질의응답</a></li>
+							</sec:authorize>
 						</ul></li>
 				</ul>
 				<!-- /.nav -->

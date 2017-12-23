@@ -55,7 +55,9 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1">내용</label>
-									<textarea class="form-control" name="content" rows="15" placeholder="내용을 입력하세요."></textarea>
+									<textarea class="form-control" name="content" rows="15" 
+									placeholder="게시판에 글쓰기를 하는 경우, 본문에 개인정보(주민등록번호, 성명, 연락처 등)가 포함되어 게시되지 않도록 유의하시기 바랍니다.
+개인정보를 포함하여 게시하는 경우에는 불특정 다수에게 개인정보가 노출되어 악용될 수 있으며, 특히 타인의 개인정보가 노출되는 경우에는 개인정보보호법에 따라 처벌을 받을 수 있음을 알려드립니다."></textarea>
 								</div>
 									<div class="form-group">
 									<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서 올려주세요.</label>

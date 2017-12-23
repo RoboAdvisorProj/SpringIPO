@@ -9,8 +9,13 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
+<style>
+.row {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+</style>
 </head>
-
 <body>
 	<%@ include file="../include/topmenu.jsp"%>
 	<!-- Section Background -->
@@ -18,7 +23,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;Q&A</li>
+				<li class="active">&nbsp;질의응답</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -30,71 +35,75 @@
 	<section class="contact section-wrapper" id="contact">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 contact-item col-sm-6 col-xs-12">
-					<i class="ion-location"></i>
+				<div class="col-md-4 contact-item col-sm-6 col-xs-12">
+					<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
 					<h3>Address</h3>
 					<p class="contact">
-						Hoffman Parkway, 353 <br> Monuntain View, USA
+						서울시 강남구 <br> 역삼동
 					</p>
 				</div>
-				<div class="col-md-3 contact-item col-sm-6 col-xs-12">
-					<i class="ion-ios-telephone"></i>
+				<div class="col-md-4 contact-item col-sm-6 col-xs-12">
+					<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
 					<h3>Phone</h3>
 					<p class="contact">
-						Local: 1-200-123-hello <br> Mobile: 2-800-123-hello
+						회사 번호: 02-123-4567 <br> 핸드폰: 010-9999-9999
 					</p>
 				</div>
-				<div class="col-md-3 contact-item col-sm-6 col-xs-12">
-					<i class="ion-printer"></i>
-					<h3>Fax</h3>
-					<p class="contact">
-						Office: 2148-287-8300 <br> Home: 2528-782-8200
-					</p>
-				</div>
-				<div class="col-md-3 contact-item col-sm-6 col-xs-12">
-					<i class="ion-ios-email"></i>
+				<div class="col-md-4 contact-item col-sm-6 col-xs-12">
+					<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
 					<h3>Email Address</h3>
 					<p class="contact">
-						<a href="mailto:info@themewagon.com">info@themewagon.com</a> <br>
-						<a href="www.themewagon.com">www.themewagon.com</a>
+						<a href="mailto:doipo@gmail.com">doipo@gmail.com</a> <br> <a
+							href="www.themewagon.com">www.themewagon.com</a>
 					</p>
 				</div>
 
-
 			</div>
-			<!-- /.row -->
-			<form class="row form">
-				<h3>Leave A Message</h3>
-				<div class="col-sm-4 col-xs-12 form-group">
-					<label class="sr-only">Name</label> <input name="name"
-						class="form-control" type="text" placeholder="First Name">
+			<form class="row form" name="form1" method="post">
+				<h3 style="margin-left:15px;">운영자에게 문의하기</h3>
+				<div class="col-sm-12 col-xs-12 form-group">
+					<label class="sr-only">아이디</label> <input name="mid"
+						class="form-control" type="text"
+						value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}"
+						readonly>
 				</div>
-				<!-- /.form-group -->
-				<div class="col-sm-4 col-xs-12 form-group">
-					<label class="sr-only">Email</label> <input name="email"
-						class="form-control" type="email" placeholder="Email address">
+				<div class="col-sm-12 col-xs-12 form-group">
+					<label class="sr-only">Message</label>
+					<textarea id="userEmail" name="memailContents" class="message form-control" 
+					placeholder="불량 회원 신고, 사이트 에러등 운영자에게 무엇이든 요청하세요."
+						rows="15"></textarea>
 				</div>
-				<!-- /.form-group -->
-				<div class="col-sm-4 col-xs-12 form-group">
-					<label class="sr-only">Website</label> <input name="website"
-						class="form-control" type="text" placeholder="Your website">
-				</div>
-				<!-- /.form-group -->
-				<div class="row">
-					<div class="col-md-12 col-xs-12 form-group">
-						<label class="sr-only">Message</label>
-						<textarea class="message form-control" placeholder="Write message"></textarea>
-					</div>
-					<!-- /.form-group -->
-					<input class="btn btn-sub" type="submit" value="Send Message">
-				</div>
+				<input id="btnEmail" class="btn btn-primary pull-right" type="submit"
+					value="메일 발송" style="margin-right: 15px">
 			</form>
-			<!-- /.row -->
 		</div>
-		<!-- /.container -->
 	</section>
-	<!-- /.contact -->
-
+	<script>
+		$(document).ready(function() {
+			$("#btnEmail").click(function() {
+				// 태크.val() : 태그에 입력된 값
+				// 태크.val("값") : 태그의 값을 변경 
+				var userEmail = $("#userEmail").val();
+				if (userEmail == "") {
+					alert("문의할 내용을 입력하세요.");
+					$("#userEmail").focus(); // 입력포커스 이동
+					return false; // 함수 종료
+				}
+				// 폼 내부의 데이터를 전송할 주소
+				document.form1.action = "${location}/help/sendMail/manager"
+				// 제출
+				document.form1.submit();
+			});
+		});
+	</script>
+	<script type="text/javascript">
+	var result= '${msg}';
+	if (result=='success') {
+		alert("고객님이 문의한 접수가 성공적으로 완료되었습니다.");
+	}else if(result=='fail'){
+		alert("이메일 발송이 실패하였습니다.")
+	}
+	</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
