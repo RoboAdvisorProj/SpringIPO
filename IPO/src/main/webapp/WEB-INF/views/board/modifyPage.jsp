@@ -40,7 +40,7 @@
 					</div>
 					<!-- /.box-header -->
 
-					<form role="form" action="modifyPage" method="post">
+					<form name="form1" role="form" method="post">
 
 						<input type='hidden' name='page' value="${cri.page}"> <input
 							type='hidden' name='perPageNum' value="${cri.perPageNum}">
@@ -58,12 +58,12 @@
 									name="writer" class="form-control" value="${boardVO.writer}" readonly="readonly">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">제목</label> <input type="text"
+								<label for="exampleInputEmail1">제목</label> <input id="title" type="text"
 									name='title' class="form-control" value="${boardVO.title}">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">내용</label>
-								<textarea class="form-control" name="content" rows="15">${boardVO.content}</textarea>
+								<textarea id="contents" class="form-control" name="content" rows="15">${boardVO.content}</textarea>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서
@@ -77,8 +77,8 @@
 						<!-- /.box-body -->
 					
 					<div class="box-footer">
-						<button type="submit" class="btn btn-primary">수정 완료</button>
-						<button type="submit" class="btn btn-warning">취소</button>
+						<button type="submit" class="btn btn-warning pull-right">취소</button>
+						<button id="modifySuccess" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">수정 완료</button>
 					</div>
 </form>
 					<script type="text/javascript"
@@ -118,12 +118,11 @@
 			that.get(0).submit();
 		});
 		
-		
+
 		$(".btn-warning").on("click", function(){
 		  self.location = "${location}/board/list?page=${cri.page}&perPageNum=${cri.perPageNum}"+
 				  "&searchType=${cri.searchType}&keyword=${cri.keyword}";
 		});
-		
 	});
 	var template = Handlebars.compile($("#template").html());
 	$(".fileDrop").on("dragenter dragover", function(event){
@@ -211,6 +210,29 @@
 		$(".popup").hide('slow');
 		
 	});	
+</script>
+<script>
+$(document).ready(function() {
+	$("#modifySuccess").click(function() {
+		var title = $("#title").val();
+		var contents = $("#contents").val();
+		if (title == "") {
+			alert("글 제목을 입력하세요.");
+			$("#title").focus(); // 입력포커스 이동
+			return false; // 함수 종료
+		}
+		if (contents == "") {
+			alert("글 내용을 입력하세요.");
+			$("#contents").focus();
+			return false;
+		}
+		// 폼 내부의 데이터를 전송할 주소
+
+		document.form1.action = "${location}/board/modifyPage"
+		// 제출
+		document.form1.submit();
+	});
+});
 </script>
 
 				</div>

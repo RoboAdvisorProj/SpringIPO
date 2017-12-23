@@ -49,6 +49,11 @@ hr {
     position: relative;
     left: -50%;
 }
+#imgBox {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+}
 </style>
 
 
@@ -111,7 +116,7 @@ hr {
 					</div>
 			
 			
-			<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
+			<ul id="imgBox" class="mailbox-attachments clearfix uploadedList" style="list-style:none;"></ul>
 					<!-- /.box-body -->
 					<div class="box-footer" style="margin-top: 50px">
 					<sec:authorize access="isAuthenticated()"> 
@@ -332,7 +337,6 @@ hr {
 					alert("댓글이 등록 되었습니다.");
 					replyPage = 1;
 					getPage("${location}/replies/" + bno + "/" + replyPage);
-					//replyerObj.val("");
 					replytextObj.val("");
 				}
 			}
@@ -402,11 +406,6 @@ $(document).ready(function(){
 		formObj.submit();
 	});
 	
-/* 	$("#removeBtn").on("click", function(){
-		formObj.attr("action", "/sboard/removePage");
-		formObj.submit();
-	}); */
-	
 	$("#postDelBtn").on("click", function(){
 		
 		var replyCnt =  $("#replycntSmall").html().replace(/[^0-9]/g,"");
@@ -426,7 +425,7 @@ $(document).ready(function(){
 				
 			});
 		}
-			if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+			if (confirm("해당 글을 삭제하시겠습니까?") == true){    //확인
 				formObj.attr("action", "${location}/board/removePage");
 				formObj.submit();
 			}else{   //취소

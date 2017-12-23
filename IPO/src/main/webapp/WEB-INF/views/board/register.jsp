@@ -50,14 +50,15 @@
 										name="writer" class="form-control" value="${user.username}" readonly="readonly">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputEmail1">제목</label> <input type="text"
+									<label for="exampleInputEmail1">제목</label> <input id="title" type="text"
 										name='title' class="form-control" placeholder="제목을 입력하세요">
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1">내용</label>
-									<textarea class="form-control" name="content" rows="15" 
+									<textarea id="contents" class="form-control" name="content" rows="15" 
 									placeholder="게시판에 글쓰기를 하는 경우, 본문에 개인정보(주민등록번호, 성명, 연락처 등)가 포함되어 게시되지 않도록 유의하시기 바랍니다.
-개인정보를 포함하여 게시하는 경우에는 불특정 다수에게 개인정보가 노출되어 악용될 수 있으며, 특히 타인의 개인정보가 노출되는 경우에는 개인정보보호법에 따라 처벌을 받을 수 있음을 알려드립니다."></textarea>
+개인정보를 포함하여 게시하는 경우에는 불특정 다수에게 개인정보가 노출되어 악용될 수 있으며,
+특히, 타인의 개인정보가 노출되는 경우에는 개인정보보호법에 따라 처벌을 받을 수 있음을 알려드립니다."></textarea>
 								</div>
 									<div class="form-group">
 									<label for="exampleInputEmail1">아래 빈곳에 파일을 끌어당겨서 올려주세요.</label>
@@ -66,11 +67,9 @@
 							<ul class="mailbox-attachments clearfix uploadedList" style="list-style:none;">
 							</ul>
 							</div>
-							<!-- /.box-body -->
-							
-	
 							<div class="box-footer">
-								<button type="submit" class="btn btn-primary pull-right">완료</button>
+								<button type="submit" class="btn btn-warning pull-right">취소</button>
+								<button id="registerSuccess" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">완료</button>
 							</div>
 						</form>
 				</sec:authorize>
@@ -152,6 +151,23 @@ $(".uploadedList").on("click", ".delbtn", function(event){
 	   }
    });
 });
+$(".btn-warning").on("click", function(){
+	  self.location = "${location}/board/list?page=${cri.page}&perPageNum=${cri.perPageNum}"+
+			  "&searchType=${cri.searchType}&keyword=${cri.keyword}";
+	});
+$("#registerSuccess").click(function() {
+	var title = $("#title").val();
+	var contents = $("#contents").val();
+	if (title == "") {
+		alert("글 제목을 입력하세요.");
+		$("#title").focus(); // 입력포커스 이동
+		return false; // 함수 종료
+	}
+	if (contents == "") {
+		alert("글 내용을 입력하세요.");
+		$("#contents").focus();
+		return false;
+	}
 $("#registerForm").submit(function(event){
 	event.preventDefault();
 	
@@ -161,9 +177,10 @@ $("#registerForm").submit(function(event){
 	$(".uploadedList .delbtn").each(function(index){
 		 str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
 	});
-	
+
 	that.append(str);
 	that.get(0).submit();
+	});
 });
 </script>
 	<%@ include file="../include/footer.jsp"%>

@@ -102,8 +102,7 @@
 
 	<form id="jobForm">
 		<input type='hidden' name="page" value=${pageMaker.pageCri.perPageNum}>
-		<input type='hidden' name="perPageNum"
-			value=${pageMaker.pageCri.perPageNum}>
+		<input type='hidden' name="perPageNum" value=${pageMaker.pageCri.perPageNum}>
 	</form>
 
 
@@ -149,7 +148,7 @@
 	});
 	</script>
 	<!-- 글쓰기,수정,삭제를 했을때 자바스크립트로 알림 -->
-	<script>
+<!-- 	<script>
 		var result = '${msg}';
 
 		if (result == 'register success') {
@@ -159,7 +158,7 @@
 		} else if (result == 'remove success') {
 			alert("글삭제를 성공적으로 완료하였습니다.");
 		}
-	</script>
+	</script> -->
 	<script>
 		$(document).ready(
 				function() {
