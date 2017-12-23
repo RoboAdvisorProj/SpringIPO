@@ -34,17 +34,20 @@ hr {
 }
 
 .front {
-	z-index: 1110;
-	opacity: 1;
-	boarder: 1px;
-	margin: auto;
+    z-index: 1110;
+    opacity: 1;
+    margin: auto;
+    position: absolute;
+    left: 50%;
 }
 
 .show {
-	position: relative;
-	max-width: 1200px;
-	max-height: 800px;
-	overflow: auto;
+    position: relative;
+    max-width: 1200px;
+    max-height: 800px;
+    overflow: auto;
+    position: relative;
+    left: -50%;
 }
 </style>
 

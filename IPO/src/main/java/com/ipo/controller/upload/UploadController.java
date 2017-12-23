@@ -86,7 +86,7 @@ public class UploadController {
   
   @ResponseBody
   @RequestMapping("/displayFile")
-  public ResponseEntity<byte[]>  displayFile(String fileName)throws Exception{
+  public ResponseEntity<byte[]> displayFile(String fileName)throws Exception{
     
     InputStream in = null; 
     ResponseEntity<byte[]> entity = null;
@@ -113,9 +113,7 @@ public class UploadController {
           new String(fileName.getBytes("UTF-8"), "ISO-8859-1")+"\"");
       }
 
-        entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in), 
-          headers, 
-          HttpStatus.CREATED);
+        entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in),headers,HttpStatus.CREATED);
     }catch(Exception e){
       e.printStackTrace();
       entity = new ResponseEntity<byte[]>(HttpStatus.BAD_REQUEST);
