@@ -99,7 +99,7 @@
 	<script type="text/javascript">
 	var result= '${msg}';
 	if (result=='success') {
-		alert("고객님이 문의한 접수가 성공적으로 완료되었습니다.");
+		alert("고객님이 문의한 내용이 성공적으로 접수되었습니다.");
 	}else if(result=='fail'){
 		alert("이메일 발송이 실패하였습니다.")
 	}
