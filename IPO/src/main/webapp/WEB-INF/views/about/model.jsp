@@ -66,22 +66,20 @@
 			<div class="row">
 
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we care</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">Value-selection</h3>
+					<p class="section-item-detail">저희 DOIPO는 기업의 재무제표를 기반으로 정교한 조건식을 사용해
+투자할 잠재적 가치가 있는 기업을 선별합니다. </p>
 				</div>
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we deliver</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">Integrity</h3>
+					<p class="section-item-detail">재무제표의 여러 조건식과 변동성, 그리고 거시경제 상황을 통합적으로 고려하여
+투자자산을 선택하고 제시합니다.</p>
 				</div>
 				<div class="col-sm-4">
-					<h3 class="section-item-title">we're creative</h3>
-					<p class="section-item-detail">The Earth was small, light blue,
-						and so touchingly alone, our home that must be defended like a
-						holy relic. The Earth was absolutely round.</p>
+					<h3 class="section-item-title">Dynamic</h3>
+					<p class="section-item-detail">시시각각 변화하는 시장상황을 동적으로 반영하여 트렌드와 모멘텀에 겆맞는
+투자자산을 제시합니다.
+</p>
 				</div>
 			</div>
 			<!-- /.row -->

@@ -11,40 +11,51 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	private UserDAO userDAO;
-	
+
 	@Override
 	public UserVO login(LoginDTO loginDTO) throws Exception {
 		// TODO Auto-generated method stub
 		return userDAO.login(loginDTO);
 	}
+
 	@Override
 	public void register(UserVO userVO) throws Exception {
 		// TODO Auto-generated method stub
-	userDAO.register(userVO);	
+		userDAO.register(userVO);
 	}
+
 	@Override
 	public UserVO selectUser(String mId) throws Exception {
 		// TODO Auto-generated method stub
 		return userDAO.selectUser(mId);
 	}
-	 @Override
+
+	@Override
 	public void updateUser(UserVO userVO) throws Exception {
 		// TODO Auto-generated method stu
-		 userDAO.updateUser(userVO);
+		userDAO.updateUser(userVO);
 	}
-	 @Override
+
+	@Override
 	public void deleteUser(String mid) throws Exception {
 		// TODO Auto-generated method stub
 		userDAO.deleteUser(mid);
 	}
-	 @Override
+
+	@Override
 	public UserVO findAccount(String memail) throws Exception {
 		// TODO Auto-generated method stub
 		return userDAO.findAccount(memail);
 	}
-	 @Override
+
+	@Override
 	public void findPw(UserVO userVO) throws Exception {
 		// TODO Auto-generated method stub
-		 userDAO.findPw(userVO);
+		userDAO.findPw(userVO);
+	}
+	@Override
+	public int selectCountUser() throws Exception {
+		// TODO Auto-generated method stub
+		return userDAO.selectCountUser();
 	}
 }

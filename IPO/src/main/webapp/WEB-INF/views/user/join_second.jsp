@@ -5,6 +5,8 @@
 <head>
 <%@ include file="../include/topmenu.jsp"%>
 <title>D O ! P O | 회원가입</title>
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
@@ -14,7 +16,12 @@
 <link rel="stylesheet" href="<c:url value="/resources/assets/signup/join_second.css"/>">
 <script>
 	/* 스프링 시큐리티의 CSRF라는 기능으로 인해 POST방식으로 보낼때 CSRF처리를 해줘야함. AJAX에서 POST요청을함으로 로딩과 동시에 CSRF처리 */
-
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	
+	$(document).ajaxSend(function(e, xhr, options) {
+	    xhr.setRequestHeader(header, token);
+	});
 	/* --------------------------------------------------- */
 	function idCheckAjax(){
 		var mid = $("#username").val()

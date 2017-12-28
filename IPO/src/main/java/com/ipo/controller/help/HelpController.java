@@ -43,7 +43,10 @@ public class HelpController {
     	String email="hidoipo@gmail.com";
     	
     	UserVO userVO=new UserVO();
-    	userService.selectUser(auth.getName());
+    	
+    	logger.info("메일 보내는 사람====>"+userService.selectUser(auth.getName()));
+    	userVO=userService.selectUser(auth.getName());
+    	String userEmail=userVO.getMemail();
     	
     	logger.info("메일 보내는 사람====>"+userVO);
     	logger.info("메일 내용====>"+memailContents);
@@ -51,7 +54,7 @@ public class HelpController {
     	if(memailContents!=null && userVO!=null) {
     	 String subject = "DO!PO 회원"+"("+auth.getName()+")"+"님이 문의한 접수입니다.";
          StringBuilder sb = new StringBuilder();
-         sb.append(memailContents);
+         sb.append("사용자 이메일:"+userEmail+"<br/><br/> "+memailContents);
     	  mailService.send(subject, sb.toString(), email, email, null);
     	  rttr.addFlashAttribute("msg", "success");
     	}else {

@@ -71,6 +71,7 @@
 								<button type="submit" class="btn btn-warning pull-right">취소</button>
 								<button id="registerSuccess" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">완료</button>
 							</div>
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						</form>
 				</sec:authorize>
 

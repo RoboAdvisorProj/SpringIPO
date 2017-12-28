@@ -77,6 +77,7 @@
 								class="form-control btn btn-primary">로그인</button>
 						</div>
 						<br>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					</form>
 
 				</div>

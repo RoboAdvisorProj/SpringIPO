@@ -6,6 +6,8 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="location" value="${pageContext.request.contextPath}" />
+<link rel="stylesheet"
+	href="<c:url value="/resources/assets/css/self_diagnosis.css"/>">
 </head>
 
 <body>
@@ -20,277 +22,333 @@
 		</div>
 		<!-- /.container -->
 	</section>
-	<!-- /.section-background -->
 
+	<div class="container" style="margin-top: 50px;">
+		<div class="content">
+			<h2>자가진단검사</h2>
+			<div class="cont">
+				<!-- str : 내용시작 -->
+				<h3>주식투자성향 자가진단</h3>
+				아래 문항을 자세히 읽어 보신 후 현재 자신의 상태와 가장 근접하다고 생각하는 번호에 체크를 해주세요. <br>
+				<br>
 
-	<!-- Our Services -->
-	<section class="service" id="service">
-		<div class="container">
-			<div class="_section-wrapper">
-				<h2 class="section-title black">자가진단</h2>
-				<!-- /.section-title -->
-				<div class="underline purple"></div>
-				<div class="row">
-					<div class="">
-						<img src="/resources/assets/images/service.png" alt="service"
-							class="service-img img-responsive">
-					</div>
-					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
-						<div class="row">
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">free delivery</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">refund money</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">24/7 support</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">summer offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">winter offer</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-							<div class="col-xs-6 col-sm-4">
-								<div class="service-item">
-									<h3 class="section-item-title">best gift</h3>
-									<p class="section-item-detail">The Earth was small, light
-										blue, and so touchingly alone, our home that must be so
-										painful.</p>
-								</div>
-								<!-- /.service-item -->
-							</div>
-						</div>
-						<!-- /.row -->
-					</div>
-					<!-- /.col-md-6 -->
+				<div class="bbs-list2 mb30">
+					<table class="bbs" summary="">
+
+						<colgroup>
+							<col width="*">
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+							<col width="100px">
+						</colgroup>
+						<!-- 						<thead>
+							<tr>
+								<th class="firs">평가 내용</th>
+								<th>전혀아니다</th>
+								<th>드물지만있다</th>
+								<th>가끔있다</th>
+								<th>자주있다</th>
+								<th>항상그렇다</th>
+							</tr>,/
+						</thead> -->
+						<tbody>
+							<tr>
+								<th scope="row" class="firs textL">1. 고객님의 연령대는 어떻게 되십니까?</th>
+								<td>
+									<ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer1" value="4"
+													id=""> 19세 이하</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer1" value="4"
+													id="">20세 ～ 40세</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer1" value="3"
+													id="">41세 ～ 50세</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer1" value="2"
+													id="">51세 ～ 60세</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer1" value="1"
+													id="">61세 이상</label>
+											</div></li>
+									</ul>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">2. 고객님께서 투자하고자 하는 자금의 투자
+									가능 기간은 얼마나 되십니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer2" value="1"
+													id=""> 6개월 미만</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer2" value="2"
+													id="">6개월 이상 ～ 1년 미만</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer2" value="3"
+													id="">1년 이상 ～ 2년 미만</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer2" value="4"
+													id="">2년 이상 ～ 3년 미만</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer2" value="5"
+													id="">3년 이상</label>
+											</div></li>
+									</ul></td>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">3. 다음 중 고객님의 투자경험과 가장
+									가까운 금융상품은 어느 것입니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer3" value="1"
+													id=""> 은행 예․적금, 국채, 지방채, 보증채, MMF, CMA 등</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer3" value="2"
+													id=""> 금융채, 신용도가 높은 회사채, 채권형펀드, 원금보장형 ELS 등</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer3" value="3"
+													id=""> 신용도 중간 등급의 회사채, 원금의 일부만 보장되는 ELS, 혼합형 펀드 등</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer3" value="4"
+													id=""> 신용도가 낮은 회사채, 주식, 원금이 보장되지 않는 ELS, 시장수익율 수준의
+													수익을 추구하는 주식형펀드 등</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer3" value="5"
+													id=""> ELW, 선물옵션, 시장수익율 이상의 수익을 추구하는 주식형펀드, 파생상품펀드,
+													주식 신용거래 등</label>
+											</div></li>
+									</ul></td>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">4. 고객님께서는 금융상품 투자에 대한
+									본인의 지식수준이 어느 정도라고 생각하십니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer4" value="1"
+													id=""> <strong>매우 낮은 수준</strong>(투자의사결정을 스스로 내려본
+													경험이 없는 정도)</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer4" value="2"
+													id=""> <strong>낮은 수준</strong>(주식과 채권의 차이를 구별할 수 있는
+													정도)</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer4" value="3"
+													id=""> <strong>높은 수준</strong>(투자할 수 있는 대부분의 금융상품의
+													차이를 구별할 수 있는 정도)</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer4" value="4"
+													id=""> <strong>매우 높은 수준</strong>(금융상품을 비롯하여 모든 투자대상
+													상품의 차이를 이해할 수 있는 정도)</label>
+											</div></li>
+									</ul></td>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">5. 고객님께서 투자하고자 하는 자금은
+									고객님의 전체 금융자산(부동산 등을 제외) 중 어느 정도의 비중을 차지합니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer5" value="5"
+													id=""> 10% 이하</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer5" value="4"
+													id=""> 10% 초과 ～ 20% 이하</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer5" value="3"
+													id=""> 20% 초과 ～ 30% 이하</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer5" value="2"
+													id=""> 30% 초과 ～ 40% 이하</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer5" value="1"
+													id=""> 40% 초과</label>
+											</div></li>
+									</ul></td>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">6. 다음 중 고객님의 수입원을 가장 잘
+									나타내는 것은 어느 것입니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer6" value="3"
+													id=""> 현재 일정한 수입이 발생하고 있으며, 향후 현재 수준을 유지하거나 증가할 것으로
+													예상</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer6" value="2"
+													id=""> 현재 일정한 수입이 발생하고 있으나, 향후 감소하거나 불안정할 것으로 예상</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer6" value="1"
+													id=""> 현재 일정한 수입이 없으며, 연금이 주 수입원임</label>
+											</div></li>
+									</ul></td>
+							</tr>
+							<tr>
+								<th scope="row" class="firs textL">7. 고객님의 투자원금에 손실이 발생할 경우
+									다음 중 고객님이 감내할 수 있는 손실 수준은 어느 수준입니까?</th>
+								<td><ul class="list-unstyled">
+										<li><div class="radio">
+												<label><input type="radio" name="answer7" value="-2"
+													id=""> 무슨 일이 있어도 투자 원금은 보전되어야 한다.</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer7" value="2"
+													id=""> 투자원금에서 최소한의 손실만을 감수할 수 있다.</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer7" value="4"
+													id=""> 투자원금 중 일부의 손실을 감수할 수 있다.</label>
+											</div></li>
+										<li><div class="radio">
+												<label><input type="radio" name="answer7" value="6"
+													id=""> 기대수익이 높다면 위험이 높아도 상관하지 않겠다.</label>
+											</div></li>
+									</ul></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				<!-- /.row -->
+				<div class="buttons mb30">
+					<a href="#none" onclick="aReset()" class="btn-a btn-a-c">다시
+						작성하기</a> <a href="#none" onclick="aConfirm()" class="btn-a btn-a-a">총점
+						결과보기</a>
+				</div>
+
+		<%-- 		<!-- str : 결과보기 -->
+				<div class="bbs-list3 mb10">
+					<table class="bbs" summary="">
+						<caption>인터넷중독 자가진단 결과보기</caption>
+						<tbody>
+							<tr>
+								<td>
+									<h3 class="hv vc">
+										총점 : <span id="totalPoint">0</span>점
+									</h3>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> --%>
+<div class="bbs-list3 mb10">
+				<div class="container">
+					<div class="outer">
+						<div class="inner">
+							<div class="centered"><h3>총점 : <span id="totalPoint">0</span>점</h3></div>
+						</div>
+					</div>
+				</div>
+</div>
+				<ul id="maxUL" style="margin-bottom: 100px;">
+					<li class="mb5" id="max20" style="display: none; margin-top:30px;">
+					<i class="fa fa-check" aria-hidden="true" style="color:green;"></i>
+					<strong>안정형</strong>(20점이하)<br> 예금 또는 적금 수준의 수익률을 기대하며, 투자원금에 손실이 발생하는 것을 원하지 않음 <br/>
+					<a class="btn btn-default" href="${location}/portfolio/riskAvoid" role="button">안정형 바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i></a>
+					</li>
+					<li class="mb5" id="max40" style="display: none; margin-top:30px;">
+					<i class="fa fa-check" aria-hidden="true" style="color:green;"></i>
+					<strong>안정추구형</strong>(20점초과 ～ 40점이하)<br/> 투자원금의 손실위험은 최소화하고, 이자소득이나 배당소득 수준의 안정적인
+						투자를 목표로 함. 다만, 수익을 위해 단기적인 손실을 수용할 수 있으며, 예․적금보다 높은 수익을 위해 자산 중
+						일부를 변동성 높은 상품에 투자할 의향이 있음 <br/>
+					<a class="btn btn-default" href="${location}/portfolio/safetyPre"
+						role="button">안정추구형 바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i></a>
+						</li>
+					<li class="mb5" id="max60" style="display: none; margin-top:30px;">
+					<i class="fa fa-check" aria-hidden="true" style="color:green;"></i>
+					<strong>위험중립형</strong>(40점초과～ 60점이하)<br/> 투자에는 그에 상응하는 투자위험이 있음을 충분히 인식하고 있으며, 예․적금보다 높은
+						수익을 기대할 수 있다면 일정수준의 손실위험을 감수할 수 있음 <br/>
+					<a class="btn btn-default" href="${location}/portfolio/riskNeu"
+						role="button">위험중립형 바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i></a>
+						</li>
+					<li class="mb5" id="max80" style="display: none; margin-top:30px;">
+					<i class="fa fa-check" aria-hidden="true" style="color:green;"></i>
+					<strong>적극투자형</strong>(60점초과～ 80점이하)<br/> 투자원금의 보전보다는 위험을 감내하더라도 높은 수준의 투자수익 실현을 추구함.
+						투자자금의 상당 부분을 주식, 주식형펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음 <br/>
+					<a class="btn btn-default" href="${location}/portfolio/activeInv"
+						role="button">적극투자형 바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i></a>
+						</li>
+					<li id="max81" style="display: none; margin-top:30px;">
+					<i class="fa fa-check" aria-hidden="true" style="color:green;"></i>
+					<strong>공격투자형(80점초과)</strong><br/>
+						시장평균 수익률을 훨씬 넘어서는 높은 수준의 투자수익을 추구하며, 이를 위해 자산가치의 변동에 따른 손실 위험을 적극
+						수용. 투자자금 대부분을 주식, 주식형펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음 <br/>
+					<a class="btn btn-default" href="${location}/portfolio/riskPre"
+						role="button">공격투자형바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i></a>
+						</li>
+				</ul>
+				<!-- end : 결과보기 -->
+				<!-- end : 내용마침 -->
 			</div>
-			<!-- /.section-wrapper -->
+			<script type="text/javascript">
+var totalPoint = 0;
+var sum=0;
+function aConfirm()
+{
+	// 이전 결과가 있다면 리셋 후 진행
+	if ( totalPoint > 0 )
+	{
+		totalPoint = 0;
+		$("#maxUL").find("li").hide();
+	}
+
+	if ( $("input[type='radio']:checked").size() < 7 )
+	{
+		alert( "모든 평가 내용 항목에 대한 답을 선택해 주세요!" );
+		return;
+	}
+
+	$("input[type='radio']:checked").each( function(){
+		totalPoint += parseInt( $(this).val() );
+		sum=totalPoint/32*100;
+		$("#totalPoint").html( sum );
+	});
+	
+	
+	
+	if ( sum <= 20 )
+		$( "#max20").show();
+	else if ( sum > 20 && sum <= 40 )
+		$( "#max40").show();
+	else if ( sum > 40 && sum <= 60 )
+		$( "#max60").show();
+	else if ( sum > 60 && sum <= 80 )
+		$( "#max80").show();
+	else if ( sum > 80)
+		$( "#max81").show();
+}
+
+function aReset()
+{
+	$("input[type='radio']:checked").attr("checked", false );
+	totalPoint = 0;
+	$("#totalPoint").html( totalPoint );
+	$("#maxUL").find("li").hide();
+}
+</script>
+
 		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.service -->
-
-
-	<!-- Testimonial -->
-	<section class="testimonial">
-		<div class="container section-wrapper">
-			<div class="section-title">testmonials</div>
-			<!-- /.section-title -->
-			<div class="underline white"></div>
-			<div class="owl-carousel testimonial-owl">
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-			</div>
-			<!-- /.owl-carousel -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.testimonial -->
-
-
-	<!-- Price Table -->
-	<section class="price-table">
-		<div class="container section-wrapper">
-			<h2 class="section-title black">Price table</h2>
-			<!-- /.section-title -->
-			<div class="underline purple"></div>
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /.row -->
-
-				</div>
-			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.price-table -->
-
-
-	<!-- Add -->
-	<section class="section-wrapper add container">
-		<div class="owl-carousel add-owl">
-			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-		</div>
-		<!-- /.owl-carousel -->
-	</section>
-
+	</div>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

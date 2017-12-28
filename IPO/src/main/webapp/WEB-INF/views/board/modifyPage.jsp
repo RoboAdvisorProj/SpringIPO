@@ -80,7 +80,8 @@
 						<button type="submit" class="btn btn-warning pull-right">취소</button>
 						<button id="modifySuccess" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">수정 완료</button>
 					</div>
-</form>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				</form>
 					<script type="text/javascript"
 						src="<c:url value="/resources/assets/js/upload.js"/>"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>

@@ -113,6 +113,7 @@ font-size:20px !important;
 						<input type="button" id="modifyBtn" value="수정">
 						<input type="button" id="cancelBtn" value="취소">
 					</div>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				</form>
 			</div>
 		</div>

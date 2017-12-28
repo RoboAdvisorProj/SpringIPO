@@ -123,6 +123,7 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
+							<li><a href="${location}/portfolio/bitcoin">비트코인</a></li>
 								<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
 								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
 								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
@@ -431,34 +432,31 @@
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
-				<div class="col-sm-3 col-xs-6">
+				<div class="col-sm-4 col-xs-6">
 					<div class="fun-box">
-						<div class="number">1956628</div>
-						<div class="number-title">lines of code</div>
+						<div class="number">현재 비회원 접속자</div>
+						<div class="number-title">${unknownCount}</div>
 					</div>
 					<!-- /.fun-box -->
 				</div>
 				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
+				<div class="col-sm-4 col-xs-6">
 					<div class="fun-box">
-						<div class="number">1473</div>
-						<div class="number-title">cups of coffee</div>
+						<div class="number">현재 회원 접속자</div>
+						<c:if test="${userCount>0}">
+						<div class="number-title">${userCount}</div>
+						</c:if>
+						<c:if test="${userCount==null}">
+						<div class="number-title">0</div>
+						</c:if>
 					</div>
 					<!-- /.fun-box -->
 				</div>
 				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
+				<div class="col-sm-4 col-xs-6">
 					<div class="fun-box">
-						<div class="number">500</div>
-						<div class="number-title">projects delivered</div>
-					</div>
-					<!-- /.fun-box -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="fun-box">
-						<div class="number">101</div>
-						<div class="number-title">satisfied clients</div>
+						<div class="number">총 회원수</div>
+						<div class="number-title">${totalUser}</div>
 					</div>
 					<!-- /.fun-box -->
 				</div>

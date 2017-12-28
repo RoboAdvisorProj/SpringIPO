@@ -76,6 +76,7 @@
 								class="form-control btn btn-warning">이메일 전송</button>
 						</div>
 						<br />
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					</form>
 				</div>
 			</div>

@@ -66,4 +66,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   	where 
   		mid=#{mid} and memail=#{memail}
   	</update>
+  	
+  	<!-- 총 회원수 -->
+  	<select id="selectCountUser" resultType="int">
+  	select count(*) from ipo_member
+  	</select>
 </mapper>
