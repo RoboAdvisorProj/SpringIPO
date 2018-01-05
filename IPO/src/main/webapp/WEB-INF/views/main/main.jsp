@@ -123,6 +123,7 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
+							<li><a href="${location}/portfolio/bitcoin">비트코인</a></li>
 								<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
 								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
 								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
@@ -220,60 +221,29 @@
 	<!-- Twitter Feed -->
 	<section class="twitter-feed purple">
 		<div class="container section-wrapper">
-			<div class="section-title">twitter feed</div>
+			<div class="section-title">주식투자 대가들의 명언</div>
 			<!-- /.section-title -->
 			<div class="underline white"></div>
 			<div class="owl-carousel twitter-owl">
 				<div class="item">
-					<p class="day">12 days ago</p>
-					<p class="feed">We are glad to introduce our first HTML5/CSS3
-						Template called “PATROS” -http://t.co/mL9rufE7h8 @designscrazed
-						@W3layouts @freshdesignweb</p>
-					<div class="options">
-						<a href="#"><span><i class="ion-reply"></i> replay</span></a> <a
-							href="#"><span><i class="ion-social-twitter"></i>
-								retweet</span></a> <a href="#"><span><i class="ion-heart"></i>
-								favorite</span></a>
-					</div>
+					<p class="day">워렌 버핏</p>
+					<p class="feed">“우리는 금융시장 전반을 분석하며, 이해할 수 있는 회사를 찾을 뿐이다.<br/>리고 그
+				회사들이 지속적인 경쟁력을 가지고 있는지, 신뢰할만한 경영진이 있는지, 가격이 합리적인지를 알아본다.”</p>
 				</div>
 				<!-- /.item -->
 				<div class="item">
-					<p class="day">12 days ago</p>
-					<p class="feed">We are glad to introduce our first HTML5/CSS3
-						Template called “PATROS” -http://t.co/mL9rufE7h8 @designscrazed
-						@W3layouts @freshdesignweb</p>
-					<div class="options">
-						<a href="#"><span><i class="ion-reply"></i> replay</span></a> <a
-							href="#"><span><i class="ion-social-twitter"></i>
-								retweet</span></a> <a href="#"><span><i class="ion-heart"></i>
-								favorite</span></a>
-					</div>
+					<p class="day">찰리멍거</p>
+					<p class="feed">"이익이 확실할 때만 움직이십시오. 이건 가장 기본적인 것입니다.<br/> 승산을 이해해야 하고, 유리할 때만 베팅하는 훈련을 해야 합니다."</p>
 				</div>
 				<!-- /.item -->
 				<div class="item">
-					<p class="day">20 days ago</p>
-					<p class="feed">We are glad to introduce our first HTML5/CSS3
-						Template called “PATROS” -http://t.co/mL9rufE7h8 @designscrazed
-						@W3layouts @freshdesignweb</p>
-					<div class="options">
-						<a href="#"><span><i class="ion-reply"></i> replay</span></a> <a
-							href="#"><span><i class="ion-social-twitter"></i>
-								retweet</span></a> <a href="#"><span><i class="ion-heart"></i>
-								favorite</span></a>
-					</div>
+					<p class="day">피터린치</p>
+					<p class="feed">"투자의 성공 여부는 얼마나 오랫동안 세상의 비관론을 무시할 수 있는지에 달려있다."</p>
 				</div>
 				<!-- /.item -->
 				<div class="item">
-					<p class="day">5 days ago</p>
-					<p class="feed">We are glad to introduce our first HTML5/CSS3
-						Template called “PATROS” -http://t.co/mL9rufE7h8 @designscrazed
-						@W3layouts @freshdesignweb</p>
-					<div class="options">
-						<a href="#"><span><i class="ion-reply"></i> replay</span></a> <a
-							href="#"><span><i class="ion-social-twitter"></i>
-								retweet</span></a> <a href="#"><span><i class="ion-heart"></i>
-								favorite</span></a>
-					</div>
+					<p class="day">코스톨라니</p>
+					<p class="feed">"투자자는 무엇이 옳고 그른지에 대해 자신만의 생각과 아이디어, 방향을 가지고 있어야 하며,<br/> 대중에 휩쓸려 감정적으로 행동하지 않아야 한다."</p>
 				</div>
 				<!-- /.item -->
 			</div>
@@ -287,7 +257,7 @@
 	<!-- Portfolio -->
 	<section class="portfolio" id="portfolio">
 		<div class="container section-wrapper">
-			<h2 class="section-title black">portfolio</h2>
+			<h2 class="section-title black">즐겨찾는 곳</h2>
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
@@ -295,7 +265,7 @@
 					<div class="portfolio-item">
 						<div class="portfolio-img">
 							<img
-								src="<c:url value="/resources/assets/images/analytics.png"/>"
+								src="<c:url value="/resources/assets/images/analytics.jpg"/>"
 								alt="port-1" class="port-item">
 							<div class="portfolio-img-hover">
 								<a href="${location}/portfolio/self_diagnosis"><img
@@ -307,13 +277,8 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								자가진단 <br> <small>Fashion</small>
+								자가진단 <br> <small>당신의 주식성향을 진단해보세요</small>
 							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
 						</div>
 						<!-- /.portfolio-item-details -->
 					</div>
@@ -323,10 +288,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/high.png"/>"
+							<img src="<c:url value="/resources/assets/images/model.jpg"/>"
 								alt="port-2" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/high_risk"><img
+								<a href="${location}/about/model"><img
 									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
@@ -335,13 +300,8 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								고위험 <br> <small>Photography</small>
+								모델 <br> <small>DO!PO에서 설계한 모델링</small>
 							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
 						</div>
 						<!-- /.portfolio-item-details -->
 					</div>
@@ -351,10 +311,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/moderate.png"/>"
+							<img src="<c:url value="/resources/assets/images/vision.jpg"/>"
 								alt="port-3" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/moderate_risk"><img
+								<a href="${location}/about/vision"><img
 									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
@@ -363,13 +323,8 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								중위험 <br> <small>Web Design</small>
+								비전 <br> <small>DO!PO가 추구하는 비전</small>
 							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
 						</div>
 						<!-- /.portfolio-item-details -->
 					</div>
@@ -379,10 +334,10 @@
 				<div class="col-sm-3 col-xs-6">
 					<div class="portfolio-item">
 						<div class="portfolio-img">
-							<img src="<c:url value="/resources/assets/images/low.png"/>"
+							<img src="<c:url value="/resources/assets/images/chat.jpg"/>"
 								alt="port-4" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/low_risk"><img
+								<a href="${location}/board/listPage"><img
 									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
@@ -391,13 +346,8 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								저위험 <br> <small>Photography</small>
+								자유게시판 <br> <small>여러 사람과 의견을 공유해보세요</small>
 							</div>
-							<!-- /.portfolio-item-name -->
-							<div class="port-heart">
-								<i class="ion-ios-heart-outline"></i> 564
-							</div>
-							<!-- /.port-heart -->
 						</div>
 						<!-- /.portfolio-item-details -->
 					</div>
@@ -414,10 +364,9 @@
 	<!-- Note -->
 	<section class="note purple">
 		<div class="container section-wrapper text-center">
-			<p class="quote">“우리는 금융시장 전반을 분석하며, 이해할 수 있는 회사를 찾을 뿐이다. 그리고 그
-				회사들이 지속적인 경쟁력을 가지고 있는지, 신뢰할만한 경영진이 있는지, 가격이 합리적인지를 알아본다.”</p>
-			<!-- /.quote -->
-			<div class="quoter">워렌 버핏</div>
+			<p>DO!PO에 오신 걸 환영합니다.<br/>
+			DO!PO는 개인정보보호 10가지 원칙에 따라 고객님의 정보를 안전하게 보관해 드리며,<br/>
+			고객님의 소중한 의견에 항상 귀 기울이고, 품질 좋은 서비스들을 제공해 드리겠습니다.</p>
 		</div>
 		<!-- /.container -->
 	</section>
@@ -431,28 +380,7 @@
 			<!-- /.section-title -->
 			<div class="underline purple"></div>
 			<div class="row">
-				<div class="col-sm-4 col-xs-6">
-					<div class="fun-box">
-						<div class="number">현재 비회원 접속자</div>
-						<div class="number-title">${unknownCount}</div>
-					</div>
-					<!-- /.fun-box -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-4 col-xs-6">
-					<div class="fun-box">
-						<div class="number">현재 회원 접속자</div>
-						<c:if test="${userCount>0}">
-						<div class="number-title">${userCount}</div>
-						</c:if>
-						<c:if test="${userCount==null}">
-						<div class="number-title">0</div>
-						</c:if>
-					</div>
-					<!-- /.fun-box -->
-				</div>
-				<!-- /.col-md-3 -->
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-12 col-xs-6">
 					<div class="fun-box">
 						<div class="number">총 회원수</div>
 						<div class="number-title">${totalUser}</div>

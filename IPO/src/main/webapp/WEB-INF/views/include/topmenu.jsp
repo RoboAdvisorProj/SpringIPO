@@ -88,9 +88,10 @@
 						role="button" aria-haspopup="true">about us <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="${location}/about/vision">비전</a></li>
 							<li><a href="${location}/about/developer">개발자</a></li>
 							<li><a href="${location}/about/model">모델</a></li>
+							<li><a href="${location}/about/vision">비전</a></li>
+			
 						</ul></li>
 					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"
 						role="button" aria-haspopup="true">portfolio <span

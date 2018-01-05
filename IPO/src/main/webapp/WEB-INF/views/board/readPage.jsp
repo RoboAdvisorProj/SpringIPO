@@ -168,10 +168,8 @@ hr {
 						<ul class="timeline">
 							<!-- timeline time label -->
 							<li class="time-label" id="repliesDiv" style="cursor: pointer;"><span
-								class="bg-green"> 댓글 보기 <small id="replycntSmall">
+								class="bg-green"> 댓글 펼치기 <small id="replycntSmall">
 										[ ${boardVO.replycnt} ] </small> 
-										<i class="fa fa-refresh fa-spin fa-lg fa-fw"></i>
-										<span class="sr-only">Loading...</span>
 							</span></li>
 						</ul>
 
@@ -255,7 +253,6 @@ hr {
 {{/each}}
 </script>
 <script>
-	
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
 		if (replyer == '${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}'| ${sessionScope.SPRING_SECURITY_CONTEXT.authentication.authorities=='[ROLE_ADMIN]'}) {

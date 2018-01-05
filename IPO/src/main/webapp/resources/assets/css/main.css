@@ -3,6 +3,7 @@
 ==================================================*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:200,400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 body
 {
@@ -10,6 +11,7 @@ body
 	overflow-x: hidden;
 	color: #313131;
 }
+
 .black{
 	color: #313131;
 }
@@ -31,21 +33,22 @@ body
 	letter-spacing: 2px;
 }
 .section-item-title{
+	font-family: Ã¢â‚¬ËœNoto Sans KRÃ¢â‚¬â„¢;
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 .section-item-detail{
+	font-family: Ã¢â‚¬ËœNoto Sans KRÃ¢â‚¬â„¢;
 	font-size: 14px;
-	font-weight: 300;
 	margin-bottom: 50px;
-	color: #555;
+	color: #000000;
 	letter-spacing: .39px;
 }
 .underline{
 	height: 2px;
-	width: 50px;
+	width: 350px;
 	margin: 0px auto 60px;
 }
 /*=================================================
@@ -147,7 +150,7 @@ body
 ||				4. Our Service
 ==================================================*/
 .service{
-	background: #ededed;
+	background: #fff;
 	position: relative;
 }
 .service .section-title{
@@ -261,7 +264,8 @@ body
 	transform: scale(1.1);
 }
 .portfolio-item-details{
-	margin: 20px 0px 50px; 
+	margin: 20px 0px 50px;
+	text-align: center;
 }
 .portfolio-item-name{
 	display: inline-block;
@@ -282,7 +286,7 @@ body
 ||				8. Note
 ==================================================*/
 .note{
-	color: #dadada;
+	color: #fff;
 }
 .quote{
 	font-style: italic;
