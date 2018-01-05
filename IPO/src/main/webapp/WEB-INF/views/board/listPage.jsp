@@ -9,8 +9,6 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <c:set var="location" value="${pageContext.request.contextPath}" />
 <style>
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
@@ -58,9 +56,9 @@
 			<c:forEach items="${list}" var="boardVO" varStatus="status">
 				<tr>
 					<td class="col-md-1" style="text-align: center;">${boardVO.bno}</td>
-					<td class="col-md-6"><a href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
-					}&bno=${boardVO.bno}">${boardVO.title}<strong>[ ${boardVO.replycnt} ]</strong>
-					</a></td>
+					<td class="col-md-6"><a
+						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
+					}&bno=${boardVO.bno}">${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong></a></td>
 					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
 					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${boardVO.regdate}" /></td>
@@ -176,6 +174,7 @@
 							});
 				});
 	</script>
+
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

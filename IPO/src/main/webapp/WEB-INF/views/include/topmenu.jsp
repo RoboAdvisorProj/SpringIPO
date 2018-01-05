@@ -96,7 +96,6 @@
 						role="button" aria-haspopup="true">portfolio <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-						<li><a href="${location}/portfolio/bitcoin">비트코인</a></li>
 							<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
 								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
 								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
