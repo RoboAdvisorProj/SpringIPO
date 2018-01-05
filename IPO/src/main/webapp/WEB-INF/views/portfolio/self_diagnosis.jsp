@@ -107,29 +107,28 @@
 									</ul></td>
 							</tr>
 							<tr>
-								<th scope="row" class="firs textL">3. 다음 중 고객님의 투자경험과 가장
-									가까운 금융상품은 어느 것입니까?</th>
+								<th scope="row" class="firs textL">3. 다음 중 고객님이 투자해본 금융상품과 비슷한 것은 어느 것입니까? </th>
 								<td><ul class="list-unstyled">
 										<li><div class="radio">
 												<label><input type="radio" name="answer3" value="1"
-													id=""> 은행 예․적금, 국채, 지방채, 보증채, MMF, CMA 등</label>
+													id=""> 원금이 반드시 보장되는 은행 예․적금, 채권, 1년 미만 금융자산 등</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer3" value="2"
-													id=""> 금융채, 신용도가 높은 회사채, 채권형펀드, 원금보장형 ELS 등</label>
+													id=""> 원금 손실 가능성이 없는 회사채, 채권형펀드, 원금보장형 파생상품 등</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer3" value="3"
-													id=""> 신용도 중간 등급의 회사채, 원금의 일부만 보장되는 ELS, 혼합형 펀드 등</label>
+													id=""> 원금 손실 가능성이 있는 낮은 등급의 회사채, 원금의 일부만 보장되는 파생상품, 혼합형 펀드 등</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer3" value="4"
-													id=""> 신용도가 낮은 회사채, 주식, 원금이 보장되지 않는 ELS, 시장수익율 수준의
+													id=""> 원금 손실이 발생하는 신용도가 낮은 회사채, 주식, 원금이 보장되지 않는 파생상품, 시장 수준의
 													수익을 추구하는 주식형펀드 등</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer3" value="5"
-													id=""> ELW, 선물옵션, 시장수익율 이상의 수익을 추구하는 주식형펀드, 파생상품펀드,
+													id=""> 원금 손실의 위험이 큰 선물옵션, 시장수익율 이상의 수익을 추구하는 주식형펀드, 파생상품펀드,
 													주식 신용거래 등</label>
 											</div></li>
 									</ul></td>
@@ -140,8 +139,7 @@
 								<td><ul class="list-unstyled">
 										<li><div class="radio">
 												<label><input type="radio" name="answer4" value="1"
-													id=""> <strong>매우 낮은 수준</strong>(투자의사결정을 스스로 내려본
-													경험이 없는 정도)</label>
+													id=""> <strong>매우 낮은 수준</strong>(투자를 스스로 해본 경험이 없다)</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer4" value="2"
@@ -150,18 +148,18 @@
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer4" value="3"
-													id=""> <strong>높은 수준</strong>(투자할 수 있는 대부분의 금융상품의
+													id=""> <strong>높은 수준</strong>(대부분의 금융상품의
 													차이를 구별할 수 있는 정도)</label>
 											</div></li>
 										<li><div class="radio">
 												<label><input type="radio" name="answer4" value="4"
-													id=""> <strong>매우 높은 수준</strong>(금융상품을 비롯하여 모든 투자대상
-													상품의 차이를 이해할 수 있는 정도)</label>
+													id=""> <strong>매우 높은 수준</strong>(모든 금융상품을 이해하고 있고 속성을 아는 정도
+													)</label>
 											</div></li>
 									</ul></td>
 							</tr>
 							<tr>
-								<th scope="row" class="firs textL">5. 고객님께서 투자하고자 하는 자금은
+								<th scope="row" class="firs textL">5. 고객님께서 투자하고자 하는 자금의 비중은
 									고객님의 전체 금융자산(부동산 등을 제외) 중 어느 정도의 비중을 차지합니까?</th>
 								<td><ul class="list-unstyled">
 										<li><div class="radio">
