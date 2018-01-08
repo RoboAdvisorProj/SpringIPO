@@ -104,7 +104,14 @@
 								<li><a href="${location}/portfolio/activeInv">적극투자형</a></li>
 								<li><a href="${location}/portfolio/riskPre">공격투자형</a></li>
 						</ul></li>
-					<li><a href="${location}/board/listPage">board</a></li>
+					<li><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true">board
+								<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="${location}">공지사항</a></li>
+								<li><a href="${location}/board/listPage">자유게시판</a></li>
+							</ul></li>
 					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"
 						role="button" aria-haspopup="true">Customer Service <span
 							class="caret"></span></a>

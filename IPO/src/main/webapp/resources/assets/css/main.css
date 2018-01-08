@@ -334,9 +334,9 @@ footer{
 }
 .copy{
 	font-size: 14px;
-	font-weight: 300;
+	/* font-weight: 300; */
 	color: #fff;
-	padding: 10px 0px;
+	/* padding: 10px 0px; */
 	display: inline-block;
 }
 .fb{
