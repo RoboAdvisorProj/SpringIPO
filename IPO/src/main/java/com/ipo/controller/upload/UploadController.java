@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.UUID;
 import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.ipo.service.board.BoardService;
 import com.ipo.util.board.MediaUtils;
 import com.ipo.util.board.UploadFileUtils;
 
@@ -31,6 +35,9 @@ public class UploadController {
   @Resource(name = "uploadPath")
   private String uploadPath;
 
+  @Inject
+  BoardService boardService;
+  
   @RequestMapping(value = "/uploadForm", method = RequestMethod.GET)
   public void uploadForm() {
   }

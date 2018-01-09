@@ -1,86 +1,85 @@
-package com.ipo.dao.board;
+package com.ipo.dao.notice;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.SearchCriteria;
-import com.ipo.vo.board.BoardVO;
+import com.ipo.vo.notice.NoticeVO;
 
 @Repository
-public class BoardDAOImpl implements BoardDAO {
-
+public class NoticeDAOImpl implements NoticeDAO {
+	
 	@Inject
 	private SqlSession session;
 
 	@Override
-	public void create(BoardVO boardVO) throws Exception {
+	public void create(NoticeVO noticeVO) throws Exception {
 		// TODO Auto-generated method stub
-		session.insert("board.create", boardVO);
+		session.insert("notice.create", noticeVO);
 	}
 
 	@Override
-	public BoardVO read(Integer bno) throws Exception {
+	public NoticeVO read(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
 
-		return session.selectOne("board.read", bno);
+		return session.selectOne("notice.read", bno);
 	}
 
 	@Override
-	public void update(BoardVO boardVO) throws Exception {
+	public void update(NoticeVO noticeVO) throws Exception {
 		// TODO Auto-generated method stub
-		session.update("board.update", boardVO);
+		session.update("notice.update", noticeVO);
 	}
 
 	@Override
 	public void delete(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		session.delete("board.delete", bno);
+		session.delete("notice.delete", bno);
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
+	public List<NoticeVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.listAll");
+		return session.selectList("notice.listAll");
 	}
 
 	@Override
-	public List<BoardVO> listPage(int page) throws Exception {
+	public List<NoticeVO> listPage(int page) throws Exception {
 		// TODO Auto-generated method stub
 		if (page <= 0) {
 			page = 1;
 		}
 		page = (page - 1) * 10;
 
-		return session.selectList("board.listPage", page);
+		return session.selectList("notice.listPage", page);
 	}
 
 	@Override
-	public List<BoardVO> listCriteria(PageCriteria pageCri) throws Exception {
+	public List<NoticeVO> listCriteria(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.listCriteria", pageCri);
+		return session.selectList("notice.listCriteria", pageCri);
 	}
 
 	@Override
 	public int countPaging(PageCriteria pageCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne("board.countPaging", pageCri);
+		return session.selectOne("notice.countPaging", pageCri);
 	}
 
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria searchCri) throws Exception {
+	public List<NoticeVO> listSearch(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.listSearch", searchCri);
+		return session.selectList("notice.listSearch", searchCri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria searchCri) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne("board.listSearchCount", searchCri);
+		return session.selectOne("notice.listSearchCount", searchCri);
 	}
 
 	@Override
@@ -91,31 +90,31 @@ public class BoardDAOImpl implements BoardDAO {
 		paramMap.put("bno", bno);
 		paramMap.put("amout", amount);
 
-		session.update("board.updateReplyCnt", paramMap);
+		session.update("notice.updateReplyCnt", paramMap);
 	}
 
 	@Override
 	public void updateViewCnt(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		session.update("board.updateViewCnt", bno);
+		session.update("notice.updateViewCnt", bno);
 	}
 
 	@Override
 	public void addAttach(String fullName) throws Exception {
 		// TODO Auto-generated method stub
-		session.insert("board.addAttach", fullName);
+		session.insert("notice.addAttach", fullName);
 	}
 
 	@Override
 	public List<String> getAttach(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList("board.getAttach", bno);
+		return session.selectList("notice.getAttach", bno);
 	}
 
 	@Override
 	public void deleteAttach(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		session.delete("board.deleteAttach", bno);
+		session.delete("notice.deleteAttach", bno);
 	}
 
 	@Override
@@ -126,24 +125,19 @@ public class BoardDAOImpl implements BoardDAO {
 		paramMap.put("bno", bno);
 		paramMap.put("fullName", fullName);
 
-		session.insert("board.replaceAttach", paramMap);
+		session.insert("notice.replaceAttach", paramMap);
 
 	}
 
 	@Override
 	public void replyUpdate() throws Exception {
 		// TODO Auto-generated method stub
-		session.update("board.replyUpdate");
+		session.update("notice.replyUpdate");
 	}
 
 	@Override
 	public void boardNumReset() throws Exception {
 		// TODO Auto-generated method stub
-		session.update("board.boardNumReset");
-	}
-	@Override
-	public int fileCount(Integer bno) throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectOne("board.fileCount",bno);
+		session.update("notice.boardNumReset");
 	}
 }

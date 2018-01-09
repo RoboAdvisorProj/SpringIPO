@@ -33,7 +33,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;BOARD</li>
+				<li class="active">&nbsp;공지사항</li>
 			</ol>
 		</div>
 		<!-- /.container -->
@@ -42,7 +42,7 @@
 
 	<div class="container" style="margin-top: 50px">
 		<div class="box-header">
-			<h3 class="box-title">자유게시판</h3>
+			<h3 class="box-title">공지사항</h3>
 		</div>
 
 <div class="table-responsive">
@@ -54,23 +54,22 @@
 				<th style="text-align: center;">등록일</th>
 				<th style="text-align: center;">조회수</th>
 			</tr>
-			<c:forEach items="${list}" var="boardVO" varStatus="status">
+			<c:forEach items="${list}" var="noticeVO" varStatus="status">
 				<tr>
-					<td class="col-md-1" style="text-align: center;">${boardVO.bno}</td>
+					<td class="col-md-1" style="text-align: center;">${noticeVO.bno}</td>
 					<td class="col-md-6"><a
-						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
-					}&bno=${boardVO.bno}">${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
-					</a></td>
-					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
+						href="${location}/notice/n_readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
+					}&bno=${noticeVO.bno}">${noticeVO.title} <strong>[ ${noticeVO.replycnt} ]</strong></a></td>
+					<td class="col-md-2" style="text-align: center;">${noticeVO.writer}</td>
 					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-							value="${boardVO.regdate}" /></td>
-					<td class="col-md-1" style="text-align: center;"><span class="badge bg-red">${boardVO.viewcnt}</span></td>
+							value="${noticeVO.regdate}" /></td>
+					<td class="col-md-1" style="text-align: center;"><span class="badge bg-red">${noticeVO.viewcnt}</span></td>
 				</tr>
 			</c:forEach>
 		</table>
 </div>
-	<sec:authorize access="isAuthenticated()">
-		<a href="${location}/board/register"
+	<sec:authorize access="hasRole('ROLE_ADMIN')">
+		<a href="${location}/notice/n_register"
 			class="btn btn-primary pull-right" role="button">글쓰기</a>
 	</sec:authorize>
 	</div>
@@ -81,20 +80,20 @@
 
 				<c:if test="${pageMaker.prev}">
 					<li><a
-						href="listPage${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+						href="n_listPage${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 				</c:if>
 
 				<c:forEach begin="${pageMaker.startPage }"
 					end="${pageMaker.endPage }" var="idx">
 					<li
 						<c:out value="${pageMaker.pageCri.page == idx?'class =active':''}"/>>
-						<a href="listPage${pageMaker.makeSearch(idx)}">${idx}</a>
+						<a href="n_listPage${pageMaker.makeSearch(idx)}">${idx}</a>
 					</li>
 				</c:forEach>
 
 				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 					<li><a
-						href="listPage${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+						href="n_listPage${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 				</c:if>
 
 			</ul>
@@ -167,7 +166,7 @@
 					$('#searchBtn').on(
 							"click",
 							function(event) {
-								self.location = "listPage"
+								self.location = "n_listPage"
 										+ '${pageMaker.makeQuery(1)}'
 										+ "&searchType="
 										+ $("select option:selected").val()

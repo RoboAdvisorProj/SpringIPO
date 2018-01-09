@@ -135,7 +135,7 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="${location}">공지사항</a></li>
+								<li><a href="${location}/notice/n_listPage">공지사항</a></li>
 								<li><a href="${location}/board/listPage">자유게시판</a></li>
 							</ul></li>
 						<li><a href="#" class="dropdown-toggle"

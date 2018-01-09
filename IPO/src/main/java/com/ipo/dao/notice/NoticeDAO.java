@@ -1,22 +1,20 @@
-package com.ipo.dao.board;
+package com.ipo.dao.notice;
 
 import java.util.List;
-
 import com.ipo.util.board.PageCriteria;
 import com.ipo.util.board.SearchCriteria;
-import com.ipo.vo.board.BoardVO;
+import com.ipo.vo.notice.NoticeVO;
 
-public interface BoardDAO {
-
-	public void create(BoardVO boardVO)throws Exception;
-	public BoardVO read(Integer bno)throws Exception;
-	public void update(BoardVO boardVO)throws Exception;
+public interface NoticeDAO {
+	public void create(NoticeVO noticeVO)throws Exception;
+	public NoticeVO read(Integer bno)throws Exception;
+	public void update(NoticeVO noticeVO)throws Exception;
 	public void delete(Integer bno)throws Exception;
-	public List<BoardVO> listAll()throws Exception;
-	public List<BoardVO> listPage(int page)throws Exception;
-	public List<BoardVO> listCriteria(PageCriteria pageCri)throws Exception;
+	public List<NoticeVO> listAll()throws Exception;
+	public List<NoticeVO> listPage(int page)throws Exception;
+	public List<NoticeVO> listCriteria(PageCriteria pageCri)throws Exception;
 	public int countPaging(PageCriteria pageCri)throws Exception;
-	public List<BoardVO> listSearch(SearchCriteria searchCri)throws Exception;
+	public List<NoticeVO> listSearch(SearchCriteria searchCri)throws Exception;
 	public int listSearchCount(SearchCriteria searchCri)throws Exception;
 	public void updateReplyCnt(Integer bno,int amount)throws Exception;
 	public void updateViewCnt(Integer bno)throws Exception;
@@ -26,5 +24,4 @@ public interface BoardDAO {
 	public void replaceAttach(String fullName,Integer bno)throws Exception;
 	public void replyUpdate()throws Exception;
 	public void boardNumReset()throws Exception;
-	public int fileCount(Integer bno)throws Exception;
 }

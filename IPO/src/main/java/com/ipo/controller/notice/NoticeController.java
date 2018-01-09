@@ -1,7 +1,6 @@
-package com.ipo.controller.board;
+package com.ipo.controller.notice;
 
 import java.util.List;
-
 import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,65 +13,65 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.ipo.service.board.BoardService;
+import com.ipo.service.notice.NoticeService;
 import com.ipo.util.board.PageMaker;
 import com.ipo.util.board.SearchCriteria;
-import com.ipo.vo.board.BoardVO;
+import com.ipo.vo.notice.NoticeVO;
 
 @Controller
-@RequestMapping("/board/*")
-public class BoardController {
+@RequestMapping("/notice/*")
+public class NoticeController {
 	
-	private static final Logger logger=LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger=LoggerFactory.getLogger(NoticeController.class);
 	
 	@Inject
-	private BoardService boardService;
-	
-	@RequestMapping(value="/register",method=RequestMethod.GET)
-	public void registerGet(BoardVO board,Model model) throws Exception{
+	private NoticeService noticeService;
+		
+	@RequestMapping(value="/n_register",method=RequestMethod.GET)
+	public void registerGet(NoticeVO noticeVO,Model model) throws Exception{
 		logger.info("register get! .........");
 	}
 	
-	@RequestMapping(value="/register",method=RequestMethod.POST)
-	public String registPOST(BoardVO boardVO,RedirectAttributes rttr) throws Exception{
+	@RequestMapping(value="/n_register",method=RequestMethod.POST)
+	public String registPOST(NoticeVO noticeVO,RedirectAttributes rttr) throws Exception{
 		logger.info("regist post .........");
-		logger.info(boardVO.toString());
-		boardService.boardNumReset();
-		boardService.regist(boardVO);
+		logger.info(noticeVO.toString());
+		noticeService.boardNumReset();
+		noticeService.regist(noticeVO);
 		rttr.addFlashAttribute("msg","register success");
 		
-		return "redirect:/board/listPage";
+		return "redirect:/notice/n_listPage";
 	}
 
-	@RequestMapping(value="/readPage",method=RequestMethod.GET)
+	@RequestMapping(value="/n_readPage",method=RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno,
 							@ModelAttribute("cri") SearchCriteria searchCri,
 							Model model)throws Exception{
-		model.addAttribute(boardService.read(bno));
+		model.addAttribute(noticeService.read(bno));
 	}
-	  @RequestMapping(value = "/removePage", method = RequestMethod.POST)
+	  @RequestMapping(value = "/n_removePage", method = RequestMethod.POST)
 	  public String remove(@RequestParam("bno") int bno, SearchCriteria searchCri, RedirectAttributes rttr) throws Exception {
 
-	    boardService.remove(bno);
-		boardService.boardNumReset();
+		noticeService.remove(bno);
+		noticeService.boardNumReset();
 	    rttr.addAttribute("page", searchCri.getPage());
 	    rttr.addAttribute("perPageNum", searchCri.getPerPageNum());
 	    rttr.addFlashAttribute("msg", "remove success");
 
-	    return "redirect:/board/listPage";
+	    return "redirect:/notice/n_listPage";
 	  }
 
-	  @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
+	  @RequestMapping(value = "/n_modifyPage", method = RequestMethod.GET)
 	  public void modifyPagingGET(int bno, 
 			  										@ModelAttribute("cri") SearchCriteria searchCri, Model model) throws Exception {
 
-	    model.addAttribute(boardService.read(bno));
+	    model.addAttribute(noticeService.read(bno));
 	  }
-		@RequestMapping(value="/modifyPage",method=RequestMethod.POST)
-		public String modifyPagingPOST(BoardVO boardVO,SearchCriteria searchCri,
+		@RequestMapping(value="/n_modifyPage",method=RequestMethod.POST)
+		public String modifyPagingPOST(NoticeVO noticeVO,SearchCriteria searchCri,
 														RedirectAttributes rttr) throws Exception{
 
-			boardService.modify(boardVO);
+			noticeService.modify(noticeVO);
 			rttr.addAttribute("page",searchCri.getPage());
 			rttr.addAttribute("perPageNum",searchCri.getPerPageNum());
 			rttr.addAttribute("searchType",searchCri.getSearchType());
@@ -82,29 +81,27 @@ public class BoardController {
 			
 			logger.info(rttr.toString());
 			
-			return "redirect:/board/listPage";
+			return "redirect:/notice/n_listPage";
 		}
 
-		@RequestMapping(value="/listPage",method=RequestMethod.GET)
+		@RequestMapping(value="/n_listPage",method=RequestMethod.GET)
 		public void listPage(@ModelAttribute("cri") SearchCriteria searchCri,Model model)throws Exception{
 			logger.info(searchCri.toString());
 			
-			model.addAttribute("list",boardService.listSearchCriteria(searchCri));
-			boardService.replyUpdate();
+			model.addAttribute("list",noticeService.listSearchCriteria(searchCri));
+			noticeService.replyUpdate();
 			PageMaker pageMaker=new PageMaker();
 			pageMaker.setPageCri(searchCri);
 			
-			pageMaker.setTotalCount(boardService.listSearchCount(searchCri));
+			pageMaker.setTotalCount(noticeService.listSearchCount(searchCri));
 			
 			model.addAttribute("pageMaker",pageMaker);
-			
-		
 
 		}
 		  @RequestMapping("/getAttach/{bno}")
 		  @ResponseBody
 		  public List<String> getAttach(@PathVariable("bno")Integer bno)throws Exception{
 		    
-		    return boardService.getAttach(bno);
+		    return noticeService.getAttach(bno);
 		  }  
 }

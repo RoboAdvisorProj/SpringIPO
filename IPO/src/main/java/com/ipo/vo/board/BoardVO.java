@@ -11,9 +11,8 @@ private String writer;
 private Date regdate;
 private int viewcnt;
 private int replycnt;
+private int filecnt;
 private String[] files;
-
-
 public Integer getBno() {
 	return bno;
 }
@@ -56,7 +55,12 @@ public int getReplycnt() {
 public void setReplycnt(int replycnt) {
 	this.replycnt = replycnt;
 }
-
+public int getFilecnt() {
+	return filecnt;
+}
+public void setFilecnt(int filecnt) {
+	this.filecnt = filecnt;
+}
 public String[] getFiles() {
 	return files;
 }
@@ -66,8 +70,8 @@ public void setFiles(String[] files) {
 @Override
 public String toString() {
 	return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
-			+ regdate + ", viewcnt=" + viewcnt + ", replycnt=" + replycnt + ", files=" + Arrays.toString(files) + "]";
+			+ regdate + ", viewcnt=" + viewcnt + ", replycnt=" + replycnt + ", filecnt=" + filecnt + ", files="
+			+ Arrays.toString(files) + "]";
 }
-
 
 }

@@ -31,7 +31,7 @@ delete from tbl_board where bno=#{bno}
 <select id="listAll" resultType="BoardVO">
 <![CDATA[
 select
-	bno, title, content, writer, regdate, viewcnt, replycnt
+	bno, title, content, writer, regdate, viewcnt, replycnt, filecnt
 from
 	tbl_board
 where bno > 0
@@ -54,7 +54,7 @@ limit #{page},10
 <select id="listCriteria" resultType="BoardVO">
 <![CDATA[
 select
-	bno,title,content,writer,regdate,viewcnt, replycnt
+	bno,title,content,writer,regdate,viewcnt, replycnt ,filecnt
 from
 	tbl_board
 where bno>0
@@ -167,5 +167,9 @@ SET @COUNT = 0;
 UPDATE tbl_board SET tbl_board.bno = @COUNT:=@COUNT+1;
 ]]>
 </update>
+
+<select id="fileCount" resultType="int">
+	select count(bno) from tbl_attach where bno=#{bno}
+</select>
 
 </mapper>
