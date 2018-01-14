@@ -54,7 +54,7 @@
 					<h3>Email Address</h3>
 					<p class="contact">
 						<a href="mailto:DO!PO@gmail.com">hidoipo@gmail.com</a> <br> <a
-							href="www.themewagon.com">www.themewagon.com</a>
+							href="www.themewagon.com">www.doipo.net</a>
 					</p>
 				</div>
 

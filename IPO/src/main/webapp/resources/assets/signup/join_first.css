@@ -10,7 +10,8 @@
 	width:900px;
 	height:auto;
 	border: 1px solid rgba(70,65,61,.4);
-	margin-bottom: 150px;
+	margin-bottom: 50px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #join_form > .article:first-child{
@@ -30,8 +31,8 @@
 .agree{
 	display: inline-block;
 	vertical-align: 8px;
-	margin-top: 40px;
-	
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 .fa-check-circle-o{
 	font-size: 40px;
@@ -45,7 +46,7 @@
 }
 .important{
 	font-weight: 700;
-	color: rgba(50,70,250,.8);
+	color: #a94442;
 }
 
 .change_color{
@@ -68,4 +69,15 @@
 }
 .link_group > .link:hover{
 	cursor: pointer;
+}
+#agree_link{
+    color: #fff;
+    background-color: #17469e;
+    text-decoration: none;
+}
+#disAgree_link
+{
+	color: #fff;
+    background-color: #17469e;
+    text-decoration: none;
 }

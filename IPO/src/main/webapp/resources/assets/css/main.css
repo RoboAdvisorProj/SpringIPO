@@ -7,9 +7,10 @@
 
 body
 {
-	font-family: 'Roboto', 'Open-Sans', sans-serif;
+	/* font-family: 'Roboto', 'Open-Sans', sans-serif; */
 	overflow-x: hidden;
 	color: #313131;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .black{
@@ -33,14 +34,12 @@ body
 	letter-spacing: 2px;
 }
 .section-item-title{
-	font-family: Ã¢â‚¬ËœNoto Sans KRÃ¢â‚¬â„¢;
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 .section-item-detail{
-	font-family: Ã¢â‚¬ËœNoto Sans KRÃ¢â‚¬â„¢;
 	font-size: 14px;
 	margin-bottom: 50px;
 	color: #000000;
@@ -140,7 +139,7 @@ body
 .header-title{
 	font-size: 50px;
 	letter-spacing: 10px;
-	font-weight: 200;
+	font-weight:;
 }
 .header-subtitle{
 	font-size: 20px;

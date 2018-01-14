@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="<c:url value="/resources/assets/signup/join_first.css"/>">
 </head>
 <body>
-
-
 	<section class="section-background">
 		<div class="container">
 			<ol class="breadcrumb">
@@ -24,7 +22,7 @@
 		<!-- /.container -->
 	</section>
 
-<div id="content">
+<div id="content" style="margin-top:50px;">
 		<h3>이용약관</h3>
 		<form method="post" id="join_form" name="join_form" action="">
 			<div class="article">
@@ -37,7 +35,7 @@
 			<div class="article">
 				<i class="fa fa-check-circle-o" id="first-check" aria-hidden="true"></i>
 				<div class="agree">
-					DO!PO 서비스 이용약관 동의<span class="important">(필수)</span>
+					DO!PO 서비스 이용약관 동의<span class="important">(필수 체크)</span>
 				</div>
 				<textarea class="form-control" rows="20" cols="110" readonly="readonly">
 제1장 총칙
@@ -194,7 +192,7 @@
 			<div class="article">
 				<i class="fa fa-check-circle-o" id="second-check" aria-hidden="true"></i>
 				<div class="agree">
-					DO!PO 개인정보 수집및 이용동의<span class="important">(필수)</span>
+					DO!PO 개인정보 수집및 이용동의<span class="important">(필수 체크)</span>
 				</div>
 				<textarea class="form-control" rows="20" cols="110" readonly="readonly">
 개인정보 수집 및 이용
@@ -250,7 +248,7 @@
 			</div>
 			<div class="link_group">
 				<a class="link" id="agree_link" onclick="nextPage('${location}/user/join_second')">동의</a>
-				<a class="link" id="disAgree_link" onclick="location.href='${location}/main/main'">비동의</a>
+				<a class="link" id="disAgree_link" onclick="location.href='${location}/main/main'">취소</a>
 			</div>
 		</form>
 	</div>

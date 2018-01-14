@@ -59,7 +59,7 @@
 					<td class="col-md-1" style="text-align: center;">${noticeVO.bno}</td>
 					<td class="col-md-6"><a
 						href="${location}/notice/n_readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
-					}&bno=${noticeVO.bno}">${noticeVO.title} <strong>[ ${noticeVO.replycnt} ]</strong></a></td>
+					}&bno=${noticeVO.bno}">${noticeVO.title}</a></td>
 					<td class="col-md-2" style="text-align: center;">${noticeVO.writer}</td>
 					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${noticeVO.regdate}" /></td>

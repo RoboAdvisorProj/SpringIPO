@@ -48,6 +48,15 @@
 		})
 	}
 </script>
+<style>
+.container {
+    /* width: 1170px; */
+}
+.h3, h3 {
+    font-size: 24px;
+    margin-left: 120px;
+}
+</style>
 </head>
 <body>
 
@@ -68,7 +77,7 @@
 		<form  action="" id="join_second_form" method="post" >
 			<div id="id_field" class="join_row">
 				<label for="id">아이디 </label>
-				<input type="text" id="username" name="mid" placeholder="ID를 입력">
+				<input type="text" id="username" name="mid" placeholder="ID 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>

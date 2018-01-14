@@ -8,14 +8,15 @@
 }
 #join_second_form{
 	padding:20px;
-	width:900px;
+	width: auto;
 	height:auto;
-	border: 1px solid rgba(0,0,0,0.7);
+	/* border: 1px solid rgba(0,0,0,0.7); */
 }
 
 .join_row{
 	border-bottom: 1px solid rgba(0,0,0,0.5);
 	padding:25px 0;
+	margin-left: 100px;
 }
 
 #join_second_form > div.join_row:last-child{

@@ -8,10 +8,15 @@ $(document).ready(function(){
 		 var id =$(this).val();
 		 var $id_parent = $(this).parent();
 		 
+		 var reg_exp=new RegExp("^[a-zA-Z][a-zA-Z0-9]{3,11}$","g");
+		 var match=reg_exp.exec(id);
+		 
 		 if(id == '')
 			 errorCheckEffect("아이디를 입력하세요",$id_parent);
-		 else if(id.length > 13)
-			 errorCheckEffect("13자리 이하로 입력하세요",$id_parent);
+		 else if(id.length < 4 || id.length > 13)
+			 errorCheckEffect("아이디는 최소 5자 이상 12자리 이하로 입력해주세요.",$id_parent);
+		 else if(match==null)
+			 errorCheckEffect("아이디 첫글자는 영문으로 시작하며 영문과 숫자 조합만 가능합니다.",$id_parent);
 		 else{
 			 idCheckAjax();
 		 }

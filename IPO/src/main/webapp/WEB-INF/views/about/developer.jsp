@@ -6,6 +6,11 @@
 <title>D O ! P O</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="location" value="${pageContext.request.contextPath}"/>
+<style>
+.thumbnail{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
 </head>
 <body>
 	<!-- Home -->
@@ -83,95 +88,6 @@
 	</section>
 	<!-- /.team -->
 
-
-	<!-- Testimonial -->
-	<section class="testimonial">
-		<div class="container section-wrapper">
-			<div class="section-title">testmonials</div>
-			<!-- /.section-title -->
-			<div class="underline white"></div>
-			<div class="owl-carousel testimonial-owl">
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
-					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
-					</div>
-				</div>
-				<!-- /.item -->
-			</div>
-			<!-- /.owl-carousel -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.testimonial -->
-
-
-	<!-- Add -->
-	<section class="section-wrapper add container">
-		<div class="owl-carousel add-owl">
-			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-		</div>
-		<!-- /.owl-carousel -->
-	</section>
 	<%@ include file="../include/footer.jsp"%>
 
 
