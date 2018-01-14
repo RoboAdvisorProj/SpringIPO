@@ -303,7 +303,7 @@
 					<li class="mb5" id="max20" style="display: none; margin-top: 30px;">
 						<i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
 						당신의 주식투자 성향은 <strong>"안정형"</strong>입니다.<br> 예금 또는 적금 수준의 수익률을 기대하며, 투자원금에
-						손실이 발생하는 것을 원하지 않음 <br /> <a class="btn btn-default"
+						손실이 발생하는 것을 원하지 않음 <br/><br/> <a class="btn btn-default"
 						href="${location}/portfolio/riskAvoid" role="button">안정형
 							바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
 					</a>
@@ -312,7 +312,7 @@
 						<i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
 						당신의 주식투자 성향은 <strong>"안정추구형"</strong>입니다.<br/> 투자원금의 손실위험은 최소화하고,
 						이자소득이나 배당소득 수준의 안정적인 투자를 목표로 함. 다만, 수익을 위해 단기적인 손실을 수용할 수 있습니다.<br/>
-						예)적금보다 높은 수익을 위해 자산 중 일부를 변동성 높은 상품에 투자할 의향이 있음 <br /> <a
+						예)적금보다 높은 수익을 위해 자산 중 일부를 변동성 높은 상품에 투자할 의향이 있음<br/><br/> <a
 						class="btn btn-default" href="${location}/portfolio/safetyPre"
 						role="button">안정추구형 바로가기&nbsp;<i class="fa fa-hand-o-up"
 							aria-hidden="true"></i></a>
@@ -320,16 +320,16 @@
 					<li class="mb5" id="max60" style="display: none; margin-top: 30px;">
 						<i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
 						당신의 주식투자 성향은 <strong>"위험중립형"</strong>입니다.<br /> 투자에는 그에 상응하는 투자위험이 있음을
-						충분히 인식하고 있습니다.<br/> 예)적금보다 높은 수익을 기대할 수 있다면 일정수준의 손실위험을 감수할 수 있음 <br />
+						충분히 인식하고 있습니다.<br/> 예)적금보다 높은 수익을 기대할 수 있다면 일정수준의 손실위험을 감수할 수 있음 <br/><br/>
 						<a class="btn btn-default" href="${location}/portfolio/riskNeu"
 						role="button">위험중립형 바로가기&nbsp;<i class="fa fa-hand-o-up"
 							aria-hidden="true"></i></a>
 					</li>
 					<li class="mb5" id="max80" style="display: none; margin-top: 30px;">
 						<i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
-						당신의 주식투자 성향은 <strong>"적극투자형"</strong>입니다.<br /> 투자원금의 보전보다는 위험을 감내하더라도
+						당신의 주식투자 성향은 <strong>"적극투자형"</strong>입니다.<br/> 투자원금의 보전보다는 위험을 감내하더라도
 						높은 수준의 투자수익 실현을 추구함.<br/> 투자자금의 상당 부분을 주식, 주식형펀드 또는 파생상품 등의 위험자산에 투자할
-						의향이 있음 <br /> <a class="btn btn-default"
+						의향이 있음 <br/><br/><a class="btn btn-default"
 						href="${location}/portfolio/activeInv" role="button">적극투자형
 							바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
 					</a>
@@ -338,7 +338,7 @@
 						class="fa fa-check" aria-hidden="true" style="color: green;"></i>
 						당신의 주식투자 성향은 <strong>"공격투자형"</strong>입니다.<br/> 시장평균 수익률을 훨씬 넘어서는 높은 수준의
 						투자수익을 추구하며, 이를 위해 자산가치의 변동에 따른 손실 위험을 적극 수용.<br/> 투자자금 대부분을 주식, 주식형펀드
-						또는 파생상품 등의 위험자산에 투자할 의향이 있음 <br /> <a class="btn btn-default"
+						또는 파생상품 등의 위험자산에 투자할 의향이 있음 <br/><br/><a class="btn btn-default"
 						href="${location}/portfolio/riskPre" role="button">공격투자형
 							바로가기&nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
 					</a></li>

@@ -6,9 +6,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4" style="margin-top: 30px; margin-bottom: 20px;">
-				<div class="copy">책임팀장:&nbsp;박성진</div>
+				<div class="copy">매니저:&nbsp;박성진</div>
 				<br />
-				<div class="copy">엔지니어:&nbsp;김현우&nbsp;|&nbsp;박성진&nbsp;|&nbsp;손해성</div><br/>
+				<div class="copy">개발자:&nbsp;김현우&nbsp;|&nbsp;박성진&nbsp;|&nbsp;손해성</div><br/>
 				<div class="copy">Copyright &copy; 2018 DO!PO</div>
 			</div>
 			<div class="col-sm-4 text-center"

@@ -304,7 +304,7 @@
 						<!-- /.portfolio-img -->
 						<div class="portfolio-item-details">
 							<div class="portfolio-item-name">
-								모델 <br> <small>DO!PO에서 설계한 모델링</small>
+								모델 <br> <small>DO!PO에서 설계한 모델</small>
 							</div>
 						</div>
 						<!-- /.portfolio-item-details -->
@@ -365,7 +365,7 @@
 	<!-- /.portfolio -->
 
 
-	<!-- Note -->
+<%-- 	<!-- Note -->
 	<section class="note purple">
 		<div class="container section-wrapper text-center">
 			<p>DO!PO에 오신 걸 환영합니다.<br/>
@@ -374,10 +374,9 @@
 		</div>
 		<!-- /.container -->
 	</section>
-	<!-- /.note -->
+	<!-- /.note --> --%>
 
-
-	<!-- Fan Facts -->
+<%-- 	<!-- Fan Facts -->
 	<section class="fun">
 		<div class="container section-wrapper">
 			<h2 class="section-title black">Fun Facts</h2>
@@ -397,7 +396,8 @@
 		</div>
 		<!-- /.container -->
 	</section>
-	<!-- /.fun -->
+	<!-- /.fun --> --%>
+
 
 	<%@ include file="../include/footer.jsp"%>
 	<script>
