@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.util.UUID;
 import javax.annotation.Resource;
 import javax.inject.Inject;
-
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.ipo.service.board.BoardService;
 import com.ipo.util.board.MediaUtils;
 import com.ipo.util.board.UploadFileUtils;
@@ -80,7 +78,6 @@ public class UploadController {
   public ResponseEntity<String> uploadAjax(MultipartFile file)throws Exception{
     
     logger.info("originalName: " + file.getOriginalFilename());
-    
    
     return 
       new ResponseEntity<>(

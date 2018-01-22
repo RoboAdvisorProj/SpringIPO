@@ -26,5 +26,5 @@ public interface BoardDAO {
 	public void replaceAttach(String fullName,Integer bno)throws Exception;
 	public void replyUpdate()throws Exception;
 	public void boardNumReset()throws Exception;
-	public int fileCount(Integer bno)throws Exception;
+	public void updateFileCnt(Integer bno,int amount)throws Exception;
 }

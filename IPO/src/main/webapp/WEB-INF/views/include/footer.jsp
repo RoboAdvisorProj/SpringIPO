@@ -42,5 +42,4 @@
 <script src="<c:url value="/resources/assets/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/resources/assets/js/owl.carousel.min.js"/>"></script>
 <script src="<c:url value="/resources/assets/js/contact.js"/>"></script>
-<!-- // <script src="resources/assets/js/smoothscroll.js"></script> -->
 <script src="<c:url value="/resources/assets/js/script.js"/>"></script>

@@ -13,7 +13,7 @@ values(#{title},#{content},#{writer})
 
 <select id="read" resultType="BoardVO">
 select
-	bno, title, content, writer, regdate, viewcnt,replycnt
+	bno, title, content, writer, regdate, viewcnt, replycnt
 from
 	 tbl_board
 where bno=#{bno}
@@ -168,8 +168,10 @@ UPDATE tbl_board SET tbl_board.bno = @COUNT:=@COUNT+1;
 ]]>
 </update>
 
-<select id="fileCount" resultType="int">
-	select count(bno) from tbl_attach where bno=#{bno}
-</select>
+<!-- 첨부파일 있을시 이미지 아이콘 -->
+<update id="updateFileCnt">
+	update tbl_board set filecnt=filecnt+#{amount} 
+	where bno=#{bno}
+</update>
 
 </mapper>

@@ -51,7 +51,10 @@
 
 	<!-- Home -->
 	<section class="header" id="header">
-
+<div style="position: absolute; top: 0; min-width: 1920px; min-height:1080px; z-index: -1;  -webkit-filter: brightness(0.45);">
+ <video src="<c:url value="/resources/assets/images/finance_video.mp4"/>" width="100%" height="100%" autoplay loop muted>
+ </video>
+</div>
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->

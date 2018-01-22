@@ -55,7 +55,7 @@ body
 ==================================================*/
 .header
 {
-	background: url('../images/newyork.jpg');
+ 	/* background: url('../images/finance_video.mp4'); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -63,7 +63,6 @@ body
 	height: 100vh;
 	color: #fff;
 	text-transform: uppercase;
-
 }
 			/*navbar*/
 .navbar-default .navbar-brand{

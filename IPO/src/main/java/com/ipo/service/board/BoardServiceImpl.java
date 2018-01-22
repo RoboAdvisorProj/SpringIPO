@@ -30,6 +30,7 @@ public class BoardServiceImpl implements BoardService {
 
 		for (String fileName : files) {
 			boardDAO.addAttach(fileName);
+			boardDAO.updateFileCnt(boardVO.getBno(), 1);
 		}
 	}
 
@@ -116,8 +117,8 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.boardNumReset();
 	}
 	@Override
-	public int fileCount(Integer bno) throws Exception {
+	public void updateFileCnt(Integer bno, int amount) throws Exception {
 		// TODO Auto-generated method stub
-		return boardDAO.fileCount(bno);
+		boardDAO.updateFileCnt(bno, amount);
 	}
 }
