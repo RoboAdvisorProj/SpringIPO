@@ -36,7 +36,7 @@
 				<div class="underline purple"></div>
 				<div class="row">
 					<div class="">
-						<img src="/resources/assets/images/service.png" alt="service"
+						<img src="/resources/assets/images/traffic_blue.png" alt="service"
 							class="service-img img-responsive">
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
