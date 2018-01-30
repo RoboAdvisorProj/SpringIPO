@@ -52,6 +52,10 @@
 Investors are fully recognizing investment risk and willing to accept some level of the risk for more gain from the investment. 
 This type has middle level of the risk criteria so that we select the stocks by using this method.
 </p>
+										<a href="javascript:loginCheck()"
+											class="btn btn-default" role="button">
+											위험중립형 리스트 보기 &nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+											</a>
 								</div>
 								<!-- /.service-item -->
 							</div>
@@ -254,7 +258,19 @@ This type has middle level of the risk criteria so that we select the stocks by 
 		</div>
 		<!-- /.owl-carousel -->
 	</section>
-
+<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/portfolio/list/riskNeuList";
+	}
+}
+</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

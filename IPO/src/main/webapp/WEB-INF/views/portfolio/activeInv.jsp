@@ -52,7 +52,12 @@
 This type of the investors prefer to get high level of the returns from taking more risks than 3 types of investment above. 
 This type of investment includes derivatives and stock funds but we only consider more high risk stocks instead.
 </p>
-								</div>
+
+										<a href="javascript:loginCheck()"
+											class="btn btn-default" role="button">
+											적극투자형 리스트 보기 &nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+											</a>
+									</div>
 								<!-- /.service-item -->
 							</div>
 						</div>
@@ -254,7 +259,19 @@ This type of investment includes derivatives and stock funds but we only conside
 		</div>
 		<!-- /.owl-carousel -->
 	</section>
-
+<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/portfolio/list/activeInvList";
+	}
+}
+</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

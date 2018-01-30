@@ -53,6 +53,10 @@ We prefer to select stocks recommended as a low volatility.
 Low risk and stable status of the company will make sure investors to not to worry and anxious about their choices. 
 According to balance sheet, these safety group stocks shows moderate growth like cash cows in the market.
 </p>
+										<a href="javascript:loginCheck()"
+											class="btn btn-default" role="button">
+											안정형 리스트 보기 &nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+											</a>
 								</div>
 								<!-- /.service-item -->
 							</div>
@@ -255,7 +259,19 @@ According to balance sheet, these safety group stocks shows moderate growth like
 		</div>
 		<!-- /.owl-carousel -->
 	</section>
-
+<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/portfolio/list/riskAvoidList";
+	}
+}
+</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

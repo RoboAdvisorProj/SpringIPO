@@ -66,7 +66,8 @@
 									href="${location}/user/login"> <i
 									class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;로그인
 								</a>
-							</sec:authorize> <sec:authorize access="isAuthenticated()">
+							</sec:authorize> 
+							<sec:authorize access="isAuthenticated()">
 								<a class="loginButton" style="font-size: 12px;"
 									href="javascript:logOutCheck()"><i
 									class="fa fa-sign-out fa-lg" aria-hidden="true"></i> &nbsp;로그아웃
@@ -95,7 +96,7 @@
 						role="button" aria-haspopup="true">portfolio <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="${location}/portfolio/self_diagnosis">자가진단</a></li>
+							<li><a href="javascript:loginCheck()">자가진단</a></li>
 								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
 								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
 								<li><a href="${location}/portfolio/riskNeu">위험중립형</a></li>
@@ -116,7 +117,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="${location}/help/faq">자주 하는 질문</a></li>
 							<sec:authorize access="isAuthenticated()">
-							<li><a href="${location}/help/qna">질의응답</a></li>
+							<li><a href="${location}/help/qna">고객센터</a></li>
 							</sec:authorize>
 						</ul></li>
 				</ul>
@@ -134,6 +135,19 @@ function logOutCheck(){
 		location.href="${location}/user/logout";
 	}else{
 		return;
+	}
+}
+</script>
+<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/portfolio/self_diagnosis";
 	}
 }
 </script>

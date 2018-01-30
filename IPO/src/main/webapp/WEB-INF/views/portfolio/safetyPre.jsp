@@ -52,6 +52,10 @@
 This type minimize the loss and aims to get a stable investment as dividend or interest income levels. 
 This type may accommodate short term loss for the return and intends to buy volatility stocks as a part of the whole assets.
 </p>
+										<a href="javascript:loginCheck()"
+											class="btn btn-default" role="button">
+											안정추구형 리스트 보기 &nbsp;<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+											</a>
 								</div>
 								<!-- /.service-item -->
 							</div>
@@ -254,7 +258,19 @@ This type may accommodate short term loss for the return and intends to buy vola
 		</div>
 		<!-- /.owl-carousel -->
 	</section>
-
+<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/portfolio/list/safetyPreList";
+	}
+}
+</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
