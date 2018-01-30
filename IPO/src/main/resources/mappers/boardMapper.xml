@@ -101,7 +101,6 @@ where
  </if>  
 </sql>
 
-<!-- 중간에 게시판 번호가 삭제되면 게시글 번호를 초기화시켜서 인덱싱 -->
 <select id="listSearch" resultType="BoardVO">
 <![CDATA[  
   select * 

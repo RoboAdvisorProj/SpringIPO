@@ -69,10 +69,8 @@
 			</c:forEach>
 		</table>
 </div>
-	<sec:authorize access="isAuthenticated()">
-		<a href="${location}/board/register"
+		<a href="javascript:loginCheck()"
 			class="btn btn-primary pull-right" role="button">글쓰기</a>
-	</sec:authorize>
 	</div>
 
 	<div class="box-footer">
@@ -176,6 +174,19 @@
 							});
 				});
 	</script>
+	<script>
+function loginCheck(){
+	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
+	
+	if(user==""){
+		if(confirm("죄송합니다.\n회원전용 서비스입니다.\n로그인 페이지로 이동하시겠습니까?")){
+			location.href="${location}/user/login";
+		}
+	}else{
+		location.href="${location}/board/register";
+	}
+}
+</script>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
