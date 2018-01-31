@@ -9,6 +9,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="location" value="${pageContext.request.contextPath}" />
+<style>
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+	.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+	.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+	.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+	.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+	.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+	.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+	.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+</style>
 </head>
 <body>
 	<%@ include file="../../include/topmenu.jsp"%>
@@ -31,24 +44,32 @@
 
 <div class="table-responsive">
 		<table class="table table-bordered" style="margin-top: 50px">
-			<tr>
-				<th style="text-align: center;">번호</th>
-				<th style="text-align: center;">제목</th>
-				<th style="text-align: center;">작성자</th>
-				<th style="text-align: center;">등록일</th>
-				<th style="text-align: center;">조회수</th>
+		<tr>
+				<th style="text-align: center;">종목코드</th>
+				<th style="text-align: center;">주식명</th>
+				<th style="text-align: center;">현재가(종가)</th>
+				<th style="text-align: center;">ROE(%)</th>
+				<th style="text-align: center;">BETA</th>
+				<th style="text-align: center;">일일수익률(%)</th>
 			</tr>
-			<c:forEach items="${list}" var="boardVO" varStatus="status">
+			<c:forEach items="${list}" var="indicatorVO" varStatus="status">
 				<tr>
-					<td class="col-md-1" style="text-align: center;">${boardVO.bno}</td>
-					<td class="col-md-6"><a id="boardTitle"
-						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
-					}&bno=${boardVO.bno}">${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
-					</a></td>
-					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
-					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-							value="${boardVO.regdate}" /></td>
-					<td class="col-md-1" style="text-align: center;"><span class="badge bg-red">${boardVO.viewcnt}</span></td>
+					<td class="col-md-2" style="text-align: center;">${indicatorVO.code}</td>
+					<td class="col-md-2" style="text-align: center;">${indicatorVO.name}</td>
+					<td class="col-md-2" style="text-align: center;">${indicatorVO.price}</td>
+					<td class="col-md-2" style="text-align: center;">${indicatorVO.roe}</td>
+					<td class="col-md-2" style="text-align: center;">${indicatorVO.beta}</td>
+				<c:choose> 
+					<c:when test="${indicatorVO.chan>0}">
+					<td class="col-md-2" style="text-align: center; color: red; ">${indicatorVO.chan}</td>
+					</c:when>
+					<c:when test="${indicatorVO.chan<0}">
+					<td class="col-md-2" style="text-align: center; color: blue; ">${indicatorVO.chan}</td>
+					</c:when>
+					<c:otherwise>
+					<td class="col-md-2" style="text-align: center; color: black;">${indicatorVO.chan}</td>
+					</c:otherwise>
+				</c:choose>
 				</tr>
 			</c:forEach>
 		</table>
@@ -61,20 +82,20 @@
 
 				<c:if test="${pageMaker.prev}">
 					<li><a
-						href="listPage${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+						href="riskNeuList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 				</c:if>
 
 				<c:forEach begin="${pageMaker.startPage }"
 					end="${pageMaker.endPage }" var="idx">
 					<li
 						<c:out value="${pageMaker.pageCri.page == idx?'class =active':''}"/>>
-						<a href="listPage${pageMaker.makeSearch(idx)}">${idx}</a>
+						<a href="riskNeuList${pageMaker.makeSearch(idx)}">${idx}</a>
 					</li>
 				</c:forEach>
 
 				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 					<li><a
-						href="listPage${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+						href="riskNeuList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 				</c:if>
 
 			</ul>
@@ -92,7 +113,7 @@
 		<div class='box-body'>
 			<div class="col-xs-4">
 				<select name="searchType" class="form-control">
-					<option value="tcw"
+					<option value="n"
 						<c:out value="${cri.searchType eq 'n'?'selected':''}"/>>
 						기업명 검색</option>
 				</select>
@@ -132,7 +153,7 @@
 					$('#searchBtn').on(
 							"click",
 							function(event) {
-								self.location = "listPage"
+								self.location = "riskNeuList"
 										+ '${pageMaker.makeQuery(1)}'
 										+ "&searchType="
 										+ $("select option:selected").val()

@@ -59,7 +59,7 @@
 					<td class="col-md-1" style="text-align: center;">${boardVO.bno}</td>
 					<td class="col-md-6"><a id="boardTitle"
 						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
-					}&bno=${boardVO.bno}">${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
+					}&bno=${boardVO.bno}">${boardVO.title} <strong>[${boardVO.replycnt}]</strong>
 					</a></td>
 					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
 					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"

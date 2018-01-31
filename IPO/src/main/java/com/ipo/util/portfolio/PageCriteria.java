@@ -7,7 +7,7 @@ public class PageCriteria {
 
 	public PageCriteria() { 
 		this.page = 1;
-		this.perPageNum = 10;
+		this.perPageNum = 20;
 	}
 
 	public int getPage() {

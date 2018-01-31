@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.ipo.controller.board.BoardController;
 import com.ipo.service.indicator.IndicatorService;
+import com.ipo.util.portfolio.PageMaker;
 import com.ipo.util.portfolio.SearchCriteria;
 
 @Controller
@@ -59,25 +60,70 @@ public class PortfolioController {
 		logger.info("riskAvoidList get! .........");
 		logger.info(searchCri.toString());
 		
+		model.addAttribute("list",indicatorService.listSearchRiskAvoid(searchCri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageCri(searchCri);
+		pageMaker.setTotalCount(indicatorService.listSearchCountRiskAvoid(searchCri));
+		
+		model.addAttribute("pageMaker",pageMaker);
+		
+		
 	}
 	//안정추구형 리스트
 	@RequestMapping(value = "/list/safetyPreList", method = RequestMethod.GET)
 	public void safetyPreListGet(@ModelAttribute("cri") SearchCriteria searchCri,Model model) throws Exception {
 		logger.info("safetyPreList get! .........");
+		logger.info(searchCri.toString());
+		
+		model.addAttribute("list",indicatorService.listSearchSafetyPre(searchCri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageCri(searchCri);
+		pageMaker.setTotalCount(indicatorService.listSearchCountSafetyPre(searchCri));
+		
+		model.addAttribute("pageMaker",pageMaker);
 	}
 	//위험중립형 리스트
 	@RequestMapping(value = "/list/riskNeuList", method = RequestMethod.GET)
 	public void riskNeuListGet(@ModelAttribute("cri") SearchCriteria searchCri,Model model) throws Exception {
 		logger.info("riskNeu get! .........");
+		logger.info(searchCri.toString());
+		
+		model.addAttribute("list",indicatorService.listSearchRiskNeu(searchCri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageCri(searchCri);
+		pageMaker.setTotalCount(indicatorService.listSearchCountRiskNeu(searchCri));
+		
+		model.addAttribute("pageMaker",pageMaker);
 	}
 	//적극투자형 리스트
 	@RequestMapping(value = "/list/activeInvList", method = RequestMethod.GET)
 	public void activeInvListGet(@ModelAttribute("cri") SearchCriteria searchCri,Model model) throws Exception {
 		logger.info("activeInvget! .........");
+		logger.info(searchCri.toString());
+		
+		model.addAttribute("list",indicatorService.listSearchActiveInv(searchCri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageCri(searchCri);
+		pageMaker.setTotalCount(indicatorService.listSearchCountActiveInv(searchCri));
+		
+		model.addAttribute("pageMaker",pageMaker);
 	}
 	//공격투자형 리스트
 	@RequestMapping(value = "/list/riskPreList", method = RequestMethod.GET)
 	public void lowRiskListGet(@ModelAttribute("cri") SearchCriteria searchCri,Model model) throws Exception {
 		logger.info("riskPre get! .........");
+		logger.info(searchCri.toString());
+		
+		model.addAttribute("list",indicatorService.listSearchRiskPre(searchCri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageCri(searchCri);
+		pageMaker.setTotalCount(indicatorService.listSearchCountRiskPre(searchCri));
+		
+		model.addAttribute("pageMaker",pageMaker);
 	}
 }

@@ -37,7 +37,7 @@
 				<div class="row">
 					<div class="">
 						<img src="/resources/assets/images/traffic_green.png" alt="service"
-							class="service-img img-responsive">
+							class="service-img img-responsive" style="-webkit-filter: brightness(1.25);">
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
@@ -113,105 +113,7 @@ This type may accommodate short term loss for the return and intends to buy vola
 		<!-- /.container -->
 	</section>
 	<!-- /.testimonial -->
-
-
-	<!-- Price Table -->
-	<section class="price-table">
-		<div class="container section-wrapper">
-			<h2 class="section-title black">Price table</h2>
-			<!-- /.section-title -->
-			<div class="underline purple"></div>
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="price-title">
-								Standard <br> <span>$/Month</span>
-							</div>
-							<ul class="price-list">
-								<li>5 Products</li>
-								<li>20 Pages Galleries</li>
-								<li>500 GB Bandwidth</li>
-								<li>Developer Platform</li>
-								<li>Mobile Website and Store</li>
-								<li>Custom Domain Free</li>
-								<li>24/7 Customer Support</li>
-								<li class="text-center">
-									<button class="btn btn-default custom-btn-default">
-										Get Started Now</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /.row -->
-
-				</div>
-			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.price-table -->
-
-
+	
 	<!-- Add -->
 	<section class="section-wrapper add container">
 		<div class="owl-carousel add-owl">

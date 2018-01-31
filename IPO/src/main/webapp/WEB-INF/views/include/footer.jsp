@@ -38,6 +38,7 @@
 	</div>
 	<!-- /.container -->
 </footer>
+
 <script src="<c:url value="/resources/assets/js/jquery-1.11.2.min.js"/>"></script>
 <script src="<c:url value="/resources/assets/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/resources/assets/js/owl.carousel.min.js"/>"></script>

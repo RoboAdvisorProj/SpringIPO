@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="indicator">
 
-	<!-- 안정형 -->
+	<!--안정형-->
 	<select id="listRiskAvoid" resultType="IndicatorVO">
 	<![CDATA[
 	select 
@@ -13,24 +13,80 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from 
 		ad_indicator 
 	where 
-		value >= 2500 
-		and PER <= 3.0 and ROE >= 3 
-		and ROA >= 5 
+		value >=  2500 
+		and PER <= 7.0 
+		and ROE >= 15 
+		and ROA >= 10 
+		and BETA >= 0.85 
 		and BETA <= 1.15 
 		and NIY0 > 0 
 		and NI3Y > 0 
 		and SALE3Y > 0 
-		and DEPRT < 30 
+		and DEPRT < 50 
 		and PBR < 1.0 
 		and D_IV = 'YES'
-		and VOL_Y <= 20 
-		and VOL_D <= 5
-	order by
-		beta
-
+		order by
+			chan desc
 	]]>
 	</select>
 	
+<sql id="searchRiskAvoid">
+ <if test="searchType != null" > 
+   <if test="searchType == 'n'.toString()">
+     and name like CONCAT('%', #{keyword}, '%')
+   </if>           
+ </if>  
+</sql>
+
+<select id="listSearchRiskAvoid" resultType="IndicatorVO">
+<![CDATA[  
+ select * 
+ from ad_indicator
+ where 
+		value >=  2500 
+		and PER <= 7.0 
+		and ROE >= 15 
+		and ROA >= 10 
+		and BETA >= 0.85 
+		and BETA <= 1.15 
+		and NIY0 > 0 
+		and NI3Y > 0 
+		and SALE3Y > 0 
+		and DEPRT < 50 
+		and PBR < 1.0 
+		and D_IV = 'YES'
+]]>  
+
+  <include refid="searchRiskAvoid"></include>
+  
+<![CDATA[    
+  order by chan desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+</select>
+  
+<select id="SearchCountRiskAvoidList" resultType="int">
+<![CDATA[  
+select count(numb) 
+from ad_indicator 
+where 
+		value >=  2500 
+		and PER <= 7.0 
+		and ROE >= 15 
+		and ROA >= 10 
+		and BETA >= 0.85 
+		and BETA <= 1.15 
+		and NIY0 > 0 
+		and NI3Y > 0 
+		and SALE3Y > 0 
+		and DEPRT < 50 
+		and PBR < 1.0 
+		and D_IV = 'YES'
+]]>
+  <include refid="searchRiskAvoid"></include>
+ 
+</select>
+
 	<!-- 안정추구형 -->
 	<select id="listSafetyPre" resultType="IndicatorVO">
 	<![CDATA[
@@ -39,50 +95,164 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from 
 		ad_indicator 
 	where 
-		value >= 1000 
-		and PER <= 7.0 
-		and ROE >= 10 
-		and ROA >= 6 
-		and BETA <= 1.2 
+		value >=  1000 
+		and PER <= 12.0 
+		and ROE >= 12 
+		and ROA >= 10 
+		and BETA >= 0.75 
+		and BETA <= 1.24 
 		and NIY0 > 0 
 		and NI3Y > 0 
 		and SALE3Y > 0 
-		and DEPRT < 40 
-		and PBR < 1.3 
+		and DEPRT < 55 
+		and PBR < 1.75 
 		and D_IV = 'YES'
-		and VOL_Y <= 30 
-		and VOL_D <= 7
 	order by
-		beta
+		chan desc
 	]]>
 	</select>
 	
+<sql id="searchSafetyPre">
+ <if test="searchType != null" > 
+   <if test="searchType == 'n'.toString()">
+     and name like CONCAT('%', #{keyword}, '%')
+   </if>           
+ </if>  
+</sql>
+
+<select id="listSearchSafetyPre" resultType="IndicatorVO">
+<![CDATA[  
+  select * 
+  from 
+  	ad_indicator
+ where 
+	value >=  1000 
+	and PER <= 12.0 
+	and ROE >= 12 
+	and ROA >= 10 
+	and BETA >= 0.75 
+	and BETA <= 1.24 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 55 
+	and PBR < 1.75 
+	and D_IV = 'YES'
+]]>  
+
+  <include refid="searchSafetyPre"></include>
+  
+<![CDATA[    
+  order by chan desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+</select>
+  
+<select id="SearchCountSafetyPreList" resultType="int">
+<![CDATA[  
+  select count(numb) 
+  from ad_indicator 
+  where 
+	value >=  1000 
+	and PER <= 12.0 
+	and ROE >= 12 
+	and ROA >= 10 
+	and BETA >= 0.75 
+	and BETA <= 1.24 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 55 
+	and PBR < 1.75 
+	and D_IV = 'YES'
+]]>
+  <include refid="searchSafetyPre"></include>
+  
+  </select>
 	<!-- 위험중립형 -->
 	<select id="listRiskNeu" resultType="IndicatorVO">
 	<![CDATA[
-	select 
-		CODE, Name, Price, ROE, BETA, Chan 
-	from 
-		ad_indicator 
-	where 
-		value >= 500 
-		and PER <= 11.0 
-		and ROE >= 8 
-		and ROA >= 5 
-		and BETA >= 1.2 
-		and NIY0 > 0 
-		and NI3Y > 0 
-		and SALE3Y > 0 
-		and DEPRT < 50 
-		and PBR < 1.5 
-		and D_IV = 'YES'
-		and VOL_Y <= 50 
-		and VOL_D <= 10
-	order by
-		beta
+select 
+	CODE, Name, Price, ROE, BETA, Chan 
+from 
+	ad_indicator 
+where 
+	value >=  500 
+	and PER <= 11.0 
+	and ROE >= 8 
+	and ROA >= 5 
+	and BETA >= 0.65 
+	and BETA <= 1.7 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 65 
+	and PBR < 3 
+	and D_IV = 'YES'
+order by
+	chan desc
 	]]>
 	</select>
 	
+		<sql id="searchRiskNeu">
+ <if test="searchType != null" > 
+   <if test="searchType == 'n'.toString()">
+     and name like CONCAT('%', #{keyword}, '%')
+   </if>           
+ </if>  
+</sql>
+
+<select id="listSearchRiskNeu" resultType="IndicatorVO">
+<![CDATA[  
+select * 
+from 
+	ad_indicator
+where 
+	value >=  500 
+	and PER <= 11.0 
+	and ROE >= 8 
+	and ROA >= 5 
+	and BETA >= 0.65 
+	and BETA <= 1.7 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 65 
+	and PBR < 3 
+	and D_IV = 'YES'
+]]>  
+
+  <include refid="searchRiskNeu"></include>
+  
+<![CDATA[    
+  order by chan desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+</select>
+  
+<select id="SearchCountRiskNeuList" resultType="int">
+<![CDATA[  
+select count(numb) 
+from 
+	ad_indicator 
+where 
+	value >=  500 
+	and PER <= 11.0 
+	and ROE >= 8 
+	and ROA >= 5 
+	and BETA >= 0.65 
+	and BETA <= 1.7 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 65 
+	and PBR < 3 
+	and D_IV = 'YES'
+]]>
+  <include refid="searchRiskNeu"></include>
+ 
+</select>
+
 	<!-- 적극투자형 -->
 	<select id="listActiveInv" resultType="IndicatorVO">
 	<![CDATA[
@@ -91,22 +261,72 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from 
 		ad_indicator 
 	where 
-		value >= 200 
-		and ROE >= 6 
-		and ROA >= 5 
-		and BETA >= 1.5 
+		value >=  200 
+		and ROE >= 12 
+		and ROA >= 10 
+		and BETA >= 0.5 
 		and NIY0 > 0 
 		and NI3Y > 0 
 		and SALE3Y > 0 
 		and DEPRT < 80 
-		and PBR < 2.0 
-		and VOL_Y <= 80 
-		and VOL_D <= 15
+		and PBR < 5.0
 	order by
-		beta
+		chan desc
 	]]>
 	</select>
 	
+		<sql id="searchActiveInv">
+ <if test="searchType != null" > 
+   <if test="searchType == 'n'.toString()">
+     and name like CONCAT('%', #{keyword}, '%')
+   </if>           
+ </if>  
+</sql>
+
+<select id="listSearchActiveInv" resultType="IndicatorVO">
+<![CDATA[  
+  select * 
+  from ad_indicator
+  where 
+	value >=  200 
+	and ROE >= 12 
+	and ROA >= 10 
+	and BETA >= 0.5 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 80 
+	and PBR < 5.0
+]]>  
+
+  <include refid="searchActiveInv"></include>
+  
+<![CDATA[    
+  order by chan desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+</select>
+  
+<select id="SearchCountActiveInvList" resultType="int">
+<![CDATA[  
+  select count(numb) 
+  from ad_indicator 
+  where 
+	value >=  200 
+	and ROE >= 12 
+	and ROA >= 10 
+	and BETA >= 0.5 
+	and NIY0 > 0 
+	and NI3Y > 0 
+	and SALE3Y > 0 
+	and DEPRT < 80 
+	and PBR < 5.0
+]]>
+  <include refid="searchActiveInv"></include>
+ 
+</select>
+
+
 	<!-- 공격투자형 -->
 	<select id="listRiskPre" resultType="IndicatorVO">
 	<![CDATA[
@@ -115,11 +335,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from 
 		ad_indicator 
 	where 
-		ROE >= 12 
-		and BETA >= 2.0
+		ROE >= 16 
+		and BETA >= 0.9
 	order by
-		beta
+		chan desc
 	]]>
 	</select>
 	
+<sql id="searchRiskPre">
+ <if test="searchType != null" > 
+   <if test="searchType == 'n'.toString()">
+     and name like CONCAT('%', #{keyword}, '%')
+   </if>           
+ </if>  
+</sql>
+
+<select id="listSearchRiskPre" resultType="IndicatorVO">
+<![CDATA[  
+select * 
+from 
+  	ad_indicator
+where 
+	ROE >= 16 
+	and BETA >= 0.9
+]]>  
+
+  <include refid="searchRiskPre"></include>
+  
+<![CDATA[    
+  order by 
+  	chan desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+</select>
+  
+<select id="SearchCountRiskPreList" resultType="int">
+<![CDATA[  
+  select count(numb) 
+  from ad_indicator 
+where 
+	ROE >= 16 
+	and BETA >= 0.9
+]]>
+  <include refid="searchRiskPre"></include>
+ 
+</select>
+
+
 </mapper>

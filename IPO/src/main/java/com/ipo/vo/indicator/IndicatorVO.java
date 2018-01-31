@@ -4,36 +4,35 @@ import java.math.BigDecimal;
 
 public class IndicatorVO {
 
-	private char code;
-	private char name;
+	private String code;
+	private String name;
 	private String price;
 	private String value;
 	private BigDecimal per;
-	private String eps;
+	private BigDecimal eps;
 	private BigDecimal roa;
 	private BigDecimal roe;
 	private BigDecimal beta;
 	private BigDecimal pbr;
-	private String niy0;
+	private BigDecimal niy0;
 	private BigDecimal ni3y;
 	private BigDecimal sale3y;
 	private BigDecimal deprt;
-	private char d_iv;
+	private String d_iv;
 	private BigDecimal vol_d;
 	private BigDecimal vol_y;
 	private BigDecimal chan;
-	private String numb;
-	
-	public char getCode() {
+	private Integer numb;
+	public String getCode() {
 		return code;
 	}
-	public void setCode(char code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
-	public char getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(char name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getPrice() {
@@ -54,10 +53,10 @@ public class IndicatorVO {
 	public void setPer(BigDecimal per) {
 		this.per = per;
 	}
-	public String getEps() {
+	public BigDecimal getEps() {
 		return eps;
 	}
-	public void setEps(String eps) {
+	public void setEps(BigDecimal eps) {
 		this.eps = eps;
 	}
 	public BigDecimal getRoa() {
@@ -84,10 +83,10 @@ public class IndicatorVO {
 	public void setPbr(BigDecimal pbr) {
 		this.pbr = pbr;
 	}
-	public String getNiy0() {
+	public BigDecimal getNiy0() {
 		return niy0;
 	}
-	public void setNiy0(String niy0) {
+	public void setNiy0(BigDecimal niy0) {
 		this.niy0 = niy0;
 	}
 	public BigDecimal getNi3y() {
@@ -108,10 +107,10 @@ public class IndicatorVO {
 	public void setDeprt(BigDecimal deprt) {
 		this.deprt = deprt;
 	}
-	public char getD_iv() {
+	public String getD_iv() {
 		return d_iv;
 	}
-	public void setD_iv(char d_iv) {
+	public void setD_iv(String d_iv) {
 		this.d_iv = d_iv;
 	}
 	public BigDecimal getVol_d() {
@@ -132,20 +131,19 @@ public class IndicatorVO {
 	public void setChan(BigDecimal chan) {
 		this.chan = chan;
 	}
-	public String getNumb() {
+	public Integer getNumb() {
 		return numb;
 	}
-	public void setNumb(String numb) {
+	public void setNumb(Integer numb) {
 		this.numb = numb;
 	}
 	@Override
 	public String toString() {
-		return "PortfolioVO [code=" + code + ", name=" + name + ", price=" + price + ", value=" + value + ", per=" + per
+		return "IndicatorVO [code=" + code + ", name=" + name + ", price=" + price + ", value=" + value + ", per=" + per
 				+ ", eps=" + eps + ", roa=" + roa + ", roe=" + roe + ", beta=" + beta + ", pbr=" + pbr + ", niy0="
 				+ niy0 + ", ni3y=" + ni3y + ", sale3y=" + sale3y + ", deprt=" + deprt + ", d_iv=" + d_iv + ", vol_d="
 				+ vol_d + ", vol_y=" + vol_y + ", chan=" + chan + ", numb=" + numb + "]";
 	}
-	
 	
 	
 }
