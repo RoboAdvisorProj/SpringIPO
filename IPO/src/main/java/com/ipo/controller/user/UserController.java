@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Random;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +21,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ipo.service.mail.MailService;
 import com.ipo.service.user.UserService;
 import com.ipo.util.security.ShaEncoder;
-import com.ipo.vo.login.LoginDTO;
 import com.ipo.vo.user.UserVO;
 
 @Controller
@@ -42,10 +39,10 @@ public class UserController {
 	private MailService mailService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginGET(HttpServletRequest request,	Model model,
+	public String loginGET(HttpServletRequest request,	RedirectAttributes rttr,
 			@RequestParam(value="failure",defaultValue="login_success") String msg) {
 		logger.info("==========LoginGet==========");
-		model.addAttribute("msg", msg);
+		rttr.addAttribute("msg", msg);
 		if(msg.equals("login_success"))
 			request.getSession().setAttribute("prevpage", request.getHeader("referer"));
 		return "user/login";

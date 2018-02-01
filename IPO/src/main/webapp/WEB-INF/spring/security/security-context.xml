@@ -37,7 +37,7 @@
 			invalidate-session="true" />
 		<remember-me key="nieeKey" token-validity-seconds="604800"/>
 		<session-management>
-			<concurrency-control max-sessions="1" />
+			<concurrency-control max-sessions="1" expired-url="/main/main" error-if-maximum-exceeded="true"/>
 		</session-management>
 	</http>
 	<jdbc-user-service data-source-ref="dataSource" id="userService"

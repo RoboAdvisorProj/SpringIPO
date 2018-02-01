@@ -39,6 +39,7 @@ public class BoardController {
 		logger.info(boardVO.toString());
 		boardService.boardNumReset();
 		boardService.regist(boardVO);
+		boardService.updateFile();
 		rttr.addFlashAttribute("msg","register success");
 		
 		return "redirect:/board/listPage";
@@ -77,7 +78,7 @@ public class BoardController {
 			rttr.addAttribute("perPageNum",searchCri.getPerPageNum());
 			rttr.addAttribute("searchType",searchCri.getSearchType());
 			rttr.addAttribute("keyword",searchCri.getKeyword());
-			
+			boardService.updateFile();
 			rttr.addFlashAttribute("msg","modify success");
 			
 			logger.info(rttr.toString());

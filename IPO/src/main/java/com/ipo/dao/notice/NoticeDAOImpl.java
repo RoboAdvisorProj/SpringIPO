@@ -140,4 +140,9 @@ public class NoticeDAOImpl implements NoticeDAO {
 		// TODO Auto-generated method stub
 		session.update("notice.boardNumReset");
 	}
+	@Override
+	public void updateFile() throws Exception {
+		// TODO Auto-generated method stub
+	session.update("notice.updateFile");	
+	}
 }

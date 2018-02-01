@@ -43,16 +43,6 @@
 							<col width="100px">
 							<col width="100px">
 						</colgroup>
-						<!-- 						<thead>
-							<tr>
-								<th class="firs">평가 내용</th>
-								<th>전혀아니다</th>
-								<th>드물지만있다</th>
-								<th>가끔있다</th>
-								<th>자주있다</th>
-								<th>항상그렇다</th>
-							</tr>,/
-						</thead> -->
 						<tbody>
 							<tr>
 								<th scope="row" class="firs textL">1. 고객님의 연령대는 어떻게 되십니까?</th>

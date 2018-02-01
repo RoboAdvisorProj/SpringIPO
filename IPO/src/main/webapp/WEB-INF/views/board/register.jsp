@@ -12,9 +12,6 @@
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-<!-- include summernote css/js-->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 <style>
 .fileDrop {
 	width: 100%;
@@ -62,7 +59,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1">내용</label>
-									<textarea id="summernote" class="form-control" name="content" rows="15" 
+									<textarea id="contents" class="form-control" name="content" rows="15" 
 									placeholder="게시판에 글쓰기를 하는 경우, 본문에 개인정보(주민등록번호, 성명, 연락처 등)가 포함되어 게시되지 않도록 유의하시기 바랍니다.
 개인정보를 포함하여 게시하는 경우에는 불특정 다수에게 개인정보가 노출되어 악용될 수 있으며,
 특히, 타인의 개인정보가 노출되는 경우에는 개인정보보호법에 따라 처벌을 받을 수 있음을 알려드립니다."></textarea>
@@ -96,25 +93,7 @@
 
 	<script type="text/javascript" src="<c:url value="/resources/assets/js/upload.js"/>"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
- <script type="text/javascript">
-      $(document).ready(function() {
-        $('#summernote').summernote({
-          height: 300,
-          minHeight: null,
-          maxHeight: null,
-          focus: true,
-          callbacks: {
-            onImageUpload: function(files, editor, welEditable) {
-              for (var i = files.length - 1; i >= 0; i--) {
-                sendFile(files[i], this);
-              }
-            }
-          }
-        });
-      });
-  </script>
-
-
+ 
 	<script id="template" type="text/x-handlebars-template">
 <li>
   <span class="mailbox-attachment-icon has-img">

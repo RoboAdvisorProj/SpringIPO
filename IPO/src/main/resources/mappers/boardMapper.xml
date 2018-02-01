@@ -167,10 +167,11 @@ UPDATE tbl_board SET tbl_board.bno = @COUNT:=@COUNT+1;
 ]]>
 </update>
 
-<!-- 첨부파일 있을시 이미지 아이콘 -->
-<update id="updateFileCnt">
-	update tbl_board set filecnt=filecnt+#{amount} 
-	where bno=#{bno}
+<!-- 이미지 테이블을 카운트해서 게시판에 갯수 업데이트-->
+<update id="updateFile">
+<![CDATA[
+update tbl_board set filecnt=(select count(bno) from tbl_attach where bno=tbl_board.bno) where bno>0
+]]>
 </update>
 
 </mapper>

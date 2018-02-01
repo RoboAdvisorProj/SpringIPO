@@ -40,9 +40,15 @@ public class UserLoginSuccessHandler extends SavedRequestAwareAuthenticationSucc
 		if(session != null) {
 			String path = (String) session.getAttribute("prevpage");
 			
+	
+			
 			/*전페이지가 회원가입 성공페이지일경우 메인으로바꿈*/
 			if(path.contains("signupSuccess")) {
 				path = path.replace("user/signupSuccess", "main/main");	
+			}
+			/*로그인 버튼 두번 클릭시 로그인 후 다시 로그인 페이지로 가는거 방지*/
+			else if(path.contains("login")) {
+				path = path.replace("user/login", "main/main");	
 			}
 			/*전 페이지가 안정형일 경우 로그인시 안정형으로 이동*/
 			else if(path.contains("riskAvoid")) {

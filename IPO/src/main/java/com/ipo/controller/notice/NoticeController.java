@@ -38,6 +38,7 @@ public class NoticeController {
 		logger.info(noticeVO.toString());
 		noticeService.boardNumReset();
 		noticeService.regist(noticeVO);
+		noticeService.updateFile();
 		rttr.addFlashAttribute("msg","register success");
 		
 		return "redirect:/notice/n_listPage";
@@ -76,7 +77,7 @@ public class NoticeController {
 			rttr.addAttribute("perPageNum",searchCri.getPerPageNum());
 			rttr.addAttribute("searchType",searchCri.getSearchType());
 			rttr.addAttribute("keyword",searchCri.getKeyword());
-			
+			noticeService.updateFile();
 			rttr.addFlashAttribute("msg","modify success");
 			
 			logger.info(rttr.toString());

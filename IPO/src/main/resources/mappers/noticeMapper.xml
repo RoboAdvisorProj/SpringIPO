@@ -167,5 +167,10 @@ SET @COUNT = 0;
 UPDATE tbl_notice SET tbl_notice.bno = @COUNT:=@COUNT+1;
 ]]>
 </update>
-
+<!-- 이미지 테이블을 카운트해서 게시판에 갯수 업데이트-->
+<update id="updateFile">
+<![CDATA[
+update tbl_notice set filecnt=(select count(bno) from tbl_attach_notice where bno=tbl_notice.bno) where bno>0
+]]>
+</update>
 </mapper>

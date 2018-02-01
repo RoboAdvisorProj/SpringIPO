@@ -60,10 +60,14 @@
 					<td class="col-md-6"><a id="boardTitle"
 						href="${location}/board/readPage${pageMaker.makeSearch(pageMaker.pageCri.page)
 					}&bno=${boardVO.bno}">${boardVO.title} <strong>[${boardVO.replycnt}]</strong>
-					</a></td>
+					</a>
+					<c:if test="${boardVO.filecnt>0}">
+						<img src="<c:url value="/resources/assets/images/picture.png"/>">
+					</c:if>
+					</td>
 					<td class="col-md-2" style="text-align: center;">${boardVO.writer}</td>
 					<td class="col-md-2" style="text-align: center;"><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-							value="${boardVO.regdate}" /></td>
+							value="${boardVO.regdate}"/></td>
 					<td class="col-md-1" style="text-align: center;"><span class="badge bg-red">${boardVO.viewcnt}</span></td>
 				</tr>
 			</c:forEach>
@@ -139,6 +143,7 @@
 
 		</div>
 	</div>
+
 	<!-- 엔터키 눌렀을때 검색 버튼 동작 -->
 	<script>
 	$("#keywordInput").keyup(function(event) {

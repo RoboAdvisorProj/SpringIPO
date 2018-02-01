@@ -46,10 +46,11 @@ public class UploadController {
     logger.info("originalName: " + file.getOriginalFilename());
     logger.info("size: " + file.getSize());
     logger.info("contentType: " + file.getContentType());
-
+    
     String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
 
     model.addAttribute("savedName", savedName);
+    
 
     return "uploadResult";
   }
@@ -129,14 +130,14 @@ public class UploadController {
     
   @ResponseBody
   @RequestMapping(value="/deleteFile", method=RequestMethod.POST)
-  public ResponseEntity<String> deleteFile(String fileName){
+  public ResponseEntity<String> deleteFile(String fileName) throws Exception{
     
     logger.info("delete file: "+ fileName);
     
     String formatName = fileName.substring(fileName.lastIndexOf(".")+1);
     
     MediaType mType = MediaUtils.getMediaType(formatName);
-    
+   
     if(mType != null){      
       
       String front = fileName.substring(0,12);
@@ -146,13 +147,13 @@ public class UploadController {
     
     new File(uploadPath + fileName.replace('/', File.separatorChar)).delete();
     
-    
+
     return new ResponseEntity<String>("deleted", HttpStatus.OK);
   }  
   
   @ResponseBody
   @RequestMapping(value="/deleteAllFiles", method=RequestMethod.POST)
-  public ResponseEntity<String> deleteFile(@RequestParam("files[]") String[] files){
+  public ResponseEntity<String> deleteFile(@RequestParam("files[]") String[] files) throws Exception{
     
     logger.info("delete all files: "+ files);
     

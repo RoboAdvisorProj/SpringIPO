@@ -142,13 +142,8 @@ public class BoardDAOImpl implements BoardDAO {
 		session.update("board.boardNumReset");
 	}
 	@Override
-	public void updateFileCnt(Integer bno, int amount) throws Exception {
+	public void updateFile() throws Exception {
 		// TODO Auto-generated method stub
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-
-		paramMap.put("bno", bno);
-		paramMap.put("amout", amount);
-
-		session.update("board.updateFileCnt", paramMap);
+	session.update("board.updateFile");	
 	}
 }

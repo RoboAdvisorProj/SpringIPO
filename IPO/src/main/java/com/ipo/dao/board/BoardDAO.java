@@ -16,7 +16,6 @@ public interface BoardDAO {
 	public List<BoardVO> listPage(int page)throws Exception;
 	public List<BoardVO> listCriteria(PageCriteria pageCri)throws Exception;
 	public int countPaging(PageCriteria pageCri)throws Exception;
-	
 	public List<BoardVO> listSearch(SearchCriteria searchCri)throws Exception;
 	public int listSearchCount(SearchCriteria searchCri)throws Exception;
 	public void updateReplyCnt(Integer bno,int amount)throws Exception;
@@ -27,5 +26,5 @@ public interface BoardDAO {
 	public void replaceAttach(String fullName,Integer bno)throws Exception;
 	public void replyUpdate()throws Exception;
 	public void boardNumReset()throws Exception;
-	public void updateFileCnt(Integer bno,int amount)throws Exception;
+	public void updateFile()throws Exception;
 }

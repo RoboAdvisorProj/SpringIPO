@@ -118,4 +118,9 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		noticeDAO.boardNumReset();
 	}
+	@Override
+	public void updateFile() throws Exception {
+		// TODO Auto-generated method stub
+	noticeDAO.updateFile();	
+	}
 }

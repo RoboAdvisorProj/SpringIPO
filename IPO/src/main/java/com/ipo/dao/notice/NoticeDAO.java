@@ -24,4 +24,5 @@ public interface NoticeDAO {
 	public void replaceAttach(String fullName,Integer bno)throws Exception;
 	public void replyUpdate()throws Exception;
 	public void boardNumReset()throws Exception;
+	public void updateFile()throws Exception;
 }

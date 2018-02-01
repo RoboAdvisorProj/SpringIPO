@@ -29,4 +29,6 @@ public interface NoticeService {
 	public void replyUpdate()throws Exception;
 	
 	public void boardNumReset()throws Exception;
+	
+	public void updateFile()throws Exception;
 }
