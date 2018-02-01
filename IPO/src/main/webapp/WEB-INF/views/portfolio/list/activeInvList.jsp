@@ -61,10 +61,10 @@
 					<td class="col-md-2" style="text-align: center;">${indicatorVO.beta}</td>
 				<c:choose> 
 					<c:when test="${indicatorVO.chan>0}">
-					<td class="col-md-2" style="text-align: center; color: red; ">${indicatorVO.chan}</td>
+					<td class="col-md-2" style="text-align: center; color: red; ">▲ +${indicatorVO.chan}</td>
 					</c:when>
 					<c:when test="${indicatorVO.chan<0}">
-					<td class="col-md-2" style="text-align: center; color: blue; ">${indicatorVO.chan}</td>
+					<td class="col-md-2" style="text-align: center; color: blue; ">▼ ${indicatorVO.chan}</td>
 					</c:when>
 					<c:otherwise>
 					<td class="col-md-2" style="text-align: center; color: black;">${indicatorVO.chan}</td>

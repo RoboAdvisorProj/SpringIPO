@@ -96,7 +96,7 @@
 						role="button" aria-haspopup="true">portfolio <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="javascript:loginCheck()">자가진단</a></li>
+							<li><a href="javascript:selfD_loginCheck()">자가진단</a></li>
 								<li><a href="${location}/portfolio/riskAvoid">안정형</a></li>
 								<li><a href="${location}/portfolio/safetyPre">안정추구형</a></li>
 								<li><a href="${location}/portfolio/riskNeu">위험중립형</a></li>
@@ -139,7 +139,7 @@ function logOutCheck(){
 }
 </script>
 <script>
-function loginCheck(){
+function selfD_loginCheck(){
 	var user="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}";
 	
 	if(user==""){

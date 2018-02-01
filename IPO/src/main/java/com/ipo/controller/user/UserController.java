@@ -4,6 +4,8 @@ import java.security.Principal;
 import java.util.Map;
 import java.util.Random;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +42,13 @@ public class UserController {
 	private MailService mailService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public void loginGET(@ModelAttribute("dto") LoginDTO loginDTO) {
+	public String loginGET(HttpServletRequest request,	Model model,
+			@RequestParam(value="failure",defaultValue="login_success") String msg) {
 		logger.info("==========LoginGet==========");
+		model.addAttribute("msg", msg);
+		if(msg.equals("login_success"))
+			request.getSession().setAttribute("prevpage", request.getHeader("referer"));
+		return "user/login";
 	}
 
 	@RequestMapping(value = "/join_first", method = RequestMethod.GET)
