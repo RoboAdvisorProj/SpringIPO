@@ -46,7 +46,7 @@ public class UserLoginSuccessHandler extends SavedRequestAwareAuthenticationSucc
 			if(path.contains("signupSuccess")) {
 				path = path.replace("user/signupSuccess", "main/main");	
 			}
-			/*로그인 버튼 두번 클릭시 로그인 후 다시 로그인 페이지로 가는거 방지*/
+			/*로그인 버튼 두번 클릭시 로그인 후 다시 로그인 페이지로 가는거 방지(로그인->메인)*/
 			else if(path.contains("login")) {
 				path = path.replace("user/login", "main/main");	
 			}
@@ -69,6 +69,14 @@ public class UserLoginSuccessHandler extends SavedRequestAwareAuthenticationSucc
 			/*전 페이지가 공격투자형일 경우 로그인시 공격투자형으로 이동*/
 			else if(path.contains("riskPre")) {
 				path = path.replace("portfolio/riskPre", "portfolio/list/riskPreList");	
+			}
+			/*전 페이지가 아이디 찾기일 경우 로그인시 메인으로 이동*/
+			else if(path.contains("findId")) {
+				path = path.replace("user/findId", "main/main");	
+			}
+			/*전 페이지가 비밀번호 찾기일 경우 로그인시 메인으로 이동*/
+			else if(path.contains("findPw")) {
+				path = path.replace("user/findPw", "main/main");	
 			}
 			
 			if(path != null) {
