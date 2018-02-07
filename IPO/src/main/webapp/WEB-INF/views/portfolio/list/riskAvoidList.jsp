@@ -42,6 +42,56 @@
 			<h3 class="box-title">안정형 리스트</h3>
 		</div>
 
+		<div class="container">
+					<a href="#none" class="pull-right" data-toggle="modal" 
+					style="margin-right:20px;"
+						data-target="#myModal"><strong>리스트 상세설명 보기</strong></a>
+					<!-- Trigger the modal with a button -->
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">리스트 상세설명</h4>
+								</div>
+								<div class="modal-body">
+
+									<dl>
+										<dt>종목코드</dt>
+										<dd>각 종목의 고유번호로 거래소에서 사용되는 코드입니다.</dd>
+										<br/>
+
+										<dt>주식명</dt>
+										<dd>해당 주식을 발행한 회사명 입니다.</dd>
+										<br/>
+
+										<dt>현재가(종가)</dt>
+										<dd>매일 장 마감(15:30) 시 최종 가격입니다.</dd>
+										<br/>
+
+										<dt>ROE</dt>
+										<dd>기업의 순수 자본 대비 당기순이익 비율입니다.</dd>
+										<br/>
+
+										<dt>BETA</dt>
+										<dd>해당 종목의 소속 시장(코스피 혹은 코스닥) 대비 몇 배나 수익률을 기록했는지 나타냅니다.</dd>
+										<br/>
+										
+										<dt>일일수익률</dt>
+										<dd>전일 대비 주식가격 변동분 입니다.</dd>
+										<br/>
+									</dl>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger"
+										data-dismiss="modal">닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 <div class="table-responsive">
 		<table class="table table-bordered" style="margin-top: 50px">
 			<tr>

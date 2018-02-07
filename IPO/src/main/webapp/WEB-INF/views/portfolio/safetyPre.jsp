@@ -76,34 +76,29 @@ This type may accommodate short term loss for the return and intends to buy vola
 	<!-- Testimonial -->
 	<section class="testimonial">
 		<div class="container section-wrapper">
-			<div class="section-title">testmonials</div>
+			<div class="section-title">STOCK QUOTES</div>
 			<!-- /.section-title -->
 			<div class="underline white"></div>
 			<div class="owl-carousel testimonial-owl">
 				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
+					<p class="testimonial-detail">One of the funny things about the stock market is that every time one person buys, 
+					another sells, and both think they are astute.</p>
 					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
+						<strong>William Feather</strong>
 					</div>
 				</div>
 				<!-- /.item -->
 				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
+					<p class="testimonial-detail">Stock market bubbles don't grow out of thin air. They have a solid basis in reality, but reality as distorted by a misconception.</p>
 					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
+						<strong>George Soros</strong>
 					</div>
 				</div>
 				<!-- /.item -->
 				<div class="item">
-					<p class="testimonial-detail">The Department of Computer
-						Science and Engineering, Islamic University of Technology(IUT), is
-						one of the</p>
+					<p class="testimonial-detail">I never attempt to make money on the stock market. I buy on the assumption that they could close the market the next day and not reopen it for five years.</p>
 					<div class="test-name">
-						<strong>Mohoshin Ahmed</strong> <br> ROX THEME
+						<strong>Warren Buffett</strong>
 					</div>
 				</div>
 				<!-- /.item -->
@@ -113,47 +108,27 @@ This type may accommodate short term loss for the return and intends to buy vola
 		<!-- /.container -->
 	</section>
 	<!-- /.testimonial -->
-	
+
 	<!-- Add -->
 	<section class="section-wrapper add container">
 		<div class="owl-carousel add-owl">
 			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
+				<img src="/resources/assets/images/mkicon.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
+				<img src="/resources/assets/images/navericon.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
+				<img src="/resources/assets/images/googleicon.png" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-1.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-2.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-3.png" alt="add"
-					class="add-item">
-			</div>
-			<!-- /.item -->
-			<div class="item">
-				<img src="/resources/assets/images/add-4.png" alt="add"
+				<img src="/resources/assets/images/bloombergicon.jpg" alt="add"
 					class="add-item">
 			</div>
 			<!-- /.item -->

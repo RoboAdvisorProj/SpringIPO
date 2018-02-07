@@ -46,16 +46,10 @@
 				<!-- /.col-md-3 -->
 
 				<div class="col-md-6 col-sm-12">
-					<p class="about-detail">The Earth was small, light blue, and so
-						touchingly alone, our home that must be defended like a holy
-						relic. The Earth was absolutely round. I believe I never knew what
-						saw for the first time how beautiful our planet is. Mankind, let
-						us preserve and increase this beauty, and not destroy
-						it!Houston.landed.We are all connected; To each other,
-						biologically. To the earth, chemically. To the rest of the
-						universe atomically. The Earth was absolutely round. I believe I
-						never knew what saw for the first time how beautiful our planet
-						is.</p>
+					<p class="about-detail">DOIPO의 주식종목 스크리닝 모델은 3가지 성격으로 설명됩니다. 첫째는 가치 선정으로, 기업의 최신 재무재표
+   공시자료를 활용해 기업의 안정성, 성장성, 기업가치가 우수한 주식을 선별합니다. 두번째는 재무재표 지표에
+   거시경제적인 변수들을 추가해 통합적인 위험선호별 주식종목 추천을 제안합니다. 세번째는 역동성으로 매일
+   종가 기준으로 산출된 주식지표들을 통해 매일매일 추천종목이 재선정되며, 이는 시장의 추세를 따라갑니다.</p>
 					<!-- /.about-detail -->
 				</div>
 				<!-- /.col-md-6 -->
