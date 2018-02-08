@@ -39,11 +39,11 @@
 			data:JSON.stringify(data),
 			success:function(msg){
 				if(msg == "possible"){
-					$("#id_field > .input_check").css("color","green").text("사용가능한 아이디입니다")
+					$("#id_field > .input_check").css("color","green").text("사용가능한 아이디입니다.")
 					 successCheckEffect($("#id_field"));
 				}
 				else
-					$("#id_field > .input_check").css("color","red").text("이미 있는 아이디입니다")
+					$("#id_field > .input_check").css("color","red").text("이미 있는 아이디입니다.")
 			}
 		})
 	}
@@ -54,7 +54,6 @@
 }
 .h3, h3 {
     font-size: 24px;
-    margin-left: 120px;
 }
 #join_second_form{
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -75,9 +74,12 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	</section>
 
 
-	<div class="container">
+	<div class="container" style="margin-top:50px;">
 		<h3>기본정보입력</h3>
-		<form  action="" id="join_second_form" method="post" >
+		<br>
+		<span style="color:red;">※회원가입후 등록된 사용자 정보가 아니면, 회원정보 찾기시 없는 회원으로 간주하기 때문에 반드시 정확하게 입력해주세요.</span>
+		<br>
+		<form  action="" id="join_second_form" method="post" style="margin-top:30px;" >
 			<div id="id_field" class="join_row">
 				<label for="id">아이디 </label>
 				<input type="text" id="username" name="mid" placeholder="ID 입력">
@@ -127,12 +129,11 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 				<input type="text" id="last_email" name="last_email" placeholder="직접입력">
 				<select name="email_box" id="email_box">
 					<option value="empty" selected>직접입력</option>
-					<option value="naver.com">naver.com</option>
 					<option value="daum.net">daum.net</option>
 					<option value="gmail.com">gmail.com</option>
+					<option value="hanmail.net">hanmail.net</option>
 					<option value="nate.com">nate.com</option>
-					<option value="hanmir.com">hanmir.com</option>
-					<option value="yahoo.com">yahoo.com</option>
+					<option value="naver.com">naver.com</option>
 				</select>
 				<input type="hidden" name="memail" id="mEmail">
 				<span class="input_check"></span>

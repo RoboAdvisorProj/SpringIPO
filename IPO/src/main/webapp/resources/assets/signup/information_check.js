@@ -77,26 +77,37 @@ $(document).ready(function(){
 	/* 이메일 처리코드 */
 	$("#first_email").stop().blur(function(){
 		email_check = emailCheck()
-		var first_email = $("#first_email").val();
-		var $email_field = $("#email_field");
-		
-		if(email_check)
-			successCheckEffect($email_field);
-		else
-			errorCheckEffect("이메일을 입력하세요",$email_field)
-			
-	})
-	
+		var regType = /^[A-Za-z0-9+]*$/;
 
-	$("#last_email").stop().blur(function(){
-		email_check = emailCheck()
+		var first_email = $("#first_email").val();
 		var last_email = $("#last_email").val();
 		var $email_field = $("#email_field");
 		
 		if(email_check)
 			successCheckEffect($email_field);
 		else
-			errorCheckEffect("이메일을 입력하세요",$email_field)
+			errorCheckEffect("이메일 주소를 입력하세요",$email_field)
+		
+		if(regType.test(first_email)==false && regType.test(last_email)==false)
+			errorCheckEffect("이메일 텍스트 형식이 잘못되었습니다.",$email_field)
+	})
+	
+
+	$("#last_email").stop().blur(function(){
+		email_check = emailCheck()
+		var regType = /^[A-Za-z0-9+]*$/;
+		var first_email = $("#first_email").val();
+		var last_email = $("#last_email").val();
+		var $email_field = $("#email_field");
+		
+		if(email_check)
+			successCheckEffect($email_field); 
+		else
+			errorCheckEffect("이메일 아이디를 입력하세요.",$email_field)
+			
+			
+		if(regType.test(first_email)==false && regType.test(last_email)==false)
+			errorCheckEffect("이메일 텍스트 형식이 잘못되었습니다.",$email_field)
 	})
 	
 	$("#email_box").stop().change(function(){		
@@ -111,8 +122,10 @@ $(document).ready(function(){
 		var tel =$(this).val();
 		var $tel_parent = $(this).parent();
 		 
-		if(tel == '' || tel.indexOf("-")!= -1 || tel.length!=11)
+		if(tel == '' || tel.indexOf("-")!= -1)
 			errorCheckEffect("'-'제외하고 올바르게 입력하세요", $tel_parent);
+		else if(tel.length!=11)
+			errorCheckEffect("전화번호 11자리를 올바르게 입력하세요.", $tel_parent);
 		else
 		 	successCheckEffect($tel_parent);	 
 	})
@@ -148,8 +161,8 @@ function selectEmailCheck(){
 		$("#last_email").prop("readonly", true);
 	}
 	
-	if( $("#last_email").val() ==''){
-		errorCheckEffect("이메일 아이디를 입력하세요",$email_field)
+	if($("#last_email").val() =='' || $("#first_email").val() ==''){
+		errorCheckEffect("이메일을 정확하게 입력하세요",$email_field)
 	}else
 		successCheckEffect($email_field);
 }

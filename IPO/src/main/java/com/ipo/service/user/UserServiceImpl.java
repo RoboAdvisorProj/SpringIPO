@@ -11,7 +11,6 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	private UserDAO userDAO;
 
-
 	@Override
 	public void register(UserVO userVO) throws Exception {
 		// TODO Auto-generated method stub
@@ -47,6 +46,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userDAO.findPw(userVO);
 	}
+
 	@Override
 	public int selectCountUser() throws Exception {
 		// TODO Auto-generated method stub

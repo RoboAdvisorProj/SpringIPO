@@ -78,7 +78,8 @@ public class UserController {
 		rttr.addFlashAttribute("user", userVO.getMid());
 		return "redirect:/user/signupSuccess";
 	}
-
+	
+	/*아이디 중복확인*/
 	@ResponseBody
 	@RequestMapping(value = "/isIdExist", method = RequestMethod.POST)
 	public String isIdExist(@RequestBody Map<String, Object> map) throws Exception {
