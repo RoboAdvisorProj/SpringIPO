@@ -47,13 +47,13 @@
 						 또한, DO!PO 회원이 아닐시 일부 서비스 제약을 받습니다.</div>
 					</li>
 					<li><span class="base_question"><strong><span class='text-primary'>2.게시글에 전화번호,이메일을 기재해도 되나요?</span></strong></span>
-						<div class="detail_answer">DO!PO에서는 무분별한 스팸 문자나 장난 전화 등을 막기 위해서 연락처 열람 시 해당 정보가 사이트에 기록되어 열람한 회원을 
-																확인 할 수 있는 기능을 제공하고 있으며 운영에 필요한 주 수입원 중 하나이므로 불편하시더라도 연락처를 본문 등에 기재하지 않도록 부탁드립니다
+						<div class="detail_answer">DO!PO에서는 <strong>개인정보보호법 제29조(안전조치의무)</strong>에 의거하여 무분별한 스팸 문자나 개인정보 보호를 위해 
+						홈페이지 이용자가 인터넷 게시판을 이용하면서 부주의로 자신의 개인정보를 게재하지 않도록 피해가능성 등에 대한 경고문을 사전에 안내하고, 개인정보 유출 방지를 위한 안전조치를 취하도록 노력하겠습니다.
 						</div>
 					</li>
 					<li><span class="base_question"><strong><span class='text-primary'>3.사이트에 치명적인 오류나 건의사항이 있어요.</span></strong></span>
-						<div class="detail_answer">DO!PO@gmail.com로 보내주시면 됩니다.
-																치명적인 버그라던가 좋은 건의 사항인 경우에는 소정의 상품을 드리고 있으니 많이 제보해주세요</div>
+						<div class="detail_answer"><strong>hidoipo@gmail.com</strong>로 고객센터나 직접 메일로 보내주시면 됩니다.
+																치명적인 버그라던가 좋은 건의 사항인 경우에는 소정의 상품을 드리고 있으니 많이 제보해주세요.</div>
 					</li>
 
 					<li><span class="base_question"><strong><span class='text-primary'>4.부적절한 게시글을 발견했어요 어떻게 하나요?</span></strong></span>
@@ -67,7 +67,7 @@
 				<h2>DO!PO 회원 서비스</h2>
 				<ul>
 					<li><span class="base_question"><strong><span class='text-primary'>1.회원수정은 어떻게 하나요?</span></strong></span>
-						<div class="detail_answer">로그인 하신후, 마이페이지로 들어가시면 바로 회원수정페이지로 링크가 됩니다.</div>
+						<div class="detail_answer">로그인 하신후, 마이페이지 클릭 후, 회원수정페이지로 이동하시면 됩니다.</div>
 					</li>
 					
 					<li><span class="base_question"><strong><span class='text-primary'>2.회원 탈퇴는 어떻게 하나요?</span></strong></span>

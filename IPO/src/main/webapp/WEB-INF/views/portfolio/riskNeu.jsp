@@ -109,27 +109,27 @@ This type has middle level of the risk criteria so that we select the stocks by 
 	</section>
 	<!-- /.testimonial -->
 
-	<!-- Add -->
+		<!-- Add -->
 	<section class="section-wrapper add container">
 		<div class="owl-carousel add-owl">
 			<div class="item">
-				<img src="/resources/assets/images/mkicon.png" alt="add"
-					class="add-item">
+				 <a href="http://money.mk.co.kr/v3/"><img src="/resources/assets/images/mkicon.png" alt="add"
+					class="add-item"></a>
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/navericon.png" alt="add"
-					class="add-item">
+				 <a href="http://finance.naver.com/"><img src="/resources/assets/images/navericon.png" alt="add"
+					class="add-item"></a>
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/googleicon.png" alt="add"
-					class="add-item">
+				 <a href="https://finance.google.com/finance/stockscreener"><img src="/resources/assets/images/googleicon.png" alt="add"
+					class="add-item"></a>
 			</div>
 			<!-- /.item -->
 			<div class="item">
-				<img src="/resources/assets/images/bloombergicon.jpg" alt="add"
-					class="add-item">
+				 <a href="https://www.bloomberg.com/markets/stocks"><img src="/resources/assets/images/bloombergicon.jpg" alt="add"
+					class="add-item"></a>
 			</div>
 			<!-- /.item -->
 		</div>
