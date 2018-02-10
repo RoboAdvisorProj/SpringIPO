@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 		return userDAO.selectUser(mId);
 	}
 
+
 	@Override
 	public void updateUser(UserVO userVO) throws Exception {
 		// TODO Auto-generated method stu

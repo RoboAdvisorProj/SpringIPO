@@ -87,7 +87,7 @@ public class UserController {
 		UserVO user = userService.selectUser((String) map.get("mid"));
 		return (user == null) ? "possible" : "impossible";
 	}
-
+	
 	/* 회원수정에서 내정보를 표시 */
 	@RequestMapping("/modify_update")
 	public String modify(Principal principal, Model model) throws Exception {

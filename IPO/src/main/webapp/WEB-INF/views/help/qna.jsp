@@ -23,7 +23,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;질의응답</li>
+				<li class="active">&nbsp;고객센터</li>
 			</ol>
 		</div>
 		<!-- /.container -->

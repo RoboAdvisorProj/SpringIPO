@@ -33,7 +33,7 @@
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="${location}/main/main">Home</a></li>
-				<li class="active">&nbsp;BOARD</li>
+				<li class="active">&nbsp;자유게시판</li>
 			</ol>
 		</div>
 		<!-- /.container -->
