@@ -39,14 +39,14 @@
 					<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
 					<h3>Address</h3>
 					<p class="contact">
-						서울시 강남구 <br> 역삼동
+						서울특별시 동대문구 회기로 85<br> KAIST 경영대학 금융공학과
 					</p>
 				</div>
 				<div class="col-md-4 contact-item col-sm-6 col-xs-12">
 					<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
 					<h3>Phone</h3>
 					<p class="contact">
-						회사 번호: 02-123-4567 <br> 핸드폰: 010-9999-9999
+						금융 문의: 010-9510-7717<br>Web 문의: 010-7633-7290
 					</p>
 				</div>
 				<div class="col-md-4 contact-item col-sm-6 col-xs-12">
@@ -54,7 +54,7 @@
 					<h3>Email Address</h3>
 					<p class="contact">
 						<a href="mailto:DO!PO@gmail.com">hidoipo@gmail.com</a> <br> <a
-							href="www.themewagon.com">www.doipo.net</a>
+							href="http://www.doipo.net">www.doipo.net</a>
 					</p>
 				</div>
 
