@@ -275,7 +275,7 @@
 								src="<c:url value="/resources/assets/images/analytics.jpg"/>"
 								alt="port-1" class="port-item">
 							<div class="portfolio-img-hover">
-								<a href="${location}/portfolio/self_diagnosis"><img
+								<a href="javascript:loginCheck()"><img
 									src="<c:url value="/resources/assets/images/plus.png"/>"
 									alt="plus" class="plus"></a>
 							</div>
