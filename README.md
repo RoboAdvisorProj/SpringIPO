@@ -3,14 +3,14 @@
 
 
 ### Amazon Web Services(AWS) 주소
-[Go to IPO PROJECT](http://52.79.187.44:8080/IPO/main/main)
+[Go to DO!PO PROJECT](http://www.doipo.net)
 
 
 
 
 ### Project Introduction
 ```
-IPO는 <Inversion of Potential on Investmen>의 약자입니다. 
+DOIPO는 <DO Inversion of Potential on Investmen>의 약자입니다. 
 한글로 설명하자면 '투자 잠재력의 반전'을 의미합니다. 
 우리 웹 사이트를 이용하는 고객들이 직접 위험을 감수하면서 
 주식 시장에 투자하는 것이 아닌 로보 어드바이저가 주식 시장을 분석하고 
