@@ -76,7 +76,9 @@ public class UserController {
 
 		userService.register(userVO);
 		rttr.addFlashAttribute("user", userVO.getMid());
-		return "redirect:/user/signupSuccess";
+		rttr.addFlashAttribute("msg","usersignup success");
+		logger.info("===============사용자 정보==============="+userVO);
+		return "redirect:/user/login";
 	}
 	
 	/*아이디 중복확인*/

@@ -68,7 +68,8 @@
 							</ul>
 							</div>
 							<div class="box-footer">
-								<button type="submit" class="btn btn-warning pull-right">취소</button>
+								<%-- <button type="submit" class="btn btn-warning pull-right" onclick="goNextPage('${location}/board/listPage')">취소</button> --%>
+								<a id="cancel" class="btn btn-warning pull-right" href="${location}/notice/n_listPage">취소</a>
 								<button id="registerSuccess" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">완료</button>
 							</div>
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

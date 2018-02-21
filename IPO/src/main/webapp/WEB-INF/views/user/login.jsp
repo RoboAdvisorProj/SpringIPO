@@ -112,6 +112,13 @@
 			});
 		});
 	</script>
+	<script>
+	var result = '${msg}';
+
+	if (result == 'usersignup success') {
+		alert("${user}님 DO!PO 회원이 되신 걸 진심으로 환영합니다.\n로그인 해주세요");
+	}
+	</script>
 	<%@ include file="../include/footer.jsp"%>
 
 </body>

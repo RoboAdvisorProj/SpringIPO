@@ -78,7 +78,14 @@ public class UserLoginSuccessHandler extends SavedRequestAwareAuthenticationSucc
 			else if(path.contains("findPw")) {
 				path = path.replace("user/findPw", "main/main");	
 			}
-			
+			/*전 페이지가 회원가입일 경우 로그인시 메인으로 이동*/
+			else if(path.contains("join_first")) {
+				path = path.replace("user/join_first", "main/main");	
+			}
+			//전 페이지가 회원가입 상세페이지일 경우 로그인시 메인으로 이동
+			else if(path.contains("join_second")) {
+				path = path.replace("user/join_second", "main/main");	
+			}
 			if(path != null) {
 				session.removeAttribute("prevpage");
 				getRedirectStrategy().sendRedirect(req, res, path);

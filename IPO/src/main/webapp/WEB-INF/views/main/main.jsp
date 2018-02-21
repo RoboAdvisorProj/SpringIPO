@@ -50,8 +50,8 @@
 <body>
 
 	<!-- Home -->
-	<section class="header" id="header">
-<div style="position: absolute; top: 0; min-width: 1920px; min-height:1080px; z-index: -1;  -webkit-filter: brightness(0.45);">
+<section class="header" id="header">
+<div style="position: absolute; top: 0; z-index: -1;  -webkit-filter: brightness(0.45);">
  <video src="<c:url value="/resources/assets/images/finance_video.mp4"/>" width="100%" height="100%" autoplay loop muted>
  </video>
 </div>
@@ -185,7 +185,7 @@
 					</div>
 					<div class="col-md-offset-4 col-md-8 col-sm-12 services">
 						<div class="row">
-							<div class="col-xs-6 col-sm-4">
+							<div class="col-xs-6 col-sm-4" id="service1">
 								<div class="service-item">
 									<h3 class="section-item-title">위험성향 체크 서비스</h3><br/>
 									<p class="section-item-detail">개인별 위험성향 체크 서비스는 개인별 투자 위험성향을 알려주며, 
@@ -193,7 +193,7 @@
 								</div>
 								<!-- /.service-item -->
 							</div>
-							<div class="col-xs-6 col-sm-4">
+							<div class="col-xs-6 col-sm-4" id="service2">
 								<div class="service-item">
 									<h3 class="section-item-title">종목 추천 서비스</h3><br/>
 									<p class="section-item-detail">투자자는 위험성향을 토대로 5가지 성향으로 분류되며, 
@@ -202,7 +202,7 @@
 								</div>
 								<!-- /.service-item -->
 							</div>
-							<div class="col-xs-6 col-sm-4">
+							<div class="col-xs-6 col-sm-4" id="service3">
 								<div class="service-item">
 									<h3 class="section-item-title">24/7 support</h3><br/>
 									<p class="section-item-detail">저희는 연중무휴 24시간 내내 홈페이지 게시판과 

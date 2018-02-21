@@ -24,7 +24,7 @@
 		<form-login 
 			login-page="/user/login" 
 			login-processing-url="/user/loginPost"
-			always-use-default-target="true"
+			always-use-default-target="false"
 			authentication-success-handler-ref="userLoginSuccessHandler"
 			authentication-failure-handler-ref="userLoginFailureHandler"
 			username-parameter="mid" 

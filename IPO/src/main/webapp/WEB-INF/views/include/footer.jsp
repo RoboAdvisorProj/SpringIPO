@@ -5,13 +5,13 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4" style="margin-top: 30px; margin-bottom: 20px;">
+			<div class="col-sm-4" id="who">
 				<div class="copy">매니저:&nbsp;박성진</div>
 				<br/>
 				<div class="copy">개발자:&nbsp;김현우&nbsp;|&nbsp;박성진&nbsp;|&nbsp;손해성</div><br/>
 				<div class="copy">Copyright&copy; 2018 DO!PO</div>
 			</div>
-			<div class="col-sm-4 text-center" style="margin-top: 30px; margin-bottom: 20px;">
+			<div class="col-sm-4 text-center" id="social">
 				<div class="social-icon">
 					<a href="#">
 						<div class="icon fb">
@@ -32,7 +32,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="col-sm-4" style="margin-top: 30px; margin-bottom: 20px; text-align:right;">
+			<div class="col-sm-4" id="addr">
 				<div class="copy">서울특별시 동대문구 회기로 85</div>
 				<br/>
 				<div class="copy">K A I S T 경영대학 금융공학과&nbsp;</div><br/>
